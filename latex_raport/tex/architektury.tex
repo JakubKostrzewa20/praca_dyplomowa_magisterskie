@@ -1,0 +1,22 @@
+\section{Architektury modeli}
+Poniższy rozdział przedstawia podstawową budowe architektur Konwolucyjnych sieci neuronowych oraz Transformeru wizyjnego.
+\subsection{Transformer wizyjny - ViT}
+Transformer wizyjny to architektura działająca oddmienie od CNN. Obraz dostarczony do modelu jest dzielony na kawałki, tak zwane patche, o z góry narzuconym rozmiarze. Każdy z patchy jest płaszczony, a następnie mapowany do wektora. Dodawana do wektora jest pozycje patchy, a otrzymany wynik jest przepuszczany przez enkoder transformera. Przegląd modelu znajduję się na  . Transformer wizyjny, dzięki swojej unikalnej strukturze, lepiej tworzy powiązania globalne między różnymi elementami na obrazku niż klasyczne podejście CNN.\cite{dosovitskiy2020image}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/vit.png}
+	\caption{Przedstawienie budowy oraz działania ViT.\cite{dosovitskiy2020image}}
+	\label{fig:vit_rys}
+\end{figure}
+\subsection{Konwolucyjne sieci neuronowe - CNN}
+Konwolucyjne sieci neuronowe to architektura deep
+learning, opiera ją ca się na czterech kluczowych konceptach:połączenia lokalne, współdzielone wagi, grupowanie i wykorzystywanie wielu warstw. Typowa architektura modelu CNN zawiera w sobie: warstwy konwolucyjne, które dokonują ekstrakcji cech; warstwy poolingowe, które dokonują zmniejszenia wymiarów inputu, scalając podobne cechy w jedną , ułatwiając obliczenia ; warstwy aktywacyjnej
+oraz warstw w pełni połączonych, gdzie na podstawie
+nauczonych parametrów z poprzednich warstw, dokonywana
+jest klasyfikacja danych. Na poniższym obrazku przedstawiona jest kontrukcja takiej sieci.\cite{lecun2015deep}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/cnn.png}
+	\caption{Przedstawienie budowy CNN.\cite{lecun2015deep}}
+	\label{fig:cnn_rys}
+\end{figure}
