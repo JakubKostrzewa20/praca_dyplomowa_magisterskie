@@ -1,0 +1,5 @@
+*.ckpt
+.vscode/
+__pycache__/
+*.zip
+*.JPG

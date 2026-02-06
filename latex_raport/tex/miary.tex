@@ -1,0 +1,60 @@
+\newpage
+\section{Metodyka badań}
+\subsection{Specyfikacja sprzętu}
+\subsection{Strategia treningowa}
+\subsection{Augmentacja danych}
+
+\subsection{Metryki ewaluacji wyników}
+Ocena skuteczności modeli klasyfikacji obrazów wymaga
+zastosowania wielorakich metryk ewaluacyjnych w celu
+uzyska nia obiektywnego wyniku skuteczności i jakości
+modelu przez nas badanego. Odpowiedni dobór metryk
+pozwala na szeroką interpretacje otrzyma nych wyników,
+także przy obecności niezbalansowanych danych. Pozwalają
+na analizę ogólną modelu, a także na identyfikację błędów,
+takich jak nieodpowiedni dobór parametrów, czy zbioru
+szkoleniowego. Poniższy rozdział przedstawia szereg metryk
+ewaluacyjnych wybranych z zamiarem użycia ich w badaniu,
+wraz ze wzorami oraz krótkim opisem użycia . Są to metryki
+szeroko stosowane w innych pracach z badanej tematyki, co
+pozwoli dodatkowo porównać otrzymane wyniki do innych
+prac w dziedzinie.
+\subsection{Macierz pomyłek}
+Macierz pomyłek (ang.confusin matrix)  stanowi podstawową metrykę ewaluacyjną modeli klasyfikacyjnych, której wyniki są używane następnie do wyliczenia bardziej złożonych metryk pozwalających na obiektywniejszą ocenę modelu. Jest to tabela krzyżowa pozwalająca na porównanie wyników predykcji do oryginalnego przypisania klas do danych. Dzieli ona wynik klasyfikacji na cztery kategorię: TP(true positivie), TN(true negative), FP( false positive) i  FN(false negative) \cite{grandini2020metrics}. Dla klasyfikacji wieloklasowej, macierz pomyłek, jest macierzą o wymiarach n x n, gdzie n to liczba klas, co przedstawiono w przykładzie dla klasy ‘B’ poniżej.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/macierz_pomylek.png}
+	\caption{Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}
+	\label{fig:macierz_konfliktu}
+\end{figure}
+
+\subsubsection{Dokładność}
+Wzór na Dokładność (ang.Accuracy) dzieli sume poprawnie przypisanych przez model klas(TP i TN) przez sumę wszystkich dokonanych klasyfikacji (TP +TN+ FN+ FP).\cite{grandini2020metrics} 
+
+$$Accuracy = \frac{TP+TN}{TP+TN+FN+FP}$$
+
+Jest więc to prawdopodobieństwo dokonania poprawnej predykcji przez model. Jest to podstawowa metryka, pozwalająca na szybką ocenę skuteczności modeli, zwracająca skuteczność predykcji modelu na całym zbiorze danych, nie bierze jednak pod uwagę niezbalansowania zbioru danych. Jest to jednak prosta w zrozumieniu metryka pozwalająca na szybka i wstępną ocenę modelu.
+
+\subsubsubsection{Precyzja}
+Precision to miara informująca nas, jaki procent przypisań danej klasy dokonanych przez model, zgadza się z oryginalnymi przypisaniami. Innymi słowy, z jaką precyzją model dokonuję predykcji danej klasy. \cite{grandini2020metrics}
+
+$$Precision= \frac{TP}{TP+FN}$$
+
+Miara ta jest używana dla konkretnych klas, jednak jej średnia, może zostać użyta do oceny całego modelu. Plusem jednak wyliczenia dla każdej klasy tej miary jest szersza ocena skuteczności modelu, co skutkować może wykryciem np. niezbalansowania klasy
+
+\subsubsection{Czułość}
+Czułość(ang. recall) to miara informująca nas, jaki procent danych, które oryginalnie mają daną klasę, zostało poprawnie sklasyfikowanych przed model. Jest więc to liczba poprawnych przypisań danej klasy(TP) podzielona przez liczbę danych mającej tą klasę w zbiorzę(TP+FN). \cite{grandini2020metrics}
+
+$$Recall  = \frac{TP}{TP+TN}$$
+
+Miara ta pozwala na stwierdzenie, czy model jest wstanie poprawnie przypisać klasę do danych. Możliwe jest też użycie średniej tej metryki, co pozwala na uzyskanie oceny całego modelu, jednak pozbawia nas możliwości zbadania klasyfikacji poszczególnych klas.
+
+\subsubsection{Miara F1}
+Miara F1(ang. F1-Score) jest próbą znalezienia pojedynczej metryki, pozwalającej na jak bardziej obiektywną ocenę modelu. Metryka agreguje metryki Precyzji i Czułości z pomocą miary harmonicznej. \cite{grandini2020metrics}
+
+$$F1-Score= 2*(\frac{precision*recall}{precision+recall})$$
+
+Przedstawiony wyżej wzór jest używany tylko w ramach klasyfikacji binarnej. Aby użyć tej miary w ramach klasyfikacji wieloklasowej należy, obliczyć odpowiednie średnie wcześniej wykorzystanych miar. W ramach tego otrzymujemy dwie nowe, ogólne miary: Macro F1-Score, które wykorzystuje arytmetyczną średnią Precyzji i Czułości, oraz Micro F1-Score – wykorzystująca średnie harmoniczną.\cite{grandini2020metrics}
+
+$$Macro F1-Score= 2*(\frac{Arithmetic Precision* Arithmetic Recall}{Arithmetic Precision+Arithmetic Recall})$$
+$$ Micro F1-Score= 2*(\frac{Harmonic Precision* Harmonic Recall}{Harmonic Precision+Harmonic Recall})$$
