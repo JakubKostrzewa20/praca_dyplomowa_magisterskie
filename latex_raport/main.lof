@@ -1,6 +1,8 @@
 \babel@toc {polish}{}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Przedstawienie budowy oraz działania bloku rezydualnego.\blx@tocontentsinit {0}\cite {he2016deep}}}{16}{figure.caption.2}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}}{16}{figure.caption.3}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych.}}{17}{figure.caption.4}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}}{20}{figure.caption.6}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}}{21}{figure.caption.7}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Przedstawienie budowy oraz działania ViT.\blx@tocontentsinit {0}\cite {dosovitskiy2020image}}}{14}{figure.caption.2}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Przedstawienie budowy CNN.\blx@tocontentsinit {0}\cite {lecun2015deep}}}{15}{figure.caption.3}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Przedstawienie budowy oraz działania bloku rezydualnego.\blx@tocontentsinit {0}\cite {he2016deep}}}{17}{figure.caption.4}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}}{17}{figure.caption.5}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych.}}{18}{figure.caption.6}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}}{22}{figure.caption.9}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}}{24}{figure.caption.10}%

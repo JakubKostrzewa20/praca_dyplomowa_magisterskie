@@ -1,31 +1,65 @@
 \newpage
 \section{Metodyka badań}
-Celem poniższego rozdziału jest przedstawienie specyfikacji sprzetowej, metod, narzędzi oraz przeprowadzonych badań porównawczych modeli głębokiego nauczania 
+Celem poniższego rozdziału jest przedstawienie specyfikacji sprzetowej, metod, narzędzi oraz przeprowadzonych badań porównawczych modeli głębokiego nauczania.
 \subsection{Specyfikacja sprzętowa i środowiska programistycznego}
 Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych samych specyfikacjach, w celu zachowania obiektywności ekseprymentu. W badaniach wykorzystano komputer osobisty z konkretnymi specyfikacjami:
 \begin{itemize}
-	\item 
-\end{itemize}
-Do treningu oraz ewaluacji modeli wykorzystano narzędzia oraz biblioteki języka Python:
+\item Karta graficzna
+	\begin{itemize}
+		\item Model:NVIDIA GeForce RTX 3050 Ti Laptop GPU
+		\item Pamięć VRAM: 4 GB
+		\item Obsługa CUDA: CUDA 13.0
+	\end{itemize}
+\item Procesor CPU: 
 \begin{itemize}
-	\item 
+	\item Model: AMD Ryzen 5 5600H with Radeon Graphics
+	\item Liczba rdzeni fizycznych CPU: 6
+	\item Wątki logiczne: 12
+\end{itemize}
+\item System operacyjny:
+\begin{itemize}
+	\item Nazwa systemu:Windows 11 Home
+	\item Wersja systemu:21H2
+	\item Typ systemu:64-bitowy system operacyjny
+\end{itemize}
+\item Pamięć RAM : 16,0 GB
+\end{itemize}
+Do treningu oraz ewaluacji modeli wykorzystano konkretne narzędzia oraz biblioteki języka Python:
+\begin{itemize}
+	\item Python
 \end{itemize}
 \subsection{Lista modeli wykorzystana w badaniu}
+Wybrane rodziny oraz modele pozwalają na szeroki zakres badania różnych sposobów oraz cech modeli. Wybrane modele pochodzą z rodzin opisanych w roz. . 
 Poniżej przedstawiono listę modeli wybranych do badania architektur:
-\begin{itemize}
-	\item MobileNetV2
-	\item MobileNetV3Small
-	\item ViT-S/16
-	\item ViT-B/16
-	\item ResNet50
-	\item ResNet30
-	\item EfficientNetB0
-	\item EfficientNetB3
-\end{itemize}
-\subsection{Strategia treningowa}
-W ramach treningu wyszkolono osiem modeli, po dwie z przedstawionych 
-\subsection{Augmentacja danych}
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		Rodzina modeli & Nazwa modelu     & Liczba parametrów & Typ architektury \\ \hline
+		ResNet         & ResNet50         & 1                 & CNN              \\ \hline
+		ResNet         & ResNet102        & 2                 & CNN              \\ \hline
+		ViT          & ViT-S/16         & 21,677,214                 & VT               \\ \hline
+		ViT          & ViT-B/16         & 4                 & VT               \\ \hline
+		MobileNet      & MobileNetV2      & 2,929,246                 & CNN              \\ \hline
+		MobileNet      & MobileNetV3Small & 6                 & CNN              \\ \hline
+		EfficientNet   & EfficientNetB0   & 7                 & CNN              \\ \hline
+		EfficientNet   & EfficientNetB3   & 8                 & CNN              \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{Strategia treningu}
+W ramach treningu dokonano fine-tunningu osiemu wcześniej przedstawionych modeli.
+Aby otrzymać obiektywne między modelami wyniki testów, modele zostały wyszkolone w ten sam sposób.
+Każdy z modeli działał na tym samym zbiorze treningowym, testowym oraz walidacyjnym.
+Dla każdego szkolenia zastosowano tą samą konfiguracje, a długość szkolenia, choć z góry ustalona, była też kontrolowana techniką EarlyStopping. Podejście to pozwoliło na obiektywną ocene skuteczności poszczególnych modeli.
+\subsection{Konfiguracja modeli}
+Niniejszy podrozdział przedstawia ogólną konfigurację modeli wykorzystaną w przeprowadzonym eksperymencie. Opisano w nim przeprowadzoną augmentacje danych, wybrane parametry oraz zastosowane techniki w ramach przeprowadzonego eksperymentu. Zastosowanie jednolitej konfiguracji pozwala na bardziej rzetelne i obiektywniejsze porównanie badanych modeli. 
+\subsubsection{Augmentacja danych}
 Z powodu niezbalansowanego zbioru danych zastosowano augmentacje danych, mającą na celu zapobieganie przeuczeniu. Zdjęcia dostarczane do modeli w ramach zbioru treningowego są poddawane przekształceniom, takim jak:
+\begin{itemize}
+	\item RandomFlip - warstwa odpowiadająca za losową rotację obrazów;
+	\item RandomFlip - warstwa odpowiadająca za odwracanie obrazów;
+	\item RandomConstrast - warstwa losowo zmieniająca kontrast obrazów;
+	\item RandomZoom - warstwa odpowiadająca za losowe przybliżanie obrazów.
+\end{itemize}
 Poniżej przedstawiono kod warstwy odpowiadającej za augmentacje: 
 \begin{lstlisting}[language=Python, caption={Kod warstwy odpowiadającej za augmentacje danych}, label={lst:paugmentacja}]
 data_augmentation = tf.keras.Sequential(
@@ -36,20 +70,31 @@ data_augmentation = tf.keras.Sequential(
 	layers.RandomZoom(0.2),
 	]
 )
-
 \end{lstlisting}
-
-Warstwa ta działa tylko podczas szkolenia i nie wpływa na obrazy przekazane w celu sprawdzenia skuteczności modelu, czy w celu klasyfikacji. Poniżej przedstawiono przykładowy wygląd losowego zdjęcia, po dokonaniu losowych przekształceń przez warstwe przedstawioną w kodzie \ref{lst:paugmentacja} .
-
+Warstwa ta działa tylko podczas szkolenia i nie wpływa na obrazy przekazane w celu sprawdzenia skuteczności modelu, czy w celu klasyfikacji. Poniżej przedstawiono przykładowy wygląd losowego zdjęcia, po dokonaniu losowych przekształceń przez warstwe przedstawioną w kodzie \ref{lst:paugmentacja}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{img/wykres-augmentacji.png}
-	\caption{	Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}
+	\caption{Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}
 	\label{fig:zdjecia_lisci}
 \end{figure}
 \begin{verbatim}
 
 \end{verbatim}
+\subsubsection{Parametry}
+Poniższe parametry zostały zastosowane w ramach szkolenia dla wszystkich badanych modeli:
+\begin{itemize}
+	\item Optimizer: Adam
+	\item Epochs: 50
+	\item Batch\_size: 16
+	\item Rozmiar zdjęć: 224x224
+	\item Learning rate: 0.001
+\end{itemize}
+\subsubsection{Early Stopping}
+EarlyStopping to funkcja wbudowana w TensorFlow pozwalająca na zatrzymanie szkolenia w momencie zaobserwowania braku poprawy metryki loss przez pięć następujących po sobie epok. Pozwala to na zapobiegnięcie overfittingowi oraz oszczędzanie zasobów obliczeniowych. 
+\begin{lstlisting}[language=Python, caption={Kod implementujący EarlyStopping w ramach szkolenia}, label={lst:earlystopping}]
+callback = tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)
+\end{lstlisting}
 \subsection{Metryki ewaluacji wyników}
 Ocena skuteczności modeli klasyfikacji obrazów wymaga
 zastosowania wielorakich metryk ewaluacyjnych w celu

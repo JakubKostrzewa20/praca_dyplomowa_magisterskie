@@ -11,7 +11,7 @@ train_ds = tf.keras.utils.image_dataset_from_directory(
     subset="training",
     validation_split=0.2,
     seed=123,
-    image_size=(224, 224),
+    image_size=IMG_SIZE,
     batch_size=BATCH,
 )
 print("train_ds stworzony")
@@ -20,7 +20,7 @@ temp_ds = tf.keras.utils.image_dataset_from_directory(
     subset="validation",
     validation_split=0.2,
     seed=123,
-    image_size=(224, 224),
+    image_size=IMG_SIZE,
     batch_size=BATCH,
 )
 temp_count = tf.data.experimental.cardinality(temp_ds)

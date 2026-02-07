@@ -77,25 +77,22 @@
 %--------------------------------------
 % Rozdziały
 %--------------------------------------
-\cleardoublepage % Zaczynamy od nieparzystej strony
+\cleardoublepage
 \pagestyle{headings}
 
-\input{tex/1-wstep}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
-\input{tex/2-de-finibus}    % Umożliwia to również łatwą migrację do nowej wersji szablonu:
-%\input{tex/3-code-listings} % wystarczy podmienić swoje pliki main.tex i eiti-thesis.cls
-                            % na nowe wersje, a cały tekst pracy pozostaje nienaruszony.
+\input{tex/1-wstep} .
+\input{tex/2-de-finibus}    
 \input{tex/podstawowe-pojecia}
+\input{tex/architektury}
 \input{tex/3-modele}
 \input{tex/zbior-danych}
 \input{tex/miary}
-\newpage % Rozdziały zaczynamy od nowej strony
-%\section{Summatio}          % Można też pisać rozdziały w jednym pliku.
-%\lipsum[5-10]
-
+\input{tex/wyniki}
+\newpage 
 %--------------------------------------------
 % Literatura
 %--------------------------------------------
-\cleardoublepage % Zaczynamy od nieparzystej strony
+\cleardoublepage 
 \printbibliography
 
 %--------------------------------------------
@@ -139,4 +136,4 @@
 % możesz tu dodać swój własny wykaz bądź listę,
 % np. spis algorytmów.
 
-\end{document} % Dobranoc.
+\end{document}
