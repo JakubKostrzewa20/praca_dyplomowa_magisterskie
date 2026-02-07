@@ -1,5 +1,4 @@
 import tensorflow as tf
-import keras
 from keras import layers
 import numpy as np
 import os
@@ -53,12 +52,5 @@ for batch, _ in train_ds.take(1):
         augmented_image = data_augmentation(tf.expand_dims(image, 0), training=True)
         plt.imshow(tf.cast(augmented_image[0], tf.uint8))
         plt.axis("off")
+plt.savefig("output/plots/wykres-augmentacji.png")       
 plt.show()
-plt.savefig("output/plots/wykres.jpg")
-
-
-labels = set()
-for _, y in test_ds:
-    labels.update(y.numpy())
-
-print("Numery klas w dataset:", sorted(labels))

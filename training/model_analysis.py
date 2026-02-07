@@ -1,11 +1,8 @@
 import tensorflow as tf
-import keras
-from keras import layers
-import tensorflow as tf
+import time
 import numpy as np
 from sklearn.metrics import (
     classification_report,
-    confusion_matrix,
     accuracy_score,
     f1_score,
     precision_score,
@@ -20,8 +17,12 @@ IMG_SHAPE = (224, 224, 3)
 model = tf.keras.models.load_model("output/mobilenet/mobile_net_v2.keras", compile=True)
 y_true = []
 y_pred = []
+times = []
 for x, y in test_ds:
+    start = time.time()
     logits = model(x, training=False)
+    end = time.time()
+    times.append(end-start)
     y_pred.extend(tf.argmax(logits, axis=1).numpy())
     y_true.extend(y.numpy())
 
@@ -40,3 +41,4 @@ print("Recall: ", recall_score(y_true_labels, y_pred_labels, average="micro"))
 print("Precision: ", precision_score(y_true_labels, y_pred_labels, average="micro"))
 print("Macro F1-Score: ", f1_score(y_true_labels, y_pred_labels, average="macro"))
 print("Micro F1-Score: ", f1_score(y_true_labels, y_pred_labels, average="micro"))
+print("Średni czas na przetworzenie jednego batcha(16 zdjęć): ", np.mean(times), " sekund")

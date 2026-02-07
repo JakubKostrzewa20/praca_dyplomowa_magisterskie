@@ -54,6 +54,6 @@ history = model.fit(
     callbacks=callback,
 )
 
-model.save("output/mobilenet/mobile_net_v3.keras")
+model.save("output/mobilenet/mobile_net_v3small.keras")
 
 results = model.evaluate(test_ds, batch_size=16)

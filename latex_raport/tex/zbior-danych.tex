@@ -5,7 +5,7 @@ Wybrany zbiór danych do wykorzystania w ramach badania to PlantVillage-Dataset.
 Jest to zaktualizowana wersja datasetu PlantVillage Dataset, który używany jest w ramach przedstawionych wcześniej badań. 
 Zawiera on 54 305 zdjęć liści roślin uprawnych wykonanych w środowisku laboratoryjnym.Dataset ten posiada klasy, 
 które przedstawiają zdrowe okazy różnych gatunków roślin uprawnych, oraz klasy które przedstawiają choroby trawiące te rośliny, razem 38.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.2\textwidth]{img/lisc-1.png}
 	\includegraphics[width=0.2\textwidth]{img/lisc-2.png}
@@ -29,7 +29,14 @@ które przedstawiają zdrowe okazy różnych gatunków roślin uprawnych, oraz k
 \caption{Statystyki liczby zdjęć w zbiorze danych}
 \label{tab:dataset_stats}
 \end{table}
+Analiza statystyczna sugeruję niezrównoważony rozkłąd zdjęć w zbiorze danych. Jak widać z tabeli \ref{tab:dataset_stats}, istnieje duża różnica ilościowa między klasą o największej ilości zdjęć - Orange\_Haunglonbging\_(Citrus\_greening), a klasą i najmniejszej ilości zdjęć - Potato\_healthy. Dodatkowo występuje duże odchylenie standardowe, bardzo bliskie średniej ilości zdjęć na klasę. Wszystko to wskazuję na potrzebe zastosowania augmentacji danych, w celu zapobiegnięcia overfittingu.
 \subsection{Podział na zbiory treningowe i testowe}
+W ramach badania, oryginalny zbiór danych został podzielony na trzy zbiory: treningowy, walidacyjny oraz testowy. Zbiór treningowy służący do nauki modelu zawiera 80\% wszystkich zdjęć, zbiór walidacyjny służacy do monitorowania oraz wczesnego zatrzymywania szkolenia modelu 10\%, a zbiór testowy służacy do ostatecznej oceny skuteczności modelu 10\%. Zdjęcia nie powtarzają się między zbiorami, a każda klasa występuje w każdym zbiorze, pozwalając na obiektywne wyniki. Finalnie, rozkład zdjęć w zbiorach danych wygląda następująco:
+\begin{itemize}
+	\item zbiór treningowy  - 43 456
+	\item zbiór testowy - 5 424
+	\item zbiór walidacyjny - 5 440
+\end{itemize}
 
 
 

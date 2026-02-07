@@ -1,25 +1,71 @@
 \newpage
 \section{Metodyka badań}
-\subsection{Specyfikacja sprzętu}
+Celem poniższego rozdziału jest przedstawienie specyfikacji sprzetowej, metod, narzędzi oraz przeprowadzonych badań porównawczych modeli głębokiego nauczania 
+\subsection{Specyfikacja sprzętowa i środowiska programistycznego}
+Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych samych specyfikacjach, w celu zachowania obiektywności ekseprymentu. W badaniach wykorzystano komputer osobisty z konkretnymi specyfikacjami:
+\begin{itemize}
+	\item 
+\end{itemize}
+Do treningu oraz ewaluacji modeli wykorzystano narzędzia oraz biblioteki języka Python:
+\begin{itemize}
+	\item 
+\end{itemize}
+\subsection{Lista modeli wykorzystana w badaniu}
+Poniżej przedstawiono listę modeli wybranych do badania architektur:
+\begin{itemize}
+	\item MobileNetV2
+	\item MobileNetV3Small
+	\item ViT-S/16
+	\item ViT-B/16
+	\item ResNet50
+	\item ResNet30
+	\item EfficientNetB0
+	\item EfficientNetB3
+\end{itemize}
 \subsection{Strategia treningowa}
+W ramach treningu wyszkolono osiem modeli, po dwie z przedstawionych 
 \subsection{Augmentacja danych}
+Z powodu niezbalansowanego zbioru danych zastosowano augmentacje danych, mającą na celu zapobieganie przeuczeniu. Zdjęcia dostarczane do modeli w ramach zbioru treningowego są poddawane przekształceniom, takim jak:
+Poniżej przedstawiono kod warstwy odpowiadającej za augmentacje: 
+\begin{lstlisting}[language=Python, caption={Kod warstwy odpowiadającej za augmentacje danych}, label={lst:paugmentacja}]
+data_augmentation = tf.keras.Sequential(
+	[
+	layers.RandomFlip("horizontal"),
+	layers.RandomRotation(0.2),
+	layers.RandomContrast(0.2),
+	layers.RandomZoom(0.2),
+	]
+)
 
+\end{lstlisting}
+
+Warstwa ta działa tylko podczas szkolenia i nie wpływa na obrazy przekazane w celu sprawdzenia skuteczności modelu, czy w celu klasyfikacji. Poniżej przedstawiono przykładowy wygląd losowego zdjęcia, po dokonaniu losowych przekształceń przez warstwe przedstawioną w kodzie \ref{lst:paugmentacja} .
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{img/wykres-augmentacji.png}
+	\caption{	Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}
+	\label{fig:zdjecia_lisci}
+\end{figure}
+\begin{verbatim}
+
+\end{verbatim}
 \subsection{Metryki ewaluacji wyników}
 Ocena skuteczności modeli klasyfikacji obrazów wymaga
 zastosowania wielorakich metryk ewaluacyjnych w celu
-uzyska nia obiektywnego wyniku skuteczności i jakości
+uzyskania obiektywnego wyniku skuteczności i jakości
 modelu przez nas badanego. Odpowiedni dobór metryk
-pozwala na szeroką interpretacje otrzyma nych wyników,
+pozwala na szeroką interpretacje otrzymanych wyników,
 także przy obecności niezbalansowanych danych. Pozwalają
 na analizę ogólną modelu, a także na identyfikację błędów,
 takich jak nieodpowiedni dobór parametrów, czy zbioru
-szkoleniowego. Poniższy rozdział przedstawia szereg metryk
+szkoleniowego. Poniżej przedstawiono szereg metryk
 ewaluacyjnych wybranych z zamiarem użycia ich w badaniu,
 wraz ze wzorami oraz krótkim opisem użycia . Są to metryki
 szeroko stosowane w innych pracach z badanej tematyki, co
 pozwoli dodatkowo porównać otrzymane wyniki do innych
 prac w dziedzinie.
-\subsection{Macierz pomyłek}
+\subsubsection{Macierz pomyłek}
 Macierz pomyłek (ang.confusin matrix)  stanowi podstawową metrykę ewaluacyjną modeli klasyfikacyjnych, której wyniki są używane następnie do wyliczenia bardziej złożonych metryk pozwalających na obiektywniejszą ocenę modelu. Jest to tabela krzyżowa pozwalająca na porównanie wyników predykcji do oryginalnego przypisania klas do danych. Dzieli ona wynik klasyfikacji na cztery kategorię: TP(true positivie), TN(true negative), FP( false positive) i  FN(false negative) \cite{grandini2020metrics}. Dla klasyfikacji wieloklasowej, macierz pomyłek, jest macierzą o wymiarach n x n, gdzie n to liczba klas, co przedstawiono w przykładzie dla klasy ‘B’ poniżej.
 \begin{figure}[h]
 	\centering
