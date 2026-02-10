@@ -14,7 +14,7 @@ EPOCHS = 50
 BATCH = 16
 IMG_SHAPE = (224, 224, 3)
 
-model = tf.keras.models.load_model("output/mobilenet/mobile_net_v3small.keras", compile=True)
+model = tf.keras.models.load_model("output/resnet/resnet50", compile=True)
 y_true = []
 y_pred = []
 times = []

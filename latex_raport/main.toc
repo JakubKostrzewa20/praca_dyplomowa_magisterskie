@@ -40,13 +40,14 @@
 \contentsline {subsection}{\numberline {6.3\relax .\enspace }Strategia treningu}{23}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4\relax .\enspace }Konfiguracja modeli}{23}{subsection.6.4}%
 \contentsline {subsubsection}{\numberline {6.4.1\relax .\enspace }Augmentacja danych}{23}{subsubsection.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.4.2\relax .\enspace }Parametry}{24}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2\relax .\enspace }Parametry}{25}{subsubsection.6.4.2}%
 \contentsline {subsubsection}{\numberline {6.4.3\relax .\enspace }Early Stopping}{25}{subsubsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.4\relax .\enspace }Mixed Precision}{25}{subsubsection.6.4.4}%
 \contentsline {subsection}{\numberline {6.5\relax .\enspace }Metryki ewaluacji wyników}{25}{subsection.6.5}%
 \contentsline {subsubsection}{\numberline {6.5.1\relax .\enspace }Macierz pomyłek}{25}{subsubsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.2\relax .\enspace }Dokładność}{25}{subsubsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2\relax .\enspace }Dokładność}{26}{subsubsection.6.5.2}%
 \contentsline {subsubsection}{\numberline {6.5.3\relax .\enspace }Precyzja}{26}{subsubsection.6.5.3}%
-\contentsline {subsubsection}{\numberline {6.5.4\relax .\enspace }Czułość}{26}{subsubsection.6.5.4}%
+\contentsline {subsubsection}{\numberline {6.5.4\relax .\enspace }Czułość}{27}{subsubsection.6.5.4}%
 \contentsline {subsubsection}{\numberline {6.5.5\relax .\enspace }Miara F1}{27}{subsubsection.6.5.5}%
 \contentsline {section}{\numberline {7\relax .\enspace }Wyniki}{28}{section.7}%
 \contentsline {subsection}{\numberline {7.1\relax .\enspace }Jakość klasyfikacji modeli}{28}{subsection.7.1}%

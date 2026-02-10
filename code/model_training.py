@@ -1,5 +1,5 @@
 import tensorflow as tf
-from keras import layers
+from tensorflow.keras import layers
 
 policy = tf.keras.mixed_precision.Policy('mixed_float16')
 tf.keras.mixed_precision.set_global_policy(policy)
@@ -25,7 +25,7 @@ data_augmentation = tf.keras.Sequential(
 )
 
 
-base_model = tf.keras.applications.EfficientNetB0(
+base_model = tf.keras.applications.ResNet50V2(
     input_shape=IMG_SHAPE, include_top=False, weights="imagenet"
 )
 
@@ -37,7 +37,7 @@ model = tf.keras.models.Sequential(
         data_augmentation,
         base_model,
         layers.GlobalAveragePooling2D(),
-        layers.Dense(38),
+        layers.Dense(38,dtype="float32"),
     ]
 )
 
@@ -55,6 +55,6 @@ history = model.fit(
     callbacks=callback,
 )
 
-model.save("output/efficentnet/efficient_net_b0.keras")
+model.save("output/resnet/resnet50v2")
 
 results = model.evaluate(test_ds, batch_size=16)

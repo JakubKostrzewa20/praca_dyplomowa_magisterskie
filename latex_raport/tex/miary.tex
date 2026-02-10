@@ -25,17 +25,18 @@ Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych
 \end{itemize}
 Do treningu oraz ewaluacji modeli wykorzystano konkretne narzędzia oraz biblioteki języka Python:
 \begin{itemize}
-	\item Python
+	\item Python - 3.10.19
+	\item Biblioteki środowiska Python: 
 \end{itemize}
 \subsection{Lista modeli wykorzystana w badaniu}
-Wybrane rodziny oraz modele pozwalają na szeroki zakres badania różnych sposobów oraz cech modeli. Wybrane modele pochodzą z rodzin opisanych w roz. . 
-Poniżej przedstawiono listę modeli wybranych do badania architektur:
+Modele zostały wybrane z rodzin opisanych w roz., w celu możliwości analizy szerokiego spektrum rozwiązań  dostępnych publicznie, różniących się pod względem architektury, cech oraz celów autorów przyświecających ich zaprojektowaniu. 
+Poniżej przedstawiono listę modeli wybranych do przeprowadzenia badania:
 \begin{table}[H]
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		Rodzina modeli & Nazwa modelu     & Liczba parametrów & Typ architektury \\ \hline
 		ResNet         & ResNet50         & 1                 & CNN              \\ \hline
-		ResNet         & ResNet102        & 2                 & CNN              \\ \hline
+		ResNet         & ResNet50v2        & 2                 & CNN              \\ \hline
 		ViT          & ViT-S/16         & 21,677,214                 & VT               \\ \hline
 		ViT          & ViT-B/16         & 4                 & VT               \\ \hline
 		MobileNet      & MobileNetV2      & 2,929,246                 & CNN              \\ \hline
@@ -70,18 +71,16 @@ data_augmentation = tf.keras.Sequential(
 	]
 )
 \end{lstlisting}
-Warstwa ta działa tylko podczas szkolenia i nie wpływa na obrazy przekazane w celu sprawdzenia skuteczności modelu, czy w celu klasyfikacji. Poniżej przedstawiono przykładowy wygląd losowego zdjęcia, po dokonaniu losowych przekształceń przez warstwe przedstawioną w kodzie \ref{lst:paugmentacja}.
+Warstwa ta działa tylko podczas szkolenia i nie wpływa na obrazy przekazane w celu sprawdzenia skuteczności modelu, czy w celu klasyfikacji. Poniżej przedstawiono przykładowy wygląd losowego zdjęcia, po dokonaniu losowych przekształceń przez warstwę przedstawioną w kodzie \ref{lst:paugmentacja}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{img/wykres-augmentacji.png}
 	\caption{Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}
 	\label{fig:zdjecia_lisci}
 \end{figure}
-\begin{verbatim}
 
-\end{verbatim}
 \subsubsection{Parametry}
-Poniższe parametry zostały zastosowane w ramach szkolenia dla wszystkich badanych modeli:
+Poniższe parametry zostały wybrane i zastosowane w ramach szkolenia dla wszystkich badanych modeli, z powodu ograniczeń sprzętowych:
 \begin{itemize}
 	\item Optimizer: Adam
 	\item Epochs: 50
@@ -93,6 +92,12 @@ Poniższe parametry zostały zastosowane w ramach szkolenia dla wszystkich badan
 EarlyStopping to funkcja wbudowana w TensorFlow pozwalająca na zatrzymanie szkolenia w momencie zaobserwowania braku poprawy metryki loss przez pięć następujących po sobie epok. Pozwala to na zapobiegnięcie overfittingowi oraz oszczędzanie zasobów obliczeniowych. 
 \begin{lstlisting}[language=Python, caption={Kod implementujący EarlyStopping w ramach szkolenia}, label={lst:earlystopping}]
 callback = tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)
+\end{lstlisting}
+\subsubsection{Mixed Precision}
+
+\begin{lstlisting}[language=Python, caption={Kod implementujący mixed precision w ramach szkolenia}, label={lst:mixedpresicion}]
+	policy = tf.keras.mixed_precision.Policy('mixed_float16')
+	tf.keras.mixed_precision.set_global_policy(policy)
 \end{lstlisting}
 \subsection{Metryki ewaluacji wyników}
 Ocena skuteczności modeli klasyfikacji obrazów wymaga
@@ -114,12 +119,12 @@ Macierz pomyłek (ang.confusin matrix)  stanowi podstawową metrykę ewaluacyjn�
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{img/macierz_pomylek.png}
-	\caption{Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}
+	\caption{Przykładowa macierz pomyłek dla trzech klas, z wynikami otrzymywanymi dla klasy ‘B’.}
 	\label{fig:macierz_konfliktu}
 \end{figure}
 
 \subsubsection{Dokładność}
-Wzór na Dokładność (ang.Accuracy) dzieli sume poprawnie przypisanych przez model klas(TP i TN) przez sumę wszystkich dokonanych klasyfikacji (TP +TN+ FN+ FP).\cite{grandini2020metrics} 
+Wzór na Dokładność (ang.Accuracy) dzieli sumę poprawnie przypisanych przez model klas(TP i TN) przez sumę wszystkich dokonanych klasyfikacji (TP +TN+ FN+ FP).\cite{grandini2020metrics} 
 
 $$Accuracy = \frac{TP+TN}{TP+TN+FN+FP}$$
 
@@ -133,7 +138,7 @@ $$Precision= \frac{TP}{TP+FN}$$
 Miara ta jest używana dla konkretnych klas, jednak jej średnia, może zostać użyta do oceny całego modelu. Plusem jednak wyliczenia dla każdej klasy tej miary jest szersza ocena skuteczności modelu, co skutkować może wykryciem np. niezbalansowania klasy
 
 \subsubsection{Czułość}
-Czułość(ang. recall) to miara informująca nas, jaki procent danych, które oryginalnie mają daną klasę, zostało poprawnie sklasyfikowanych przed model. Jest więc to liczba poprawnych przypisań danej klasy(TP) podzielona przez liczbę danych mającej tą klasę w zbiorzę(TP+FN). \cite{grandini2020metrics}
+Czułość(ang. recall) to miara informująca nas, jaki procent danych, które oryginalnie mają daną klasę, zostało poprawnie sklasyfikowanych przed model. Jest więc to liczba poprawnych przypisań danej klasy(TP) podzielona przez liczbę danych mającej tą klasę w zbiorze(TP+FN). \cite{grandini2020metrics}
 
 $$Recall  = \frac{TP}{TP+TN}$$
 
