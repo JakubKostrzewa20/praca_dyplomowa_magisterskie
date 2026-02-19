@@ -1,8 +1,8 @@
 \newpage
 \section{Metodyka badań}
-Celem poniższego rozdziału jest przedstawienie specyfikacji sprzetowej, metod, narzędzi oraz przeprowadzonych badań porównawczych modeli głębokiego nauczania.
-\subsection{Specyfikacja sprzętowa i środowiska programistycznego}
-Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych samych specyfikacjach, w celu zachowania obiektywności ekseprymentu. W badaniach wykorzystano komputer osobisty z konkretnymi specyfikacjami:
+Celem poniższego rozdziału jest przedstawienie specyfikacji sprzętowej, metod, narzędzi oraz przeprowadzonych badań porównawczych modeli głębokiego nauczania.
+\subsection{Specyfikacja sprzętowa}
+Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych samych specyfikacjach, w celu zachowania obiektywności eksperymentu. W badaniach wykorzystano komputer osobisty z konkretnymi specyfikacjami:
 \begin{itemize}
 \item Karta graficzna
 	\begin{itemize}
@@ -23,11 +23,7 @@ Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych
 \end{itemize}
 \item Pamięć RAM : 16,0 GB
 \end{itemize}
-Do treningu oraz ewaluacji modeli wykorzystano konkretne narzędzia oraz biblioteki języka Python:
-\begin{itemize}
-	\item Python - 3.10.19
-	\item Biblioteki środowiska Python: 
-\end{itemize}
+
 \subsection{Lista modeli wykorzystana w badaniu}
 Modele zostały wybrane z rodzin opisanych w roz., w celu możliwości analizy szerokiego spektrum rozwiązań  dostępnych publicznie, różniących się pod względem architektury, cech oraz celów autorów przyświecających ich zaprojektowaniu. 
 Poniżej przedstawiono listę modeli wybranych do przeprowadzenia badania:
@@ -45,11 +41,13 @@ Poniżej przedstawiono listę modeli wybranych do przeprowadzenia badania:
 		EfficientNet   & EfficientNetB3   & 8                 & CNN              \\ \hline
 	\end{tabular}
 \end{table}
+\subsection{Podział zbiorów danych}
+
 \subsection{Strategia treningu}
 W ramach treningu dokonano fine-tunningu osiemu wcześniej przedstawionych modeli.
 Aby otrzymać obiektywne między modelami wyniki testów, modele zostały wyszkolone w ten sam sposób.
 Każdy z modeli działał na tym samym zbiorze treningowym, testowym oraz walidacyjnym.
-Dla każdego szkolenia zastosowano tą samą konfiguracje, a długość szkolenia, choć z góry ustalona, była też kontrolowana techniką EarlyStopping. Podejście to pozwoliło na obiektywną ocene skuteczności poszczególnych modeli.
+Dla każdego szkolenia zastosowano tą samą konfiguracje, a długość szkolenia, choć z góry ustalona, była też kontrolowana techniką EarlyStopping. Podejście to pozwoliło na obiektywną ocene skuteczności poszczególnych modeli, oraz wyciągnięcie wniosków z poszczegoólnych eksperymentów.
 \subsection{Konfiguracja modeli}
 Niniejszy podrozdział przedstawia ogólną konfigurację modeli wykorzystaną w przeprowadzonym eksperymencie. Opisano w nim przeprowadzoną augmentacje danych, wybrane parametry oraz zastosowane techniki w ramach przeprowadzonego eksperymentu. Zastosowanie jednolitej konfiguracji pozwala na bardziej rzetelne i obiektywniejsze porównanie badanych modeli. 
 \subsubsection{Augmentacja danych}
@@ -99,6 +97,8 @@ callback = tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)
 	policy = tf.keras.mixed_precision.Policy('mixed_float16')
 	tf.keras.mixed_precision.set_global_policy(policy)
 \end{lstlisting}
+\subsection{Wykonane eksperymenty}
+\subsubsection{title}
 \subsection{Metryki ewaluacji wyników}
 Ocena skuteczności modeli klasyfikacji obrazów wymaga
 zastosowania wielorakich metryk ewaluacyjnych w celu

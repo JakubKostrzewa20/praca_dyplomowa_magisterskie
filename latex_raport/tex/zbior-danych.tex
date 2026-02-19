@@ -31,6 +31,11 @@ które przedstawiają zdrowe okazy różnych gatunków roślin uprawnych, oraz k
 \end{table}
 Analiza statystyczna sugeruję niezrównoważony rozkłąd zdjęć w zbiorze danych. Jak widać z tabeli \ref{tab:dataset_stats}, istnieje duża różnica ilościowa między klasą o największej ilości zdjęć - Orange\_Haunglonbging\_(Citrus\_greening), a klasą i najmniejszej ilości zdjęć - Potato\_healthy. Dodatkowo występuje duże odchylenie standardowe, bardzo bliskie średniej ilości zdjęć na klasę. Wszystko to wskazuję na potrzebe zastosowania augmentacji danych, w celu zapobiegnięcia overfittingu.
 \subsection{Podział na zbiory treningowe i testowe}
+
+
+
+W ramach badania oryginalny zbiór danych został podzielony na trzy podzbiory: pierwszy zawierał wszystkie zdjęcia z oryginalnego zbioru, drugi zaweriał tylko 50\% wszystkich zdjęć, a trzeci tylko 25\%. Następnie każdy z podzbiorów został znowu podzielony, tym razem na zbiór treningowy, walidacyjny oraz testowy w propocji 80/10/10. Zdjęcia nie powtarzają się między zbiorami, a każda klasa wtstępuje w każdym ze zbiorów, pozwalając na obiektywne wyniki.
+-------------------------------------------------------------------
 W ramach badania, oryginalny zbiór danych został podzielony na trzy zbiory: treningowy, walidacyjny oraz testowy. Zbiór treningowy służący do nauki modelu zawiera 80\% wszystkich zdjęć, zbiór walidacyjny służacy do monitorowania oraz wczesnego zatrzymywania szkolenia modelu 10\%, a zbiór testowy służacy do ostatecznej oceny skuteczności modelu 10\%. Zdjęcia nie powtarzają się między zbiorami, a każda klasa występuje w każdym zbiorze, pozwalając na obiektywne wyniki. Finalnie, rozkład zdjęć w zbiorach danych wygląda następująco:
 \begin{itemize}
 	\item zbiór treningowy  - 43 456
