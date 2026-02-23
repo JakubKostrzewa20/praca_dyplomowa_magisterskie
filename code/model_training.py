@@ -24,12 +24,12 @@ data_augmentation = tf.keras.Sequential(
     ]
 )
 
-base_model = tf.keras.applications.MobileNetV2(
+base_model = tf.keras.applications.MobileNetV3Small(
     input_shape=IMG_SHAPE, include_top=False, weights="imagenet"
 )
 
 inputs = tf.keras.Input(shape=IMG_SHAPE)
-callback = tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)
+callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", patience=5)
 model = tf.keras.models.Sequential(
     [
         inputs,

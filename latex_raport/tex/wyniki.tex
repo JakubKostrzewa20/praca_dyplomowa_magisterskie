@@ -1,36 +1,52 @@
 \newpage
 \section{Wyniki}
 \subsection{Jakość klasyfikacji modeli}
-Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na jednakowym zbiorze danych oraz jednakowej konfiguracji.
+Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na jednakowym zbiorze zawierającym wszystkie dane oraz jednakowej konfiguracji.
 \begin{table}[H]
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
 		Nazwa modelu     & Macro F1-Score & Micro F1-Score & Accuracy & Recall & Precision \\ \hline
-		ResNet50         & 0.973              & 0.978              & 0.978        & 0.978      & 0.978         \\ \hline
-		ResNet50v2        & 0.986              & 0.989              & 0.989        & 0.989      & 0.989         \\ \hline
+		ResNet50         & 0.786              & 0.840              & 0.840        & 0.840      & 0.840         \\ \hline
+		ResNet50v2        & 0.961              & 0.973              & 0.973        & 0.973      & 0.973         \\ \hline
 		ViT-S/16         & 1              & 2              & 3        & 4      & 5         \\ \hline
 		ViT-B/16         & 1              & 2              & 3        & 4      & 5         \\ \hline
-		MobileNetV2      & 0.910              &   0.936            & 0.936        & 0.936      & 0.936         \\ \hline
-		MobileNetV3Small & 0.967              & 0.976              & 0.976        & 0.976      & 0.976         \\ \hline
+		MobileNetV2      & 0.941              &   0.953            & 0.953        & 0.953      & 0.953         \\ \hline
+		MobileNetV3Small & 0.983              & 0.987              & 0.987        & 0.987      & 0.987         \\ \hline
 		EfficientNetB0   & 1              & 2              & 3        & 4      & 5         \\ \hline
 		EfficientNetB3   & 1              & 2              & 3        & 4      & 5         \\ \hline
 	\end{tabular}
 \end{table}
 \subsection{Efektywność obliczeniowa treningu}
-Poniższa tabela prezentuje wyniki uzyskane
+Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na jednakowym zbiorze zawierającym wszystkie dane oraz jednakowej konfiguracji.
 \begin{table}[H]
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		Nazwa modelu     & \begin{tabular}[c]{@{}l@{}}Średni czas na przetworzenie \\ jednego batch-a\end{tabular} & Params & \begin{tabular}[c]{@{}l@{}}Waga modelu\\ po szkoleniu\end{tabular} & FLOPS (GFLOPS) \\ \hline
-		ResNet50         & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
-		ResNet102        & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
+		ResNet50         & 0.165 s                                                                                       & 2      & 271 MB                                                                  & 4              \\ \hline
+		ResNet50v2        & 0.174 s                                                                                       & 2      & 270 MB                                                                  & 4              \\ \hline
 		ViT-S/16         & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
 		ViT-B/16         & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
-		MobileNetV2      & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
-		MobileNetV3Small & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
+		MobileNetV2      & 0.226 s                                                                                       & 2      & 26.8 MB                                                                  & 4              \\ \hline
+		MobileNetV3Small & 0.188 s                                                                                       & 2      & 38.3 MB                                                                  & 4              \\ \hline
 		EfficientNetB0   & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
 		EfficientNetB3   & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
 	\end{tabular}
 \end{table}
-
+\subsection{Skalowanie efektywności względem ilości danych treningowych}
+Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na zbiorach danych o różnej wielkości oraz jednakowej konfiguracji.
+\begin{table}[H]
+	\begin{tabular}{c|ccc|}
+		\cline{2-4}
+		& \multicolumn{3}{c|}{Macro F1-Score}                                                  \\ \hline
+		\multicolumn{1}{|c|}{Nazwa modelu}     & \multicolumn{1}{c|}{100\% danych} & \multicolumn{1}{c|}{50 \% danych} & 25 \% danych \\ \hline
+		\multicolumn{1}{|c|}{ResNet50}         & \multicolumn{1}{c|}{0.786}            & \multicolumn{1}{c|}{0.933}            & 0.694            \\ \hline
+		\multicolumn{1}{|c|}{ResNet50v2}        & \multicolumn{1}{c|}{0.961}            & \multicolumn{1}{c|}{0.961}            & 0.705            \\ \hline
+		\multicolumn{1}{|c|}{ViT-S/16}         & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
+		\multicolumn{1}{|c|}{ViT-B/16}         & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
+		\multicolumn{1}{|c|}{MobileNetV2}      & \multicolumn{1}{c|}{0.941}            & \multicolumn{1}{c|}{0.891}            & 0.867            \\ \hline
+		\multicolumn{1}{|c|}{MobileNetV3Small} & \multicolumn{1}{c|}{0.983}            & \multicolumn{1}{c|}{0.882}            & 0.966            \\ \hline
+		\multicolumn{1}{|c|}{EfficientNetB0}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
+		\multicolumn{1}{|c|}{EfficientNetB3}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
+	\end{tabular}
+\end{table}
 \subsection{Wnioski}

@@ -9,12 +9,12 @@ from sklearn.metrics import (
     recall_score,
 )
 
-test_ds = tf.data.Dataset.load("input_data/datasets/test_set")
+test_ds = tf.data.Dataset.load("input_data/datasets/25/test_set_25")
 EPOCHS = 50
 BATCH = 16
 IMG_SHAPE = (224, 224, 3)
 
-model = tf.keras.models.load_model("output/resnet/resnet50", compile=True)
+model = tf.keras.models.load_model("output/resnet/25/resnet50v2_25.keras", compile=True)
 y_true = []
 y_pred = []
 times = []

@@ -42,14 +42,36 @@ Poniżej przedstawiono listę modeli wybranych do przeprowadzenia badania:
 	\end{tabular}
 \end{table}
 \subsection{Podział zbiorów danych}
+W ramach badania oryginalny zbiór danych został podzielony na trzy podzbiory: pierwszy zawierał wszystkie zdjęcia z oryginalnego zbioru, drugi zaweriał tylko 50\% wszystkich zdjęć, a trzeci tylko 25\%. Następnie każdy z podzbiorów został znowu podzielony, tym razem na zbiór treningowy, walidacyjny oraz testowy w propocji 80/10/10. Zdjęcia nie powtarzają się między zbiorami, a każda klasa występuje w każdym ze zbiorów, pozwalając na obiektywne wyniki.
+ Finalnie, rozkład zdjęć w zbiorach danych wygląda następująco:
+ \begin{itemize}
+ 	\item 100\% danych
+ 	\begin{itemize}
+ 		\item zbiór treningowy  - 43 456
+ 		\item zbiór testowy - 5 424
+ 		\item zbiór walidacyjny - 5 440
+ 	\end{itemize}
+ \item  50\% danych
+  	\begin{itemize}
+ 	\item zbiór treningowy  - 21 712
+ 	\item zbiór testowy - 2 752
+ 	\item zbiór walidacyjny - 2 704
+ \end{itemize}
+ \item  25\% danych
+  	\begin{itemize}
+ 	\item zbiór treningowy  - 10 848
+ 	\item zbiór testowy - 1 392
+ 	\item zbiór walidacyjny - 1 344
+ \end{itemize}
+ \end{itemize}
 
 \subsection{Strategia treningu}
 W ramach treningu dokonano fine-tunningu osiemu wcześniej przedstawionych modeli.
 Aby otrzymać obiektywne między modelami wyniki testów, modele zostały wyszkolone w ten sam sposób.
-Każdy z modeli działał na tym samym zbiorze treningowym, testowym oraz walidacyjnym.
+Każdy z modeli działał na tym samym zbiorze treningowym, testowym oraz walidacyjnym, w ramach jedneo eksperymentu.
 Dla każdego szkolenia zastosowano tą samą konfiguracje, a długość szkolenia, choć z góry ustalona, była też kontrolowana techniką EarlyStopping. Podejście to pozwoliło na obiektywną ocene skuteczności poszczególnych modeli, oraz wyciągnięcie wniosków z poszczegoólnych eksperymentów.
 \subsection{Konfiguracja modeli}
-Niniejszy podrozdział przedstawia ogólną konfigurację modeli wykorzystaną w przeprowadzonym eksperymencie. Opisano w nim przeprowadzoną augmentacje danych, wybrane parametry oraz zastosowane techniki w ramach przeprowadzonego eksperymentu. Zastosowanie jednolitej konfiguracji pozwala na bardziej rzetelne i obiektywniejsze porównanie badanych modeli. 
+Niniejszy podrozdział przedstawia ogólną konfigurację modeli wykorzystaną w przeprowadzonym eksperymencie. Opisano w nim przeprowadzoną augmentacje danych, wybrane parametry oraz zastosowane techniki w ramach przeprowadzonych eksperymentów. Zastosowanie jednolitej konfiguracji pozwala na bardziej rzetelne i obiektywniejsze porównanie badanych modeli. 
 \subsubsection{Augmentacja danych}
 Z powodu niezbalansowanego zbioru danych zastosowano augmentacje danych, mającą na celu zapobieganie przeuczeniu. Zdjęcia dostarczane do modeli w ramach zbioru treningowego są poddawane przekształceniom, takim jak:
 \begin{itemize}
@@ -87,21 +109,23 @@ Poniższe parametry zostały wybrane i zastosowane w ramach szkolenia dla wszyst
 	\item Learning rate: 0.001
 \end{itemize}
 \subsubsection{Early Stopping}
-EarlyStopping to funkcja wbudowana w TensorFlow pozwalająca na zatrzymanie szkolenia w momencie zaobserwowania braku poprawy metryki loss przez pięć następujących po sobie epok. Pozwala to na zapobiegnięcie overfittingowi oraz oszczędzanie zasobów obliczeniowych. 
+EarlyStopping to funkcja wbudowana w TensorFlow pozwalająca na zatrzymanie szkolenia w momencie zaobserwowania braku poprawy metryki loss przez pięć następujących po sobie epok.  
 \begin{lstlisting}[language=Python, caption={Kod implementujący EarlyStopping w ramach szkolenia}, label={lst:earlystopping}]
 callback = tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)
 \end{lstlisting}
 \subsubsection{Mixed Precision}
-
+Precyzja mieszana to użycie 16 bitowych oraz 32-bitowych typów zmiennoprzecinkowych w modelu podczas uczenia, w celu przyspieszenia jego działania oraz ograniczenia zużycia pamięci. Pozwala to na skrócenie czasu kroku, przy zachowaniu jakości szkolenia.
 \begin{lstlisting}[language=Python, caption={Kod implementujący mixed precision w ramach szkolenia}, label={lst:mixedpresicion}]
 	policy = tf.keras.mixed_precision.Policy('mixed_float16')
 	tf.keras.mixed_precision.set_global_policy(policy)
 \end{lstlisting}
 \subsection{Wykonane eksperymenty}
-\subsubsection{title}
+\subsubsection{Szkolenie na całym zbiorze}
+Każdy z 8 modeli został wyszkolony w ten sam, wyżej opisany sposób, na pełnym zbiorze danych. Eksperyment ten ma na celu pokazanie skuteczności modeli przy jednakowym zbiorze danych oraz pokazać ich szybkość obliczeniowa oraz wielkość.
+\subsubsection{Szkolenie na zbiorach z różnymi ilościami danych}
+Każdy z 8 modeli został wyszkolony 3 razy. Za pierwszy razem użyto pełnego zbioru danych, za drugim razem użyto tylko 50\% zdjęć ze zbioru, a za trzecim wykorzystano zaledwie 25\%. Eksperyment ten ma celu pokazanie skuteczności modeli przy różnych ilościach danych.
 \subsection{Metryki ewaluacji wyników}
-Ocena skuteczności modeli klasyfikacji obrazów wymaga
-zastosowania wielorakich metryk ewaluacyjnych w celu
+Ocena skuteczności modeli klasyfikacji obrazów wymaga zastosowania wielorakich metryk ewaluacyjnych w celu
 uzyskania obiektywnego wyniku skuteczności i jakości
 modelu przez nas badanego. Odpowiedni dobór metryk
 pozwala na szeroką interpretacje otrzymanych wyników,

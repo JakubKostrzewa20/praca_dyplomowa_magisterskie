@@ -16,9 +16,9 @@ print("Statystyki dla konkretnych klas:", class_count)
 sorted_class_count = dict(sorted(class_count.items(), key=lambda item: item[1]))
 print("Klasy posortowane dla ilości zdjęć: ", sorted_class_count)
 
-train_ds = tf.data.Dataset.load("input_data/datasets/train_set")
-test_ds = tf.data.Dataset.load("input_data/datasets/test_set")
-val_ds = tf.data.Dataset.load("input_data/datasets/val_set")
+train_ds = tf.data.Dataset.load("input_data/datasets/50/train_set_50")
+test_ds = tf.data.Dataset.load("input_data/datasets/50/test_set_50")
+val_ds = tf.data.Dataset.load("input_data/datasets/50/val_set_50")
 
 num_samples_train = train_ds.cardinality().numpy()
 print("Liczba próbek w train_set:", num_samples_train)
@@ -35,22 +35,22 @@ print("Największa ilość zdjęć dla klasy: ", counts.max())
 print("Odchylenie standardowe: ", counts.std())
 print("Średnia zdjęć na klasę: ", counts.mean())
 
-data_augmentation = tf.keras.Sequential(
-    [
-        layers.RandomFlip("horizontal"),
-        layers.RandomRotation(0.2),
-        layers.RandomContrast(0.2),
-        layers.RandomZoom(0.2),
-    ]
-)
+# data_augmentation = tf.keras.Sequential(
+#     [
+#         layers.RandomFlip("horizontal"),
+#         layers.RandomRotation(0.2),
+#         layers.RandomContrast(0.2),
+#         layers.RandomZoom(0.2),
+#     ]
+# )
 
-for batch, _ in train_ds.take(1):
-    plt.figure(figsize=(10, 10))
-    image = batch[0]
-    for i in range(9):
-        ax = plt.subplot(3, 3, i + 1)
-        augmented_image = data_augmentation(tf.expand_dims(image, 0), training=True)
-        plt.imshow(tf.cast(augmented_image[0], tf.uint8))
-        plt.axis("off")
-plt.savefig("output/plots/wykres-augmentacji.png")
-plt.show()
+# for batch, _ in train_ds.take(1):
+#     plt.figure(figsize=(10, 10))
+#     image = batch[0]
+#     for i in range(9):
+#         ax = plt.subplot(3, 3, i + 1)
+#         augmented_image = data_augmentation(tf.expand_dims(image, 0), training=True)
+#         plt.imshow(tf.cast(augmented_image[0], tf.uint8))
+#         plt.axis("off")
+# plt.savefig("output/plots/wykres-augmentacji.png")
+# plt.show()
