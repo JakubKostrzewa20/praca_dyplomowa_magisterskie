@@ -7,18 +7,18 @@ IMG_SIZE = (224, 224)
 BATCH = 16
 
 train_ds = tf.keras.utils.image_dataset_from_directory(
-    directory = "input_data/new_datasets/25/train",
+    directory="input_data/new_datasets/25/train",
     image_size=IMG_SIZE,
     batch_size=BATCH,
 )
 print("train_ds stworzony")
 val_ds = tf.keras.utils.image_dataset_from_directory(
-    directory = "input_data/new_datasets/25/val",
+    directory="input_data/new_datasets/25/val",
     image_size=IMG_SIZE,
     batch_size=BATCH,
 )
-test_ds=tf.keras.utils.image_dataset_from_directory(
-    directory = "input_data/new_datasets/25/test",
+test_ds = tf.keras.utils.image_dataset_from_directory(
+    directory="input_data/new_datasets/25/test",
     image_size=IMG_SIZE,
     batch_size=BATCH,
 )

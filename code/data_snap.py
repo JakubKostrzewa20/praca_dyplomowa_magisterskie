@@ -3,7 +3,7 @@ import tensorflow_datasets as tfds
 
 snap_path = "/path/to/your/dataset.snap"
 builder = tfds.builder_from_snapshot(snap_path)
-dataset = builder.as_dataset()  
+dataset = builder.as_dataset()
 
 
 import os

@@ -22,7 +22,7 @@ for x, y in test_ds:
     start = time.time()
     logits = model(x, training=False)
     end = time.time()
-    times.append(end-start)
+    times.append(end - start)
     y_pred.extend(tf.argmax(logits, axis=1).numpy())
     y_true.extend(y.numpy())
 
@@ -41,4 +41,6 @@ print("Recall: ", recall_score(y_true_labels, y_pred_labels, average="micro"))
 print("Precision: ", precision_score(y_true_labels, y_pred_labels, average="micro"))
 print("Macro F1-Score: ", f1_score(y_true_labels, y_pred_labels, average="macro"))
 print("Micro F1-Score: ", f1_score(y_true_labels, y_pred_labels, average="micro"))
-print("Średni czas na przetworzenie jednego batcha(16 zdjęć): ", np.mean(times), " sekund")
+print(
+    "Średni czas na przetworzenie jednego batcha(16 zdjęć): ", np.mean(times), " sekund"
+)
