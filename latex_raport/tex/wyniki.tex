@@ -14,6 +14,8 @@ Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na jednakow
 		MobileNetV3Small & 0.983              & 0.987              & 0.987        & 0.987      & 0.987         \\ \hline
 		EfficientNetB0   & 1              & 2              & 3        & 4      & 5         \\ \hline
 		EfficientNetB3   & 1              & 2              & 3        & 4      & 5         \\ \hline
+		DenseNet121   & 0.980              & 0.986              & 0.986         & 0.986       & 0.986          \\ \hline
+		DenseNet169   & 1              & 2              & 3        & 4      & 5         \\ \hline
 	\end{tabular}
 \end{table}
 \subsection{Efektywność obliczeniowa treningu}
@@ -47,6 +49,29 @@ Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na zbiorach
 		\multicolumn{1}{|c|}{MobileNetV3Small} & \multicolumn{1}{c|}{0.983}            & \multicolumn{1}{c|}{0.882}            & 0.966            \\ \hline
 		\multicolumn{1}{|c|}{EfficientNetB0}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
 		\multicolumn{1}{|c|}{EfficientNetB3}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
+		\multicolumn{1}{|c|}{DenseNet121}   & \multicolumn{1}{c|}{0.980}            & \multicolumn{1}{c|}{0.867}            & 0.914            \\ \hline
+				\multicolumn{1}{|c|}{DenseNet169}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline	
+\end{tabular}
+\end{table}
+\subsection{Skalowanie efektywności względem ilości zaszumionych danych}
+Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na zbiorach o jednakowej wielkości, z różną ilością danych treningowych poddanych przeszktałceniu oraz jednakowej konfiguracji.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|cccc|}
+		\cline{2-5}
+		\multicolumn{1}{c|}{} & \multicolumn{4}{c|}{Macro F1-Score} \\ \hline
+		Nazwa modelu & \multicolumn{1}{c|}{100\% danych} & \multicolumn{1}{c|}{50\% danych} & \multicolumn{1}{c|}{25\% danych} & 0\% danych \\ \hline
+		ResNet50 & \multicolumn{1}{c|}{0.970} & \multicolumn{1}{c|}{0.954} & \multicolumn{1}{c|}{0.966} & 0.786 \\ \hline
+		ResNet50v2 & \multicolumn{1}{c|}{0.969} & \multicolumn{1}{c|}{0.976} & \multicolumn{1}{c|}{0.983} & 0.961 \\ \hline
+		ViT-S/16 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
+		ViT-B/16 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
+		MobileNetV2 & \multicolumn{1}{c|}{0.866} & \multicolumn{1}{c|}{0.971} & \multicolumn{1}{c|}{0.944} & 0.941 \\ \hline
+		MobileNetV3Small & \multicolumn{1}{c|}{0.981} & \multicolumn{1}{c|}{0.983} & \multicolumn{1}{c|}{0.971} & 0.983 \\ \hline
+		EfficientNetB0 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
+		EfficientNetB3 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
+				DenseNet121 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0.977} & \multicolumn{1}{c|}{0.993} & 0.980 \\ \hline
+						DenseNet169 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
+						
 	\end{tabular}
 \end{table}
 \subsection{Wnioski}

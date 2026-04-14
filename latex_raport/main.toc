@@ -31,34 +31,38 @@
 \contentsline {subsection}{\numberline {4.2\relax .\enspace }ViT}{18}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3\relax .\enspace }ResNet}{18}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4\relax .\enspace }EfficentNet}{19}{subsection.4.4}%
-\contentsline {section}{\numberline {5\relax .\enspace }Zbiór danych}{20}{section.5}%
-\contentsline {subsection}{\numberline {5.1\relax .\enspace }Charakterystyka zbioru danych}{20}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2\relax .\enspace }Analiza zestawu}{20}{subsection.5.2}%
-\contentsline {section}{\numberline {6\relax .\enspace }Metodyka badań}{21}{section.6}%
-\contentsline {subsection}{\numberline {6.1\relax .\enspace }Specyfikacja sprzętowa}{21}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2\relax .\enspace }Lista modeli wykorzystana w badaniu}{21}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3\relax .\enspace }Podział zbiorów danych}{22}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4\relax .\enspace }Strategia treningu}{22}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5\relax .\enspace }Konfiguracja modeli}{22}{subsection.6.5}%
-\contentsline {subsubsection}{\numberline {6.5.1\relax .\enspace }Augmentacja danych}{23}{subsubsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.2\relax .\enspace }Parametry}{24}{subsubsection.6.5.2}%
-\contentsline {subsubsection}{\numberline {6.5.3\relax .\enspace }Early Stopping}{25}{subsubsection.6.5.3}%
-\contentsline {subsubsection}{\numberline {6.5.4\relax .\enspace }Mixed Precision}{25}{subsubsection.6.5.4}%
-\contentsline {subsection}{\numberline {6.6\relax .\enspace }Wykonane eksperymenty}{25}{subsection.6.6}%
-\contentsline {subsubsection}{\numberline {6.6.1\relax .\enspace }Szkolenie na całym zbiorze}{25}{subsubsection.6.6.1}%
-\contentsline {subsubsection}{\numberline {6.6.2\relax .\enspace }Szkolenie na zbiorach z różnymi ilościami danych}{25}{subsubsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.7\relax .\enspace }Metryki ewaluacji wyników}{25}{subsection.6.7}%
-\contentsline {subsubsection}{\numberline {6.7.1\relax .\enspace }Macierz pomyłek}{26}{subsubsection.6.7.1}%
-\contentsline {subsubsection}{\numberline {6.7.2\relax .\enspace }Dokładność}{26}{subsubsection.6.7.2}%
-\contentsline {subsubsection}{\numberline {6.7.3\relax .\enspace }Precyzja}{26}{subsubsection.6.7.3}%
-\contentsline {subsubsection}{\numberline {6.7.4\relax .\enspace }Czułość}{27}{subsubsection.6.7.4}%
-\contentsline {subsubsection}{\numberline {6.7.5\relax .\enspace }Miara F1}{27}{subsubsection.6.7.5}%
-\contentsline {section}{\numberline {7\relax .\enspace }Wyniki}{28}{section.7}%
-\contentsline {subsection}{\numberline {7.1\relax .\enspace }Jakość klasyfikacji modeli}{28}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2\relax .\enspace }Efektywność obliczeniowa treningu}{28}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3\relax .\enspace }Skalowanie efektywności względem ilości danych treningowych}{28}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4\relax .\enspace }Wnioski}{29}{subsection.7.4}%
-\contentsline {section}{Wykaz symboli i skrótów}{31}{section*.17}%
-\contentsline {section}{Spis rysunków}{31}{section*.17}%
-\contentsline {section}{Spis tabel}{31}{section*.17}%
-\contentsline {section}{Spis załączników}{31}{section*.18}%
+\contentsline {subsection}{\numberline {4.5\relax .\enspace }DenseNet}{20}{subsection.4.5}%
+\contentsline {section}{\numberline {5\relax .\enspace }Zbiór danych}{21}{section.5}%
+\contentsline {subsection}{\numberline {5.1\relax .\enspace }Charakterystyka zbioru danych}{21}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2\relax .\enspace }Analiza zestawu}{21}{subsection.5.2}%
+\contentsline {section}{\numberline {6\relax .\enspace }Metodyka badań}{22}{section.6}%
+\contentsline {subsection}{\numberline {6.1\relax .\enspace }Specyfikacja sprzętowa}{22}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2\relax .\enspace }Lista modeli wykorzystana w badaniu}{22}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3\relax .\enspace }Podział zbiorów danych}{23}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1\relax .\enspace }Dane z różnym procentem uszkodzonychy danych}{23}{subsubsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.4\relax .\enspace }Strategia treningu}{23}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5\relax .\enspace }Konfiguracja modeli}{23}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1\relax .\enspace }Augmentacja danych}{24}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2\relax .\enspace }Parametry}{25}{subsubsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.3\relax .\enspace }Early Stopping}{26}{subsubsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.4\relax .\enspace }Mixed Precision}{26}{subsubsection.6.5.4}%
+\contentsline {subsection}{\numberline {6.6\relax .\enspace }Wykonane eksperymenty}{26}{subsection.6.6}%
+\contentsline {subsubsection}{\numberline {6.6.1\relax .\enspace }Szkolenie na całym zbiorze}{26}{subsubsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.2\relax .\enspace }Szkolenie na zbiorach z różnymi ilościami danych}{26}{subsubsection.6.6.2}%
+\contentsline {subsection}{\numberline {6.7\relax .\enspace }Szkolenie na zbiorach z różnym procentem uszkodzonych danych}{26}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8\relax .\enspace }Metryki ewaluacji wyników}{26}{subsection.6.8}%
+\contentsline {subsubsection}{\numberline {6.8.1\relax .\enspace }Macierz pomyłek}{27}{subsubsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.2\relax .\enspace }Dokładność}{27}{subsubsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.3\relax .\enspace }Precyzja}{28}{subsubsection.6.8.3}%
+\contentsline {subsubsection}{\numberline {6.8.4\relax .\enspace }Czułość}{28}{subsubsection.6.8.4}%
+\contentsline {subsubsection}{\numberline {6.8.5\relax .\enspace }Miara F1}{28}{subsubsection.6.8.5}%
+\contentsline {section}{\numberline {7\relax .\enspace }Wyniki}{29}{section.7}%
+\contentsline {subsection}{\numberline {7.1\relax .\enspace }Jakość klasyfikacji modeli}{29}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2\relax .\enspace }Efektywność obliczeniowa treningu}{29}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3\relax .\enspace }Skalowanie efektywności względem ilości danych treningowych}{29}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4\relax .\enspace }Skalowanie efektywności względem ilości zaszumionych danych}{30}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5\relax .\enspace }Wnioski}{30}{subsection.7.5}%
+\contentsline {section}{Wykaz symboli i skrótów}{31}{section*.18}%
+\contentsline {section}{Spis rysunków}{31}{section*.18}%
+\contentsline {section}{Spis tabel}{31}{section*.18}%
+\contentsline {section}{Spis załączników}{31}{section*.19}%

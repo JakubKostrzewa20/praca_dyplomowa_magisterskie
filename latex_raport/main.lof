@@ -6,6 +6,6 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Przedstawienie budowy CNN.\blx@tocontentsinit {0}\cite {lecun2015deep}}}{17}{figure.caption.6}%
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Przedstawienie budowy oraz działania bloku rezydualnego.\blx@tocontentsinit {0}\cite {he2016deep}}}{19}{figure.caption.7}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}}{19}{figure.caption.8}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych.}}{20}{figure.caption.9}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}}{24}{figure.caption.12}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otrzymywanymi dla klasy ‘B’.}}{26}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych.}}{21}{figure.caption.9}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}}{25}{figure.caption.12}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otrzymywanymi dla klasy ‘B’.}}{27}{figure.caption.13}%

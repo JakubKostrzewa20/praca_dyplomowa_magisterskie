@@ -22,4 +22,6 @@ EfficientNet to rodzina modeli konwolucyjnych sieci neuronowych(CNN) stworzonych
 	\caption{Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}
 	\label{fig:macierz_konfliktu}
 \end{figure}
+\subsection{DenseNet}
+DenseNet to rodzina modeli konwolucyjnych sieci neuronowych (CNN), stworzona przez naukowców z Uniwersytetu Kaliforniejskiego w Merced. Podobnie jak w modelach ResNet, zaimplementowano tutaj formę połączeń skórtowych między warstwami, jednak w różnej formię. Celem twórcóW było zaprojektowanie architektury, któa sprosta występującemu problemówi w czasach tworzenia - zanikającego gradientu. Twórcy tym samym dążyli do redukcji czasu klasyfikacji, aby model mógł być wprowadzony do użytku w ramach analizy wideo w czasie rzeczywistym. W DenseNet, każda warstwa otrzymuję wszystkie wyniki z poprzedzających ją warstw w postaci tensora. Dzięki temu model na każdej warstwie ma dostęp do całości danych, od surowych wejściowych, po te przetworzone przez kolejmne warstwy, a nie jak w normalnej sieci konwolucyjnej, czyli tylko wynik z poprzedzającej warstwy. Pozwala to na dodawanie nowych cech, bez tracenia wcześniej wyuczonych informacji.
 

@@ -2,23 +2,23 @@ import tensorflow as tf
 import keras
 from keras import layers
 
-DATA_DIRECTORY = "input_data/new_datasets/100/train"
+DATA_DIRECTORY = "input_data/new_datasets/noise/100/train"
 IMG_SIZE = (224, 224)
 BATCH = 16
 
 train_ds = tf.keras.utils.image_dataset_from_directory(
-    directory="input_data/new_datasets/25/train",
+    directory="input_data/new_datasets/noise/100/train",
     image_size=IMG_SIZE,
     batch_size=BATCH,
 )
 print("train_ds stworzony")
 val_ds = tf.keras.utils.image_dataset_from_directory(
-    directory="input_data/new_datasets/25/val",
+    directory="input_data/new_datasets/noise/100/val",
     image_size=IMG_SIZE,
     batch_size=BATCH,
 )
 test_ds = tf.keras.utils.image_dataset_from_directory(
-    directory="input_data/new_datasets/25/test",
+    directory="input_data/new_datasets/noise/100/test",
     image_size=IMG_SIZE,
     batch_size=BATCH,
 )
@@ -38,8 +38,9 @@ val_ds = val_ds.prefetch(tf.data.AUTOTUNE)
 
 print("Zapisuje:")
 print("test_ds")
-test_ds.save("input_data/datasets/25/test_set_25")
+test_ds.save("input_data/datasets/noise/50/test_set_noise_100")
 print("val_ds")
-val_ds.save("input_data/datasets/25/val_set_25")
+val_ds.save("input_data/datasets/noise/50/val_set_noise_100")
 print("train_ds")
-train_ds.save("input_data/datasets/25/train_set_25")
+train_ds.save("input_data/datasets/noise/50/train_set_noise_100")
+print("Skończone")

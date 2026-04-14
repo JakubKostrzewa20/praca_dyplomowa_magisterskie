@@ -39,10 +39,12 @@ Poniżej przedstawiono listę modeli wybranych do przeprowadzenia badania:
 		MobileNet      & MobileNetV3Small & 6                 & CNN              \\ \hline
 		EfficientNet   & EfficientNetB0   & 7                 & CNN              \\ \hline
 		EfficientNet   & EfficientNetB3   & 8                 & CNN              \\ \hline
+				DenseNet   & DenseNet121   & 8                 & CNN              \\ \hline
+						DenseNet   & DenseNet169   & 8                 & CNN              \\ \hline
 	\end{tabular}
 \end{table}
 \subsection{Podział zbiorów danych}
-W ramach badania oryginalny zbiór danych został podzielony na trzy podzbiory: pierwszy zawierał wszystkie zdjęcia z oryginalnego zbioru, drugi zaweriał tylko 50\% wszystkich zdjęć, a trzeci tylko 25\%. Następnie każdy z podzbiorów został znowu podzielony, tym razem na zbiór treningowy, walidacyjny oraz testowy w propocji 80/10/10. Zdjęcia nie powtarzają się między zbiorami, a każda klasa występuje w każdym ze zbiorów, pozwalając na obiektywne wyniki.
+W ramach badania oryginalny zbiór danych został podzielony na trzy podzbiory: pierwszy zawierał wszystkie zdjęcia z oryginalnego zbioru, drugi zaweriał tylko 50\% wszystkich zdjęć, a trzeci tylko 25\%. Następnie każdy z podzbiorów został znowu podzielony, tym razem na zbiór treningowy, walidacyjny oraz testowy w propocji 80/10/10. Zdjęcia nie powtarzają się między zbiorami, a każda klasa występuje w każdym ze zbiorów, zachowując proporcje między klasami, pozwalając na obiektywną analize uzyskanych wyników.
  Finalnie, rozkład zdjęć w zbiorach danych wygląda następująco:
  \begin{itemize}
  	\item 100\% danych
@@ -64,6 +66,8 @@ W ramach badania oryginalny zbiór danych został podzielony na trzy podzbiory: 
  	\item zbiór walidacyjny - 1 344
  \end{itemize}
  \end{itemize}
+\subsubsection{Dane z różnym procentem uszkodzonychy danych}
+W ramach jednego z eksperymentów, oryginalny zbiór danych został podzielony na trzy zbiory - treningowy, walidacyjny oraz testowy,  w propocji 80/10/10. Nastepnie procent ze zbioru treningowego zostały przetworzone z użyciem rozmycia gaussowskiego. 
 
 \subsection{Strategia treningu}
 W ramach treningu dokonano fine-tunningu osiemu wcześniej przedstawionych modeli.
@@ -124,6 +128,9 @@ Precyzja mieszana to użycie 16 bitowych oraz 32-bitowych typów zmiennoprzecink
 Każdy z 8 modeli został wyszkolony w ten sam, wyżej opisany sposób, na pełnym zbiorze danych. Eksperyment ten ma na celu pokazanie skuteczności modeli przy jednakowym zbiorze danych oraz pokazać ich szybkość obliczeniowa oraz wielkość.
 \subsubsection{Szkolenie na zbiorach z różnymi ilościami danych}
 Każdy z 8 modeli został wyszkolony 3 razy. Za pierwszy razem użyto pełnego zbioru danych, za drugim razem użyto tylko 50\% zdjęć ze zbioru, a za trzecim wykorzystano zaledwie 25\%. Eksperyment ten ma celu pokazanie skuteczności modeli przy różnych ilościach danych.
+\subsection{Szkolenie na zbiorach z różnym procentem uszkodzonych danych}
+Każdy z 8 modeli został wyszkolony 4 razy. Za pierwszym razem użyto czystego zbioru danych, za drugim razem użyto danych szkoleniowych, których 25\% zostało poddanych rozmyciu gaussowskiemu, za trzecim 50\%, a za czwartym 100\%. Celem eksperymentu, było sprawdzenie skuteczności modeli, kiedy do zestawu szkoleniowego dostały się zdjęcia, których jakość może zaszkodzić procesowi szkolenia. 
+
 \subsection{Metryki ewaluacji wyników}
 Ocena skuteczności modeli klasyfikacji obrazów wymaga zastosowania wielorakich metryk ewaluacyjnych w celu
 uzyskania obiektywnego wyniku skuteczności i jakości
