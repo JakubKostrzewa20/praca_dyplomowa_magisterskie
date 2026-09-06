@@ -1,11 +1,27 @@
 \babel@toc {polish}{}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Planta.}}{11}{figure.caption.2}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Agrio.}}{12}{figure.caption.3}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji.}}{13}{figure.caption.4}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Przedstawienie budowy oraz działania ViT.\blx@tocontentsinit {0}\cite {dosovitskiy2020image}}}{16}{figure.caption.5}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Przedstawienie budowy CNN.\blx@tocontentsinit {0}\cite {lecun2015deep}}}{17}{figure.caption.6}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Przedstawienie budowy oraz działania bloku rezydualnego.\blx@tocontentsinit {0}\cite {he2016deep}}}{19}{figure.caption.7}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}}{19}{figure.caption.8}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych.}}{21}{figure.caption.9}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}}{25}{figure.caption.12}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otrzymywanymi dla klasy ‘B’.}}{27}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych PlantDoc. \blx@tocontentsinit {0}\cite {PlantDoc}}}{15}{figure.caption.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowe zdjęcia ze zbioru danych PlantVillage.\blx@tocontentsinit {0}\cite {PlantVillage}}}{15}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Przykładowe zdjęcia ze zbioru danych New Plant Diseases.\blx@tocontentsinit {0}\cite {PlantNew}}}{16}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Planta.}}{17}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Agrio.}}{18}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji.}}{19}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat ilustrujący działanie algorytmu SVM}}{22}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Schemat budowy drzewa decyzyjnego \blx@tocontentsinit {0}\cite {decisiontree}}}{23}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Dane przed wykorzystaniem algorytmu k-NN}}{24}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dane po wykorzystaniu algorytmu k-NN}}{25}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Schemat budowy neuronu\blx@tocontentsinit {0}\cite {MINIwyklady}}}{26}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Schemat budowy perceptronu \blx@tocontentsinit {0}\cite {MINIwyklady}}}{27}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Schemat ilustrujący budowę MLP.}}{27}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Schemat budowy CNN.\blx@tocontentsinit {0}\cite {ksolves_cnn_architecture}}}{28}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Przedstawienie jednostki rekurencyjnej.\blx@tocontentsinit {0}\cite {lecun2015deep}}}{30}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Przedstawienie rozwijania RNN}}{31}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Przykładowa macierz pomyłek dla trzech klas, z wynikami otrzymywanymi dla klasy ‘B’.}}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Przedstawienie działania konwolucji głębokościowej.\blx@tocontentsinit {0}\cite {depthwise}}}{35}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Przedstawienie budowy oraz działania ViT.\blx@tocontentsinit {0}\cite {dosovitskiy2020image}}}{36}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Przedstawienie budowy oraz działania bloku rezydualnego.\blx@tocontentsinit {0}\cite {he2016deep}}}{38}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Skalowanie modelu (a) to bazowy przykład modeli; (b)-(d) są modelami,w których zwiększono tylko jeden wymiar; (e) to model w ramach, którego zastosowano skalowanie złożone.\blx@tocontentsinit {0}\cite {tan2019efficientnet} }}{39}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Struktura modelu DenseNet. \blx@tocontentsinit {0}\cite {huang2018denselyconnectedconvolutionalnetworks}}}{40}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych. \blx@tocontentsinit {0}\cite {PlantVillage}}}{41}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych \blx@tocontentsinit {0}\cite {PlantVillage} na których dokonano przekształceń.}}{45}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Przykładowe zdjęcie ze zbioru danych \blx@tocontentsinit {0}\cite {PlantVillage} po poddaniu go augmentacji danych.}}{47}{figure.caption.29}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Zdjęcie ekranu startowego oraz ekranu z wynikami }}{59}{figure.caption.34}%

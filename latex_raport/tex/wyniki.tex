@@ -1,77 +1,120 @@
 \newpage
 \section{Wyniki}
-\subsection{Jakość klasyfikacji modeli}
-Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na jednakowym zbiorze zawierającym wszystkie dane oraz jednakowej konfiguracji.
+
+\subsection{Charakterystyka badanych modeli}
+Poniższa tabela prezentuje charakterystykę modeli wykorzystanych w eksperymentach. Dane z tabeli pochodzą z pierwszego eksperymentu, konkretnie z modeli wyszkolonych na całym zbiorze danych.
 \begin{table}[H]
-	\begin{tabular}{|l|l|l|l|l|l|}
+	\centering
+	\begin{tabular}{|l|l|l|l|}
 		\hline
-		Nazwa modelu     & Macro F1-Score & Micro F1-Score & Accuracy & Recall & Precision \\ \hline
-		ResNet50         & 0.786              & 0.840              & 0.840        & 0.840      & 0.840         \\ \hline
-		ResNet50v2        & 0.961              & 0.973              & 0.973        & 0.973      & 0.973         \\ \hline
-		ViT-S/16         & 1              & 2              & 3        & 4      & 5         \\ \hline
-		ViT-B/16         & 1              & 2              & 3        & 4      & 5         \\ \hline
-		MobileNetV2      & 0.941              &   0.953            & 0.953        & 0.953      & 0.953         \\ \hline
-		MobileNetV3Small & 0.983              & 0.987              & 0.987        & 0.987      & 0.987         \\ \hline
-		EfficientNetB0   & 1              & 2              & 3        & 4      & 5         \\ \hline
-		EfficientNetB3   & 1              & 2              & 3        & 4      & 5         \\ \hline
-		DenseNet121   & 0.980              & 0.986              & 0.986         & 0.986       & 0.986          \\ \hline
-		DenseNet169   & 1              & 2              & 3        & 4      & 5         \\ \hline
+		Nazwa modelu     & \begin{tabular}[c]{@{}l@{}}Średni czas na przetworzenie \\ jednej partii 16 zdjęć\end{tabular} & Liczba parametrów & \begin{tabular}[c]{@{}l@{}}Rozmiar modelu\\ po szkoleniu\end{tabular}  \\ \hline
+		ResNet50         &  0.0124                                                                                       & 23585894      & 90,2 MB                                                                               \\ \hline
+		ResNet101        &  0.0224 s                                                                                      & 42578022      & 163 MB                                                                                 \\ \hline
+		ViT-B/16         & 0.0097 s                                                                                       & 85827878      & 327 MB                                                                                \\ \hline
+		ViT-B/32         & 10.0108   s                                                                                    & 87484454      & 333 MB                                                                                \\ \hline
+		MobileNetV2      & 0.0109 s                                                                                       & 2272550      & 8,90 MB                                                                                \\ \hline
+		MobileNetV3Small & 0.0106 s                                                                                        & 1556806      & 6,06 MB                                                                                \\ \hline
+		EfficientNetB0   & 0.0156 s                                                                                        & 4056226      & 15,7 MB                                                                                \\ \hline
+		EfficientNetB1   & 0.0226 s                                                                                       & 6561862      & 25,4 MB                                                                                \\ \hline
+		DenseNet121   & 0.0321 s                                                                                     & 6992806      & 27,2 MB                                                                               \\ \hline
+		DenseNet169   & 0.0451 s                                                                                       & 12547750      & 48,8 MB                                                                                \\ \hline
 	\end{tabular}
+\caption{Statystyki modeli dla tego samego zbioru danych}
+\label{tab:model_effectivnes}
 \end{table}
-\subsection{Efektywność obliczeniowa treningu}
-Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na jednakowym zbiorze zawierającym wszystkie dane oraz jednakowej konfiguracji.
-\begin{table}[H]
-	\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		Nazwa modelu     & \begin{tabular}[c]{@{}l@{}}Średni czas na przetworzenie \\ jednego batch-a\end{tabular} & Params & \begin{tabular}[c]{@{}l@{}}Waga modelu\\ po szkoleniu\end{tabular} & FLOPS (GFLOPS) \\ \hline
-		ResNet50         & 0.165 s                                                                                       & 2      & 271 MB                                                                  & 4              \\ \hline
-		ResNet50v2        & 0.174 s                                                                                       & 2      & 270 MB                                                                  & 4              \\ \hline
-		ViT-S/16         & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
-		ViT-B/16         & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
-		MobileNetV2      & 0.226 s                                                                                       & 2      & 26.8 MB                                                                  & 4              \\ \hline
-		MobileNetV3Small & 0.188 s                                                                                       & 2      & 38.3 MB                                                                  & 4              \\ \hline
-		EfficientNetB0   & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
-		EfficientNetB3   & 1                                                                                       & 2      & 3                                                                  & 4              \\ \hline
-	\end{tabular}
-\end{table}
-\subsection{Skalowanie efektywności względem ilości danych treningowych}
+\subsection{ Eksperyment 1 - Skalowanie efektywności względem ilości danych treningowych}
 Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na zbiorach danych o różnej wielkości oraz jednakowej konfiguracji.
 \begin{table}[H]
+	\centering
 	\begin{tabular}{c|ccc|}
 		\cline{2-4}
 		& \multicolumn{3}{c|}{Macro F1-Score}                                                  \\ \hline
 		\multicolumn{1}{|c|}{Nazwa modelu}     & \multicolumn{1}{c|}{100\% danych} & \multicolumn{1}{c|}{50 \% danych} & 25 \% danych \\ \hline
-		\multicolumn{1}{|c|}{ResNet50}         & \multicolumn{1}{c|}{0.786}            & \multicolumn{1}{c|}{0.933}            & 0.694            \\ \hline
-		\multicolumn{1}{|c|}{ResNet50v2}        & \multicolumn{1}{c|}{0.961}            & \multicolumn{1}{c|}{0.961}            & 0.705            \\ \hline
-		\multicolumn{1}{|c|}{ViT-S/16}         & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
-		\multicolumn{1}{|c|}{ViT-B/16}         & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
-		\multicolumn{1}{|c|}{MobileNetV2}      & \multicolumn{1}{c|}{0.941}            & \multicolumn{1}{c|}{0.891}            & 0.867            \\ \hline
-		\multicolumn{1}{|c|}{MobileNetV3Small} & \multicolumn{1}{c|}{0.983}            & \multicolumn{1}{c|}{0.882}            & 0.966            \\ \hline
-		\multicolumn{1}{|c|}{EfficientNetB0}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
-		\multicolumn{1}{|c|}{EfficientNetB3}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline
-		\multicolumn{1}{|c|}{DenseNet121}   & \multicolumn{1}{c|}{0.980}            & \multicolumn{1}{c|}{0.867}            & 0.914            \\ \hline
-				\multicolumn{1}{|c|}{DenseNet169}   & \multicolumn{1}{c|}{1}            & \multicolumn{1}{c|}{2}            & 3            \\ \hline	
+		\multicolumn{1}{|c|}{ResNet50}         & \multicolumn{1}{c|}{0.9941}            & \multicolumn{1}{c|}{0.9927}            & 0.9751            \\ \hline
+		\multicolumn{1}{|c|}{ResNet101}        & \multicolumn{1}{c|}{0.9961}            & \multicolumn{1}{c|}{0.9869}            & 0.9860           \\ \hline
+		\multicolumn{1}{|c|}{ViT-B/16}         & \multicolumn{1}{c|}{0.9928}            & \multicolumn{1}{c|}{0.9867}            & 0.9803           \\ \hline
+		\multicolumn{1}{|c|}{ViT-B/32}         & \multicolumn{1}{c|}{0.9846}            & \multicolumn{1}{c|}{0.9859}            & 0.9705            \\ \hline
+		\multicolumn{1}{|c|}{MobileNetV2}      & \multicolumn{1}{c|}{0.9925}            & \multicolumn{1}{c|}{0.9902}            & 0.9866            \\ \hline
+		\multicolumn{1}{|c|}{MobileNetV3Small} & \multicolumn{1}{c|}{0.9921}            & \multicolumn{1}{c|}{0.9801}            & 0.9775            \\ \hline
+		\multicolumn{1}{|c|}{EfficientNetB0}   & \multicolumn{1}{c|}{0.9937}            & \multicolumn{1}{c|}{0.9956}            & 0.9855            \\ \hline
+		\multicolumn{1}{|c|}{EfficientNetB1}   & \multicolumn{1}{c|}{0.9928}            & \multicolumn{1}{c|}{0.9893}            & 0.9869            \\ \hline
+		\multicolumn{1}{|c|}{DenseNet121}   & \multicolumn{1}{c|}{0.4530}            & \multicolumn{1}{c|}{0.6234}            & 0.7676            \\ \hline	
+				\multicolumn{1}{|c|}{DenseNet169}   & \multicolumn{1}{c|}{0.7042}            & \multicolumn{1}{c|}{0.7032}            & 0.8275            \\ \hline	
+			
 \end{tabular}
+\caption{Wyniki klasyfikacji dla zbiorów treningowych o różnej wielkości}
+\label{tab:model_less data}
 \end{table}
-\subsection{Skalowanie efektywności względem ilości zaszumionych danych}
-Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na zbiorach o jednakowej wielkości, z różną ilością danych treningowych poddanych przeszktałceniu oraz jednakowej konfiguracji.
+
+\subsection{ Eksperyment 2 - Skalowanie efektywności względem ilości zaszumionych danych}
+Poniższa tabela prezentuje wyniki uzyskane podczas szkolenia modeli na zbiorach \newline o jednakowej wielkości, z różną ilością danych treningowych poddanych przekształceniu oraz jednakowej konfiguracji.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|cccc|}
 		\cline{2-5}
 		\multicolumn{1}{c|}{} & \multicolumn{4}{c|}{Macro F1-Score} \\ \hline
-		Nazwa modelu & \multicolumn{1}{c|}{100\% danych} & \multicolumn{1}{c|}{50\% danych} & \multicolumn{1}{c|}{25\% danych} & 0\% danych \\ \hline
-		ResNet50 & \multicolumn{1}{c|}{0.970} & \multicolumn{1}{c|}{0.954} & \multicolumn{1}{c|}{0.966} & 0.786 \\ \hline
-		ResNet50v2 & \multicolumn{1}{c|}{0.969} & \multicolumn{1}{c|}{0.976} & \multicolumn{1}{c|}{0.983} & 0.961 \\ \hline
-		ViT-S/16 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
-		ViT-B/16 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
-		MobileNetV2 & \multicolumn{1}{c|}{0.866} & \multicolumn{1}{c|}{0.971} & \multicolumn{1}{c|}{0.944} & 0.941 \\ \hline
-		MobileNetV3Small & \multicolumn{1}{c|}{0.981} & \multicolumn{1}{c|}{0.983} & \multicolumn{1}{c|}{0.971} & 0.983 \\ \hline
-		EfficientNetB0 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
-		EfficientNetB3 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
-				DenseNet121 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0.977} & \multicolumn{1}{c|}{0.993} & 0.980 \\ \hline
-						DenseNet169 & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & 4 \\ \hline
-						
+		Nazwa modelu & \multicolumn{1}{c|}{czysty} & \multicolumn{1}{c|}{75\% } & \multicolumn{1}{c|}{50\% } & 25\%  \\ \hline
+		ResNet50 & \multicolumn{1}{c|}{0.9941} & \multicolumn{1}{c|}{0.9941} & \multicolumn{1}{c|}{0.9943} & 0.9941 \\ \hline
+		ResNet101 & \multicolumn{1}{c|}{0.9961} & \multicolumn{1}{c|}{0.9960} & \multicolumn{1}{c|}{0.9931} & 0.9927 \\ \hline
+		ViT-B/16 & \multicolumn{1}{c|}{0.9928} & \multicolumn{1}{c|}{0.9890} & \multicolumn{1}{c|}{0.9961} & 0.9803 \\ \hline
+		ViT-B/32 & \multicolumn{1}{c|}{0.9846} & \multicolumn{1}{c|}{0.9840} & \multicolumn{1}{c|}{0.9905} & 0.9837 \\ \hline
+		MobileNetV2 & \multicolumn{1}{c|}{0.9925} & \multicolumn{1}{c|}{0.9950} & \multicolumn{1}{c|}{0.9931} & 0.9967 \\ \hline
+		MobileNetV3Small & \multicolumn{1}{c|}{0.9921} & \multicolumn{1}{c|}{0.9987} & \multicolumn{1}{c|}{0.9910} & 0.9905 \\ \hline
+		EfficientNetB0 & \multicolumn{1}{c|}{0.9937} & \multicolumn{1}{c|}{0.9953} & \multicolumn{1}{c|}{0.9956} & 0.9962 \\ \hline
+		EfficientNetB1 & \multicolumn{1}{c|}{0.9946} & \multicolumn{1}{c|}{0.9947} & \multicolumn{1}{c|}{0.9945} & 0.9942 \\ \hline
+		DenseNet121 & \multicolumn{1}{c|}{0.4530} & \multicolumn{1}{c|}{0.4836} & \multicolumn{1}{c|}{0.5013} & 0.5265 \\ \hline
+DenseNet169 & \multicolumn{1}{c|}{0.7042} & \multicolumn{1}{c|}{0.5799} & \multicolumn{1}{c|}{0.5717} & 0.5581 \\ \hline
+	
 	\end{tabular}
+\caption{Wyniki klasyfikacji dla różnego procenta zaszumienia zbioru treningowego}
+\label{tab:model_noise}
 \end{table}
-\subsection{Wnioski}
+
+
+\clearpage
+\newpage
+\section{Analiza wyników}
+\subsection{Analiza wpływu danych}
+Analiza wyników wskazuje, że zmniejszanie liczebności danych w zbiorze treningowy, minimalnie wpłynęło na pogorszenie skuteczności klasyfikacji. Dla większości modeli wartości miary Macro F1 były coraz mniejsze, im mniej danych otrzymywał model \newline w trakcie nauki. Różnice między wynikami dla zbiorów treningowych z różną ilością danych były jednak małe - różnica wynosi około 1 punktu procentowego. Zatem, mimo zaobserwowania wpływu liczby danych treningowych na jakość klasyfikacji, większość badanych modeli jest wstanie osiągnąć wysokie miary, mimo coraz mniejszego zbioru danych.  Tak wysokie wyniki mogą być spowodowane, poza samą specyfiką zadania, \newline w której badane modele osiągają wysokie miary, jakością zbioru użytego w badaniu - zdjęcia są wysokiej jakości, wykonane na tym samym tle, z dobrze widocznym obiektem do identyfikacji. Dobrej jakości zbiór danych mógł pozwolić modelom na skupienie się na nauce cech, które różnią klasy, a nie braniu pod uwagę, na przykład, oświetlenia, tła czy zakłóceń. 
+
+Najlepiej ze zmniejszaniem liczby danych treningowych poradziły sobie modele MobileNetV2,EfficientNetB0 oraz  EfficientNetB1. Mają najmniejszą różnicę miary Macro F1 między coraz mniejszymi zbiorami treningowymi - są one zatem najbardziej stabilne \newline z całej grupy badawczej. 
+
+Najlepsze wyniki w zestawieniu osiągnęły modele ResNet. Udało im się to osiągnąć jedynie dla szkoleń wykonanych na całym zbiorze. Miały one większą różnice niż modele z rodziny EfficientNet, mimo posiadania większej ilości parametrów. Ich przewaga nad modelami z rodziny EfficientNet oraz MobileNet była minimalna, zatem, mimo tego,\newline że model ResNet101 osiągnął najlepszy wynik, nie stanowi on dobrego kompromisu między skutecznością, a wymaganiami pamięciowymi, co odróżnia go od najbardziej stabilnych modeli. 
+
+Modele z rodziny MobileNet mają najmniej parametrów w zestawieniu osiągając podobne, a jak w przypadku modelu MobileNetV2, najlepsze wyniki w porównaniu \newline z badanymi modelami. Mimo, widocznego spadku jakości klasyfikacji dla modelu w wersji MoblieNetV3Small przy zmniejszeniu danych, rodzina tych modeli stanowi kompromis między skutecznością klasyfikacji, a wymaganiami pamięciowymi. 
+
+Najgorzej z całym zadaniem poradziły sobie modele z rodziny DenseNet. Oba modele, Densenet121 i DenseNet169 osiągnęły zdecydowanie niższe wyniki na każdym z trzech badanych zbiorów od reszty badanych modeli. To jedyne modele, które osiągały lepsze wyniki z mniejsza ilością danych. Nie wynika to jednak prawdopodobnie z błędu podczas przeprowadzania eksperymentu - oba modele wykazują takie samo zachowanie, a reszta modeli była szkolona w ten sam sposób, w tym samym środowisko oraz na tych samych danych. Prawdopodobnie, DenseNet nie radzi sobie z dużą ilością danych, które prowadzą do przeuczenia - wyjaśniałoby to czemu na małym zbiorze oba modele radzą sobie najlepiej. Modele te jako jedyne nie poradziły sobie z zadaniem, gdzie każdy z wyników otrzymanych dla różnych zbiorów odbiega znacząco od wyników reszty badanych modeli.  
+
+Modele z rodziny ViT osiągnęły gorsze wyniki od modeli CNN, pomijając modele DenseNet. Mimo stabilności oraz małego spadku jakości pomiędzy badanymi zbiorami, modele te osiągają gorsze wyniki niż reszta modeli. Można z tego wywnioskować, że modele te radzą sobie gorzej z tym zdaniem, co może być spowodowane, przez zbiór danych, w którym zdjęcia dostarczone do szkolenia oraz walidacji i testowania modeli są do siebie bardzo podobne, gdyż różnią się małymi szczegółami. Można zauważyć, ze model w wersji ViT-B/16 osiąga lepsze wyniki niż model w wersji ViT-B/32. Może to wynikać z faktu, że obraz jest dzielony na więcej fragmentów, co pozwala modelowi na lepszą naukę cech. Modele te, są też największe w zestawieniu - mają najwięcej parametrów, jak i największy rozmiar. Mimo tego, ich klasyfikacja jest mniej dokładna od modeli CNN, które są zdecydowanie mniejsze, co udowadnia, że więcej parametrów nie przekłada się na lepszy wynik.
+
+
+
+  
+\subsection{Analiza wpływu zanieczyszczeń w danych}
+Analiza wyników wskazuje, że zwiększanie udziału zaszumionych obrazów w zbiorze treningowym, nie wpłynęła do jednoznacznego pogorszenia skuteczności klasyfikacji. Dla większości modeli wartości miary Macro F1 pozostawały na podobnym poziomie, niezależnie od procenta zaszumionych danych w zbiorze szkoleniowym. Wyniki wskazują na to, że badane modele  charakteryzują się wysoką odpornością na umiarkowane pogarszanie jakości danych szkoleniowych i są wstanie dokonać poprawnej klasyfikacji, mimo obecności zakłóceń, na prawie takim samym poziomie, co używając modeli szkolonych na czystym zbiorze.
+
+Najbardziej odporne na zaszumienie były modele ResNet50 oraz EfficientNetB1, gdzie różnica między wynikami, dla różnego procentu zaszumionych danych w zbiorze treningowym wynosiła zaledwie kilka tysięcznych punktu Macro F1. Zaszumione dane praktycznie nie wpłynęły na jakość klasyfikacji.
+
+Modele CNN, pomijając rodzinę DenseNet, utrzymują wyniki na podobnym poziomie, bez względu na ilość zaszumionych danych. Mimo zaobserwowania, widocznych różnic \newline w wynikach pomiędzy zbiorami, różnice te są bardzo małe. Z tego powodu należy zwrócić uwagę na charakterystykę badanych modeli. Modele z rodziny EfficientNet oraz MobileNet stanowią idealny kompromis, między odpornością na zaszumienia, a wielkością tych modeli. Obie rodziny mają mniej parametrów niż reszta modeli w zestawieniu, a mimo tego, osiągają podobne wyniki.
+
+Warto także zwrócić uwagę na fakt, że dla większości modeli, z wyjątkiem DenseNet169 oraz MobileNetV3Small, dodanie zaszumionych danych pomogło modelom uzyskać większą miarę Macro F1. Dla niektórych, było to 50\%, dla innych 75\%. Może to sugerować, że dodanie danych z artefaktami  osiągnęło podobny efekt  do augmentacji, ograniczając tym samym ryzyko nadmiernego dopasowania modelu do zbioru treningowego oraz poprawiając jego zdolność do generalizacji. Można to zjawisko interpretować jako zwiększanie różnorodności danych treningowych. 
+
+
+Modele z rodziny DenseNet poradziły sobie najgorzej z problemem zaszumionych danych. Uzyskały one najniższe miary Macro F1. Najgorsze wyniki ze wszystkich badanych architektur, uzyskał model DenseNet121. Warto jednak zwrócić uwagę na fakt, że , tak jak reszta modeli, można zaobserwować, że zaszumione dane spełniają role augmentacji. Model ten uzyskuje najlepszy wynik dla zbioru szkoleniowego z 25\% zaszumionych danych, gdzie reszta zbiorów treningowych także osiąga lepsze wyniki od czystego zbioru. Różnice między wynikami dla tego modelu są także większe, niż dla reszty modeli jednak, nadal można stwierdzić, że model ten jest stabilny. Mimo to, model ten osiąga zdecydowanie gorsze wyniki od reszty modeli, jako jedyny osiągając wynik poniżej 0.5 Macro F1 - co sugeruje, że model ten nie radzi sobie z tym problemem. To samo można stwierdzić na temat DenseNet169, tutaj jednak można zaobserwować znacznie większą różnice, między wynikami uzyskanymi dla czystego zbioru, a zbiorami zaszumionymi. Model ten ma największą różnice między wynikami, gdzie osiąga najlepsze wyniki dla czystego zbioru - tak samo jak drugi model z rodziny nie radzi sobie z tym problem, jednak wpływ zaszumionych danych jest największy dla tego modelu i jest jednoznacznie negatywny.
+
+Modele z rodziny ViT-B są stabilne. Występuje mała różnica między wynikami, gdzie pomijając modele z rodziny DenseNet, różnica ta jest zdecydowanie większa, niż dla modeli CNN. Można z tego wywnioskować, że modele bazowane na transformerach mają mniejszą odporność na zakłócenia w danych. Nie można jednak powiedzieć, że otrzymane wyniki sugerują, że modele te nie radzą sobie z tym zadaniem - miara Macro F1 nadal jest wysoka, powyżej 0.95. Modele te, mimo wysokich wyników, osiągają jednak mniejsze miary niż modele CNN. Dodatkowo, mają one więcej parametrów, niż reszta modeli. W związku z tym, można stwierdzić, że modele z rodziny ViT radzą sobie gorzej, niż modele typu CNN, mimo większej ilości parametrów oraz większej wagi. Oba modele z tej rodziny mają podobne wyniki, jednak model ViT-B/16 ma odrobinę lepsze wyniki od ViT-B/32. Może to wynikać z faktu, że wielkość fragmentów obrazów jaka była używana przy pierwszym modelu jest mniejsza, a co za tym idzie, model dzieli obraz na więcej fragmentów co mogło mu pomóc w lepszym poszukiwaniu cech. 
+
+\subsection{Finalna ocena modeli}
+
+Analiza wyników obu eksperymentów wskazuje, że badane modele jednocześnie radziły sobie świetnie z coraz mniejszą liczbą danych oraz z coraz większą liczbą zniekształconych danych. W obu przypadkach wartości Macro F1 pozostawały na bardzo wysokim poziomie.
+
+Najbardziej stabilnymi były modele z rodzin EfficientNet oraz MobileNet. Miały najmniejsze różnice między zbiorami w pierwszym eksperymencie, jak i drugim. Dodatkowo, są to modele z mniejszą liczbą parametrów, w porównaniu do innych badanych w ramach eksperymentów. Warto jednak podkreślić, że modele te nie osiągały najlepszych miar, jednak były one stabilne, przez co można sierdzić, że są one kompromisem między skutecznością oraz odpornością na zakłócenia, a wymaganiami pamięciowymi.
+
+Najlepsze wyniki osiągały modele z rodziny ResNet. Miara Posiadają one zdecydowanie więcej parametrów, niż np. modele z rodziny MobileNet, co nie przekłada się jednak na znaczną różnicę w jakości klasyfikacji przedstawionej przez tamte modele. Mimo to,  że mają one najlepsze wyniki, modele te ważą zdecydowanie więcej niż modele, które osiągają podobne wyniki.
+
+Najgorzej z zadaniami poradziły sobie modele z rodziny DenseNet. DenseNet osiągnął najgorsze wyniki w każdym eksperymencie, znacząco odbiegając od reszty modeli. Modele te są stabilne, jednak osiągają gorsze wyniki, niż na modelach uczących się na jednym ze zbiorów bez zaszumionych danych treningowych. Za tą rodziną nie przemawia też argument efektywności, gdyż są one większe pod względem rozmiaru od modeli z rodziny EfficientNet i MobileNet, które osiągają zdecydowanie lepsze wyniki.
+
+ViT-B były jedynymi modelami opierających się na transformerach. W obu eksperymentach oba modele z tej rodziny osiągnęły wysokie wyniki, jednak nie poradziły sobie lepiej niż modele CNN. Osiągnęły one niższe wyniki w obu eksperymentach, będąc jedynie lepsze od modeli DenseNet. Były one stabilne, a różnica między wynikami dla zbiorów nie była duża, jednak nadal była większa, niż przy innych modelach. Modele z tej rodziny były także największe w zestawieniu.  Z tych powodów nie można uznać, że modele z tej rodziny są lepsze od modeli CNN, choć radzą sobie z tym zadaniem, co dowodzi, że modele oparte na transformerach mogą znaleźć zastosowanie w klasyfikacji. 
+
+
+\clearpage

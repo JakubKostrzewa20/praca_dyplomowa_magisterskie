@@ -15,14 +15,26 @@
 ]{eiti/eiti-thesis}
 
 \langpol % Dla języka angielskiego mamy \langeng
-\usepackage{graphicx} 
+\usepackage{graphicx}
+%\usepackage{biblatex}
 \graphicspath{{img/}} 
 \usepackage{float} % Katalog z obrazkami.
-\addbibresource{bibliografia.bib} % Plik .bib z bibliografią
+% \addbibresource{bibliografia.bib} % Plik .bib z bibliografią
 \usepackage{graphicx} 
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{enumitem}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{csquotes}
+
+\usepackage[backend=biber]{biblatex}
+
+
+\addbibresource{bibliografia.bib}
+	
 
 
 \begin{document}
@@ -31,19 +43,18 @@
 % Strona tytułowa
 %--------------------------------------
 \MasterThesis % Dla pracy inżynierskiej mamy \EngineerThesis
-\instytut{XXXXXX}
+\instytut{Informatyki}
 \kierunek{Informatyka}
 \specjalnosc{Informatyka w multimediach}
 \title{
 	Zastosowanie głębokich sieci neuronowych\\ w detekcji chorób roślin
 }
 \engtitle{ % Tytuł po angielsku do angielskiego streszczenia
-    Unnecessarily long and complicated thesis' title \\
-    difficult to read, understand and pronounce
+   Application of Deep Neural Networks in Plant Disease Detection
 }
 \author{Jakub Piotr Kostrzewa}
-\album{342192}
-\promotor{prof. dr hab. inż. Przemysław Rokita}
+\album{}
+\promotor{Prof. Przemysław Rokita}
 \date{\the\year}
 \maketitle
 
@@ -51,15 +62,25 @@
 % Streszczenie po polsku
 %--------------------------------------
 \cleardoublepage % Zaczynamy od nieparzystej strony
-\streszczenie \lipsum[1-3]
-\slowakluczowe XXX, XXX, XXX
+\streszczenie Celem pracy magisterskiej było zbadanie wybranych modeli głębokiego uczenia w zadaniu klasyfikacji wieloklasowej obrazów roślin oraz określenie wpływu ilości i jakości danych treningowych na uzyskiwane wyniki. W ramach badania przeanalizowano dziesięć modeli należących do pięciu rodzin architektur: ResNet, Vision Transformer(ViT), DenseNet, MobileNet, EfficientNet.
+
+ Przeprowadzono dwa eksperymenty w ramach, których modele były szkolone na różnych zbiorach danych, z użyciem techniki transfer learning. Wszystkie modele były wstępnie przetrenowane na tym samym zbiorze. W ramach pierwszego eksperymentu zbadano wpływ ograniczenia ilości danych na jakość klasyfikacji, a w drugim wpływ jakości zbioru treningowego. Jako pierwotny zbiór danych został wykorzystany zbiór PlantVillage-Dataset. Do każdego z eksperymentów przygotowano oddzielne zbiory. Do analizy wyników wykorzystano miarę Macro-F1 Score.
+ 
+ Uzyskane Wyniki wskazały, że większość analizowanych modeli osiąga wysokie wartości miary Macro-F1 w tym zadaniu. Jedynym wyjątkiem były modele DenseNet, które osiągnęły najgorsze wyniki w całym zestawieniu, zdecydowanie niższe od reszty.  Modele oparte o transformery nie uzyskały przewagi nad modelami CNN. Najlepszymi modelami okazały się modele z rodzin MobileNet i EfficientNet. Wyniki wskazują na potencjał zbadanych modeli do praktycznego wykorzystania.
+
+\slowakluczowe uczenie głębokie, sieci neuronowe, klasyfikacja danych, choroby roślin
 
 %--------------------------------------
 % Streszczenie po angielsku
 %--------------------------------------
 \newpage
-\abstract \kant[1-3]
-\keywords XXX, XXX, XXX
+\abstract The aim of this master's thesis was to investigate selected deep learning models for multiclass classification of plant images and determine the impact of the quantity and quality of training data on the obtained results. The study analyzed ten models belonging to five architecture families: ResNet, Vision Transformer (ViT), DenseNet, MobileNet, and EfficientNet.
+
+Two experiments were conducted in which the models were trained on different datasets using transfer learning. All models were pre-trained on the same dataset. The first experiment examined the impact of data limitation on classification quality, while the second examined the impact of training set quality. The PlantVillage-Dataset was used as the initial dataset. Separate datasets were prepared for each experiment. The Macro-F1 Score was used to analyze the results.
+
+The obtained results indicated that most of the analyzed models achieved high Macro-F1 scores in this task. The only exception were the DenseNet models, which achieved the worst results in the entire comparison, significantly lower than the rest. Transformer-based models did not demonstrate an advantage over CNN models. The best models were those from the MobileNet and EfficientNet families. The results demonstrate the potential of the models tested for practical use.
+
+\keywords deep learning, neurual networks, data classification, plant diseases
 
 %--------------------------------------
 % Oświadczenie o autorstwie
@@ -80,13 +101,16 @@
 \cleardoublepage
 \pagestyle{headings}
 
-\input{tex/1-wstep} .
+\input{tex/1-wstep} 
 \input{tex/2-de-finibus}    
 \input{tex/podstawowe-pojecia}
+
 \input{tex/3-modele}
 \input{tex/zbior-danych}
 \input{tex/miary}
 \input{tex/wyniki}
+\input{tex/aplikacja}
+\input{tex/podsumowanie}
 \newpage 
 %--------------------------------------------
 % Literatura
@@ -124,7 +148,7 @@
 
 % Załączniki
 %\newpage
-%\appendix{Nazwa załącznika 1}
+\appendix{Link do repozytorium GitHub}
 %\lipsum[1-8]
 
 %\newpage

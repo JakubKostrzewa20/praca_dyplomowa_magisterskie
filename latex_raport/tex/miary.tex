@@ -1,19 +1,35 @@
 \newpage
 \section{Metodyka badań}
 Celem poniższego rozdziału jest przedstawienie specyfikacji sprzętowej, metod, narzędzi oraz przeprowadzonych badań porównawczych modeli głębokiego nauczania.
-\subsection{Specyfikacja sprzętowa}
-Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych samych specyfikacjach, w celu zachowania obiektywności eksperymentu. W badaniach wykorzystano komputer osobisty z konkretnymi specyfikacjami:
+
+\subsection{Środowisko badawcze}
+Wszystkie szkolenia modeli zostały wykonane na urządzeniu o podanych niżej specyfikacjach, w celu zachowania obiektywności eksperymentu.: 
+\begin{itemize}
+	\item Karta graficzna
+	\begin{itemize}
+		\item Model:NVIDIA GeForce RTX 5080
+	\end{itemize}
+	\item Procesor CPU: 
+	\begin{itemize}
+		\item Model: AMD Ryzen 9 9950X3D
+	\end{itemize}
+	\item System operacyjny:
+	\begin{itemize}
+		\item Nazwa systemu:Windows 11 Pro
+		\item Wersja systemu:25H2
+		\item Typ systemu:64-bitowy system operacyjny
+	\end{itemize}
+	\item Pamięć RAM : 32 GB
+\end{itemize}
+Do testowania modeli wykorzystano komputer osobisty z konkretnymi specyfikacjami:
 \begin{itemize}
 \item Karta graficzna
 	\begin{itemize}
 		\item Model:NVIDIA GeForce RTX 3050 Ti Laptop GPU
-		\item Pamięć VRAM: 4 GB
 	\end{itemize}
 \item Procesor CPU: 
 \begin{itemize}
 	\item Model: AMD Ryzen 5 5600H with Radeon Graphics
-	\item Liczba rdzeni fizycznych CPU: 6
-	\item Wątki logiczne: 12
 \end{itemize}
 \item System operacyjny:
 \begin{itemize}
@@ -21,166 +37,183 @@ Wszystkie szkolenia oraz testowanie modeli zostały wykonane na sprzęcie o tych
 	\item Wersja systemu:21H2
 	\item Typ systemu:64-bitowy system operacyjny
 \end{itemize}
-\item Pamięć RAM : 16,0 GB
+\item Pamięć RAM : 16 GB
 \end{itemize}
+
+Od strony programowej implementację procesu treningowego wykonano w języku Python, z wykorzystaniem bibliotek przeznaczonych do przetwarzania obrazów oraz uczenia głębokich sieci neuronowych. Do implementacji trenowania modeli wykorzystano bibliotekę PyTorch wraz z modułem Torchvision, zapewniającym implementację analizowanych architektur oraz operacji przetwarzania i augmentacji obrazów. Biblioteki OpenCV oraz NumPy zostały wykorzystane do przetwarzania obrazów. Dodatkowo, wykorzystano standardowe moduły języka Python, między innymi do obsługi katalogów.
 
 \subsection{Lista modeli wykorzystana w badaniu}
-Modele zostały wybrane z rodzin opisanych w roz., w celu możliwości analizy szerokiego spektrum rozwiązań  dostępnych publicznie, różniących się pod względem architektury, cech oraz celów autorów przyświecających ich zaprojektowaniu. 
+Dobór modeli do badania został przeprowadzony z uwzględnieniem ich skali oraz złożoności. Wybrano po dwa modele  z każdej rodziny, różniące się rozmiarem, głębokością czy konfiguracją architektury. Takie podejście pozwoliło ograniczyć ryzyko wyciągnięcia wniosków dotyczących całej rodziny architektur na podstawie wyników uzyskiwanych przez pojedynczy model. Liczba oraz warianty wybranych modeli zostały jednocześnie ograniczone przez dostępne zasoby obliczeniowe, ponieważ zwiększenie liczby modeli wiązałoby się ze znacznym wydłużeniem czasu trenowania oraz zwiększeniem zapotrzebowania na pamięć i moc obliczeniową. W przypadku rodziny EfficientNet dodatkowym kryterium wyboru był rozmiar obrazu wejściowego poszczególnych wariantów. Wybrano modele EfficientNetB0 oraz EfficientNetB1, dla których rekomendowane rozmiary obrazów wejściowych to odpowiednio 224 x 224 oraz 240 x 240.
 Poniżej przedstawiono listę modeli wybranych do przeprowadzenia badania:
 \begin{table}[H]
-	\begin{tabular}{|l|l|l|l|}
+	\centering
+	\begin{tabular}{|l|l|l|}
 		\hline
-		Rodzina modeli & Nazwa modelu     & Liczba parametrów & Typ architektury \\ \hline
-		ResNet         & ResNet50         & 1                 & CNN              \\ \hline
-		ResNet         & ResNet50v2        & 2                 & CNN              \\ \hline
-		ViT          & ViT-S/16         & 21,677,214                 & VT               \\ \hline
-		ViT          & ViT-B/16         & 4                 & VT               \\ \hline
-		MobileNet      & MobileNetV2      & 2,929,246                 & CNN              \\ \hline
-		MobileNet      & MobileNetV3Small & 6                 & CNN              \\ \hline
-		EfficientNet   & EfficientNetB0   & 7                 & CNN              \\ \hline
-		EfficientNet   & EfficientNetB3   & 8                 & CNN              \\ \hline
-				DenseNet   & DenseNet121   & 8                 & CNN              \\ \hline
-						DenseNet   & DenseNet169   & 8                 & CNN              \\ \hline
+		Rodzina modeli & Nazwa modelu      & Typ architektury \\ \hline
+		ResNet         & ResNet50                          & CNN              \\ \hline
+		ResNet         & ResNet101                        & CNN              \\ \hline
+		ViT          & ViT-B/16                         & ViT               \\ \hline
+		ViT          & ViT-B/32                        & ViT               \\ \hline
+		MobileNet      & MobileNetV2                       & CNN              \\ \hline
+		MobileNet      & MobileNetV3Small                  & CNN              \\ \hline
+		EfficientNet   & EfficientNetB0                   & CNN              \\ \hline
+		EfficientNet   & EfficientNetB1                    & CNN              \\ \hline
+				DenseNet   & DenseNet121                   & CNN              \\ \hline
+					DenseNet	   & DenseNet169                   & CNN              \\ \hline
+		
 	\end{tabular}
+\caption{Lista modeli wykorzystanych w badaniu}
+\label{tab:model_list}
 \end{table}
-\subsection{Podział zbiorów danych}
-W ramach badania oryginalny zbiór danych został podzielony na trzy podzbiory: pierwszy zawierał wszystkie zdjęcia z oryginalnego zbioru, drugi zaweriał tylko 50\% wszystkich zdjęć, a trzeci tylko 25\%. Następnie każdy z podzbiorów został znowu podzielony, tym razem na zbiór treningowy, walidacyjny oraz testowy w propocji 80/10/10. Zdjęcia nie powtarzają się między zbiorami, a każda klasa występuje w każdym ze zbiorów, zachowując proporcje między klasami, pozwalając na obiektywną analize uzyskanych wyników.
- Finalnie, rozkład zdjęć w zbiorach danych wygląda następująco:
- \begin{itemize}
- 	\item 100\% danych
- 	\begin{itemize}
- 		\item zbiór treningowy  - 43 456
- 		\item zbiór testowy - 5 424
- 		\item zbiór walidacyjny - 5 440
- 	\end{itemize}
- \item  50\% danych
-  	\begin{itemize}
- 	\item zbiór treningowy  - 21 712
- 	\item zbiór testowy - 2 752
- 	\item zbiór walidacyjny - 2 704
- \end{itemize}
- \item  25\% danych
-  	\begin{itemize}
- 	\item zbiór treningowy  - 10 848
- 	\item zbiór testowy - 1 392
- 	\item zbiór walidacyjny - 1 344
- \end{itemize}
- \end{itemize}
-\subsubsection{Dane z różnym procentem uszkodzonychy danych}
-W ramach jednego z eksperymentów, oryginalny zbiór danych został podzielony na trzy zbiory - treningowy, walidacyjny oraz testowy,  w propocji 80/10/10. Nastepnie procent ze zbioru treningowego zostały przetworzone z użyciem rozmycia gaussowskiego. 
 
-\subsection{Strategia treningu}
-W ramach treningu dokonano fine-tunningu osiemu wcześniej przedstawionych modeli.
-Aby otrzymać obiektywne między modelami wyniki testów, modele zostały wyszkolone w ten sam sposób.
-Każdy z modeli działał na tym samym zbiorze treningowym, testowym oraz walidacyjnym, w ramach jedneo eksperymentu.
-Dla każdego szkolenia zastosowano tą samą konfiguracje, a długość szkolenia, choć z góry ustalona, była też kontrolowana techniką EarlyStopping. Podejście to pozwoliło na obiektywną ocene skuteczności poszczególnych modeli, oraz wyciągnięcie wniosków z poszczegoólnych eksperymentów.
-\subsection{Konfiguracja modeli}
-Niniejszy podrozdział przedstawia ogólną konfigurację modeli wykorzystaną w przeprowadzonym eksperymencie. Opisano w nim przeprowadzoną augmentacje danych, wybrane parametry oraz zastosowane techniki w ramach przeprowadzonych eksperymentów. Zastosowanie jednolitej konfiguracji pozwala na bardziej rzetelne i obiektywniejsze porównanie badanych modeli. 
-\subsubsection{Augmentacja danych}
-Z powodu niezbalansowanego zbioru danych zastosowano augmentacje danych, mającą na celu zapobieganie przeuczeniu. Zdjęcia dostarczane do modeli w ramach zbioru treningowego są poddawane przekształceniom, takim jak:
+\subsection{Podział zbiorów danych}
+W ramach badania oryginalny zbiór danych został podzielony na trzy podzbiory: zbiór treningowy, zbiór walidacyjny oraz zbiór testowy. Następnie zbiór treningowy został wykorzystany do stworzenia kolejnych zbiorów. Zostały utworzone zbiory zawierające coraz mniejsza liczbę danych, oraz zbiory zawierające coraz więcej danych z rozmyciem ruchu (z ang. motion blur) oraz szumem gaussowskim (z ang. Gausian noise).
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		Zbiór                                       & Liczba zdjęć \\ \hline
+		Treningowy - 100 \% danych                  & 42 429            \\ \hline
+		Treningowy - 50 \% danych                   & 21 214            \\ \hline
+		Treningowy - 25 \% danych                   & 10 849            \\ \hline
+		Treningowy - 25 \% danych zanieczyszczonych & 42 429            \\ \hline
+		Treningowy - 50 \% danych zanieczyszczonych & 42 429            \\ \hline
+		Treningowy - 75 \% danych zanieczyszczonych & 42 429            \\ \hline
+		Testowy                                     & 5 459            \\ \hline
+		Walidacyjny                                 & 5 417            \\ \hline
+	\end{tabular}
+\caption{Lista zbiorów oraz liczba zdjęć }
+\label{tab:data_list}
+\end{table}
+\subsubsection{Dane z różnym procentem uszkodzonych danych}
+W ramach jednego z eksperymentów, zbiór treningowy został wykorzystany do przygotowania trzech nowych zbiorów treningowych zawierających coraz większy procent danych, które zostały poddane przekształceniom mającym na celu symulacje słabszej jakości zdjęć. Zdjęcia zostały poddane poniższym przekształceniom:
 \begin{itemize}
-	\item RandomFlip - warstwa odpowiadająca za losową rotację obrazów;
-	\item RandomFlip - warstwa odpowiadająca za odwracanie obrazów;
-	\item RandomConstrast - warstwa losowo zmieniająca kontrast obrazów;
-	\item RandomZoom - warstwa odpowiadająca za losowe przybliżanie obrazów.
+	\item Rozmycie ruchu (z ang. motion blur) - efekt wizualny, który pojawia się kiedy robiąc zdjęcie obiektowi, ten wykonuje ruch. Objawia się to smugami i lekko rozmytym wyglądem,
+	\item Szum gaussowski (z ang. gaussain noise) - to losowy szum podlegający rozkładowi normalnemu, czyli jego wartości skupiają się wokół średniej.
 \end{itemize}
-Poniżej przedstawiono kod warstwy odpowiadającej za augmentacje: 
-\begin{lstlisting}[language=Python, caption={Kod warstwy odpowiadającej za augmentacje danych}, label={lst:paugmentacja}]
-data_augmentation = tf.keras.Sequential(
-	[
-	layers.RandomFlip("horizontal"),
-	layers.RandomRotation(0.2),
-	layers.RandomContrast(0.2),
-	layers.RandomZoom(0.2),
-	]
-)
-\end{lstlisting}
-Warstwa ta działa tylko podczas szkolenia i nie wpływa na obrazy przekazane w celu sprawdzenia skuteczności modelu, czy w celu klasyfikacji. Poniżej przedstawiono przykładowy wygląd losowego zdjęcia, po dokonaniu losowych przekształceń przez warstwę przedstawioną w kodzie \ref{lst:paugmentacja}.
+Poniżej przedstawiono przykładowe zdjęcia ze zbioru, na których dokonano przekształceń.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{img/lisc-1-prz.JPG}
+	\includegraphics[width=0.3\textwidth]{img/lisc-2-prz.JPG}
+	\includegraphics[width=0.3\textwidth]{img/lisc-3-prz.JPG}
+	\caption{Przykładowe zdjęcia ze zbioru danych \cite{PlantVillage} na których dokonano przekształceń.}
+	\label{fig:zdjecia_lisci_prz}
+\end{figure}
+
+ Parametr określający intensywność rozmycia ruchu był losowany dla każdego obrazu z zakresu 5-30 pikseli, a kierunek rozmycia losowo wybierany spośród dwóch opcji: poziomo, bądź pionowo. Do rozmytego obrazu dodawany następnie szum Gaussowski o losowo dobieranym odchyleniu standardowym z zakresu od 5 do 20. 
+ 
+\subsection{Procedura treningu}
+Każdy z analizowanych modeli był trenowany niezależnie dla każdego przygotowanego wariantu zbioru danych. W celu zapewnienia porównywalności eksperymentów zastosowano jednolitą procedurę treningową, a różnicę pomiędzy poszczególnymi eksperymentami wynikały z charakterystyki zbioru treningowego.
+
+W pierwszym etapie model był inicjalizowany za pomocą wag wstępnie wytrenowanych na zbiorze ImageNet-1K. Oryginalną warstwę klasyfikacyjną zastępowano warstwą dostosowaną do badanego zadania, które obejmowało 38 klas. Parametry całej sieci pozostawiono aktywne, co znaczy, że podczas treningu dokonywano dostrajania wszystkich wyszkolonych wag.
+
+Przed rozpoczęciem każdego treningu ustalano generator liczb pseudolosowych na wartość 30. Obrazy ze zbioru treningowego poddawano augmentacji danych obejmujących zmianę wielkości, przycięcia, czy zmianę kontrastu. Następnie obraz był dostosowywany do wymagań danych wejściowego dla danego modelu. Zbiory testowe, oraz walidacyjne nie były poddawane losowym operacjom augmentacyjnym.
+
+Trening był przeprowadzony z wykorzystaniem optymalizatora Adam, funkcją straty Cross-Entropy, oraz współczynnikiem uczenia 1e-4. Rozmiar próbki(z ang. batch) został ustalony na 128. Podczas treningu wykorzystano technikę precyzji mieszanej, która pozwoliła na efektywniejsze wykorzystanie zasobów sprzętowych oraz krótsze szkolenia modeli. Liczbę epok ustalono na 50.
+
+Po zakończeniu każdej epoki, model był poddawany ocenie z wykorzystaniem zbioru walidacyjnego. Obliczano funkcję straty oraz dokładność klasyfikacji. Wartość straty na zbiorze walidacyjnym była następnie wykorzystywana do wyboru najlepszego stanu modelu. Jeśli wartość była niższa, niż w poprzednich epokach, aktualny stan był zapisywany jako najlepszy.
+
+Aby ograniczyć długość treningu, i zapobiec przeuczeniu, wykorzystano technikę Wczesnego zatrzymywania. Jeśli przez pięć kolejnych epok model nie poprawił swoich wyników, trening był zatrzymywany. 
+
+Po zakończeniu treningu, najlepszy model, ustalony poprzez ocenę go na zbiorze walidacyjnym, był poddawany ocenie na zbiorze testowym. 
+
+
+
+\subsection{Konfiguracja treningu}
+Niniejszy podrozdział przedstawia ogólną konfigurację modeli wykorzystaną w przeprowadzonych eksperymentach. Opisano w nim przeprowadzoną augmentacje danych, wybrane parametry oraz zastosowane techniki w ramach przeprowadzonych eksperymentów. Zastosowanie jednolitej konfiguracji pozwala na bardziej rzetelne i obiektywniejsze porównanie badanych modeli. 
+\subsubsection{Augmentacja danych}
+Z powodu niezbalansowanego zbioru danych zastosowano augmentacje danych, której celem jest zwiększenie różnorodności danych treningowych.  Zdjęcia dostarczane do modeli w ramach zbioru treningowego są poddawane przekształceniom, takim jak:
+\begin{itemize}
+	\item Losowe odwracanie - zdjęcia zostały lekko obrócone
+	\item Odwracanie poziome - zdjęcia zostały obrócone poziomo tzw. odbicie lustrzane
+	\item Losowy kontrast - zdjęciom zostało losowo podbity kontrast
+	\item Losowe przybliżenie - zdjęcia zostały losowo przybliżone, co prowadzi do przycięcia niektórych elementów obiektu
+\end{itemize}
+Warstwa ta działa tylko podczas uczenia i nie wpływa na obrazy przekazane w celu sprawdzenia skuteczności modelu, czy w celu klasyfikacji.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{img/wykres-augmentacji.png}
-	\caption{Przykładowe zdjęcie ze zbioru danych po poddaniu go augmentacji danych.}
+	\caption{Przykładowe zdjęcie ze zbioru danych \cite{PlantVillage} po poddaniu go augmentacji danych.}
 	\label{fig:zdjecia_lisci}
 \end{figure}
+Na Rys. \ref{fig:zdjecia_lisci} przedstawiono przykładowe rezultaty zastosowania augmentacji danych na jednym ze zdjęć. W trakcie treningu transformacje były dobierane losowo, dlatego rzeczywisty obraz wejściowy mógł byc poddany innej kombinacji operacji. 
 
-\subsubsection{Parametry}
-Poniższe parametry zostały wybrane i zastosowane w ramach szkolenia dla wszystkich badanych modeli, z powodu ograniczeń sprzętowych:
-\begin{itemize}
-	\item Optimizer: Adam
-	\item Epochs: 50
-	\item Batch\_size: 16
-	\item Rozmiar zdjęć: 224x224
-	\item Learning rate: 0.001
-\end{itemize}
-\subsubsection{Early Stopping}
-EarlyStopping to funkcja wbudowana w TensorFlow pozwalająca na zatrzymanie szkolenia w momencie zaobserwowania braku poprawy metryki loss przez pięć następujących po sobie epok.  
-\begin{lstlisting}[language=Python, caption={Kod implementujący EarlyStopping w ramach szkolenia}, label={lst:earlystopping}]
-callback = tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)
-\end{lstlisting}
-\subsubsection{Mixed Precision}
-Precyzja mieszana to użycie 16 bitowych oraz 32-bitowych typów zmiennoprzecinkowych w modelu podczas uczenia, w celu przyspieszenia jego działania oraz ograniczenia zużycia pamięci. Pozwala to na skrócenie czasu kroku, przy zachowaniu jakości szkolenia.
-\begin{lstlisting}[language=Python, caption={Kod implementujący mixed precision w ramach szkolenia}, label={lst:mixedpresicion}]
-	policy = tf.keras.mixed_precision.Policy('mixed_float16')
-	tf.keras.mixed_precision.set_global_policy(policy)
-\end{lstlisting}
-\subsection{Wykonane eksperymenty}
-\subsubsection{Szkolenie na całym zbiorze}
-Każdy z 8 modeli został wyszkolony w ten sam, wyżej opisany sposób, na pełnym zbiorze danych. Eksperyment ten ma na celu pokazanie skuteczności modeli przy jednakowym zbiorze danych oraz pokazać ich szybkość obliczeniowa oraz wielkość.
-\subsubsection{Szkolenie na zbiorach z różnymi ilościami danych}
-Każdy z 8 modeli został wyszkolony 3 razy. Za pierwszy razem użyto pełnego zbioru danych, za drugim razem użyto tylko 50\% zdjęć ze zbioru, a za trzecim wykorzystano zaledwie 25\%. Eksperyment ten ma celu pokazanie skuteczności modeli przy różnych ilościach danych.
-\subsection{Szkolenie na zbiorach z różnym procentem uszkodzonych danych}
-Każdy z 8 modeli został wyszkolony 4 razy. Za pierwszym razem użyto czystego zbioru danych, za drugim razem użyto danych szkoleniowych, których 25\% zostało poddanych rozmyciu gaussowskiemu, za trzecim 50\%, a za czwartym 100\%. Celem eksperymentu, było sprawdzenie skuteczności modeli, kiedy do zestawu szkoleniowego dostały się zdjęcia, których jakość może zaszkodzić procesowi szkolenia. 
-
-\subsection{Metryki ewaluacji wyników}
-Ocena skuteczności modeli klasyfikacji obrazów wymaga zastosowania wielorakich metryk ewaluacyjnych w celu
-uzyskania obiektywnego wyniku skuteczności i jakości
-modelu przez nas badanego. Odpowiedni dobór metryk
-pozwala na szeroką interpretacje otrzymanych wyników,
-także przy obecności niezbalansowanych danych. Pozwalają
-na analizę ogólną modelu, a także na identyfikację błędów,
-takich jak nieodpowiedni dobór parametrów, czy zbioru
-szkoleniowego. Poniżej przedstawiono szereg metryk
-ewaluacyjnych wybranych z zamiarem użycia ich w badaniu,
-wraz ze wzorami oraz krótkim opisem użycia . Są to metryki
-szeroko stosowane w innych pracach z badanej tematyki, co
-pozwoli dodatkowo porównać otrzymane wyniki do innych
-prac w dziedzinie.
-\subsubsection{Macierz pomyłek}
-Macierz pomyłek (ang.confusin matrix)  stanowi podstawową metrykę ewaluacyjną modeli klasyfikacyjnych, której wyniki są używane następnie do wyliczenia bardziej złożonych metryk pozwalających na obiektywniejszą ocenę modelu. Jest to tabela krzyżowa pozwalająca na porównanie wyników predykcji do oryginalnego przypisania klas do danych. Dzieli ona wynik klasyfikacji na cztery kategorię: TP(true positivie), TN(true negative), FP( false positive) i  FN(false negative) \cite{grandini2020metrics}. Dla klasyfikacji wieloklasowej, macierz pomyłek, jest macierzą o wymiarach n x n, gdzie n to liczba klas, co przedstawiono w przykładzie dla klasy ‘B’ poniżej.
-\begin{figure}[h]
+\begin{table}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{img/macierz_pomylek.png}
-	\caption{Przykładowa macierz pomyłek dla trzech klas, z wynikami otrzymywanymi dla klasy ‘B’.}
-	\label{fig:macierz_konfliktu}
-\end{figure}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Operacja                  & Parametr              & Wartość                         \\ \hline
+		Resize                    & Rozmiar wyjściowy     & $IMG\_SIZE \times IMG\_SIZE$   \\ \hline
+		RandomHorizontalFlip      & Prawdopodobieństwo    & $0{,}5$                       \\ \hline
+		RandomRotation            & Zakres rotacji        & $\pm 20^\circ$                  \\ \hline
+		ColorJitter               & Zmiana kontrastu      & $0{,}2$                         \\ \hline
+		RandomResizedCrop         & Zakres skali          & $0{,}8$--$1{,}0$                \\ \hline
+	\end{tabular}
+	\caption{Operacje i parametry stosowane podczas przygotowania danych treningowych}
+	\label{tab:train_transform}
+\end{table}
 
-\subsubsection{Dokładność}
-Wzór na Dokładność (ang.Accuracy) dzieli sumę poprawnie przypisanych przez model klas(TP i TN) przez sumę wszystkich dokonanych klasyfikacji (TP +TN+ FN+ FP).\cite{grandini2020metrics} 
 
-$$Accuracy = \frac{TP+TN}{TP+TN+FN+FP}$$
+W powyższej tabeli przedstawiono parametry poszczególnych operacji.
 
-Jest więc to prawdopodobieństwo dokonania poprawnej predykcji przez model. Jest to podstawowa metryka, pozwalająca na szybką ocenę skuteczności modeli, zwracająca skuteczność predykcji modelu na całym zbiorze danych, nie bierze jednak pod uwagę niezbalansowania zbioru danych. Jest to jednak prosta w zrozumieniu metryka pozwalająca na szybka i wstępną ocenę modelu.
+Dobór operacji augmentacyjnych oraz ich parametrów miał na celu zwiększenie różnorodności danych treningowych przy jednoczesnym zachowaniu istotnych cech wizualnych obrazów. Zastosowano transformacje, które nie prowadza do istotnego zniekształcenia przedstawionych obiektów, a jednocześnie wprowadzą zauważalne różnice względem obrazów oryginalnych.  
+\subsubsection{Parametry}
+Parametry w procesie treningowym zostały ujednolicone dla każdego modelu, aby ograniczyć wpływ zmiennych zakłócających i zapewnić porównywalność i wiarygodność uzyskanych wyników. Poniższe parametry zostały wybrane również ze względu na ograniczenia sprzętowe:
+\begin{itemize}
+	\item Optymalizator: Adam
+	\item Liczba epok: 50
+	\item Rozmiar partii: 128
+	\item Rozmiar zdjęć: 224x224 i 240x240
+	\item Współczynnik uczenia: 1e-4
+	\item Ziarno: 30
+	\item Wagi: IMAGENET1K\_V1
+\end{itemize}
 
-\subsubsection{Precyzja}
-Precision to miara informująca nas, jaki procent przypisań danej klasy dokonanych przez model, zgadza się z oryginalnymi przypisaniami. Innymi słowy, z jaką precyzją model dokonuję predykcji danej klasy. \cite{grandini2020metrics}
+Ustalono maksymalną liczbę epok na 50, jednocześnie stosując mechanizm wczesnego zatrzymywania (z ang. Early Stopping) monitorujący wartość funkcji straty na zbiorze walidacyjnym. W praktyce trening modeli kończył się przed osiągnięciem maksymalnego limitu, przez co liczba 50 epok stanowiła górne ograniczenie czasu uczenia, a nie wymóg wykonania pełnych 50 epok.
 
-$$Precision= \frac{TP}{TP+FN}$$
+W celu ograniczenia wpływu czynników losowych podczas eksperymentów ustalono wartości ziarna generatorów liczb losowych na 30 Wartość ta była stosowana jednolicie we wszystkich eksperymentach.
 
-Miara ta jest używana dla konkretnych klas, jednak jej średnia, może zostać użyta do oceny całego modelu. Plusem jednak wyliczenia dla każdej klasy tej miary jest szersza ocena skuteczności modelu, co skutkować może wykryciem np. niezbalansowania klasy
+Jako optymalizator został zastosowany Adam. Jest to popularne rozwiązanie, szeroko stosowane w trenowaniu głębokich sieci neuronowych. W celu zapewnienia jednolitych warunków porównania wszystkie analizowane architektury trenowano z wykorzystaniem tego samego optymalizatora. 
 
-\subsubsection{Czułość}
-Czułość(ang. recall) to miara informująca nas, jaki procent danych, które oryginalnie mają daną klasę, zostało poprawnie sklasyfikowanych przed model. Jest więc to liczba poprawnych przypisań danej klasy(TP) podzielona przez liczbę danych mającej tą klasę w zbiorze(TP+FN). \cite{grandini2020metrics}
+Współczynnik uczenia ustalono na poziomie 1-4e. Wartość tę przyjęto jako stały hiperparametr treningu, zgodnie z założeniem przeprowadzenia porównania architektur w jednolitych warunkach.
 
-$$Recall  = \frac{TP}{TP+TN}$$
+Rozmiar partii( z ang. batchy) został ustalony na 128 próbek, uwzględniając możliwości sprzętowe wykorzystywanego środowiska obliczeniowego. Wartość ta pozwalała na efektywne wykorzystanie dostępnych zasobów pamięci GPU i skrócenie czasu realizacji eksperymentów, co miało znaczenie ze względu na liczbę przeprowadzonych treningów. 
 
-Miara ta pozwala na stwierdzenie, czy model jest wstanie poprawnie przypisać klasę do danych. Możliwe jest też użycie średniej tej metryki, co pozwala na uzyskanie oceny całego modelu, jednak pozbawia nas możliwości zbadania klasyfikacji poszczególnych klas.
+W celu zachowania jednolitych warunków eksperymentalnych dla większości analizowanych modeli zastosowano rozdzielczość wejściową 224x224 piksele. Wyjątek stanowił model EfficientNetB1, dla którego zastosowano rozdzielczość 240x240 pikseli, zgodnie z konfiguracją tego wariantu architektury. Zróżnicowanie rozdzielczości wynikało z charakterystyki analizowanych modeli i nie było elementem badanego czynnika eksperymentalnego.
 
-\subsubsection{Miara F1}
-Miara F1(ang. F1-Score) jest próbą znalezienia pojedynczej metryki, pozwalającej na jak bardziej obiektywną ocenę modelu. Metryka agreguje metryki Precyzji i Czułości z pomocą miary harmonicznej. \cite{grandini2020metrics}
+Wszystkie analizowane modele zostały zainicjalizowane wagami wstępnie wytrenowanymi na zbiorze ImageNet. Wybór wag ImageNet wynikał z dostępności jednolitego wariantu wag dla wszystkich analizowanych architektur. 
 
-$$F1-Score= 2*(\frac{precision*recall}{precision+recall})$$
+\subsubsection{Wczesne zatrzymywanie}
+Wczesne zatrzymywanie (z ang. EarlyStopping) to technika zapobiegająca przeuczeniu modeli w trakcie uczenia. Polega ona na monitorowaniu wybranej metryki. W momencie zaobserwowania braku poprawy w wybranym okresie trening jest zatrzymywane, a wagi modelu zapisywane. Poza zapobieganiem przeuczeń modeli, technika ta pozwolą tez na zmniejszenie czasu potrzebnego na wytrenowanie jednego modelu.
 
-Przedstawiony wyżej wzór jest używany tylko w ramach klasyfikacji binarnej. Aby użyć tej miary w ramach klasyfikacji wieloklasowej należy, obliczyć odpowiednie średnie wcześniej wykorzystanych miar. W ramach tego otrzymujemy dwie nowe, ogólne miary: Macro F1-Score, które wykorzystuje arytmetyczną średnią Precyzji i Czułości, oraz Micro F1-Score – wykorzystująca średnie harmoniczną.\cite{grandini2020metrics}
+W przeprowadzonym treningu, Wczesne zatrzymywanie brało pod uwagę pięć kolejnych epok - zatem jeśli przez pięć następujących po sobie epok model nie poprawi się, trening jest zatrzymywany.
 
-$$Macro F1-Score= 2*(\frac{Arithmetic Precision* Arithmetic Recall}{Arithmetic Precision+Arithmetic Recall})$$
-$$ Micro F1-Score= 2*(\frac{Harmonic Precision* Harmonic Recall}{Harmonic Precision+Harmonic Recall})$$
+W ramach treningu monitorowano błąd modelu na danych walidacyjnych. Zbiór walidacyjny, niezależny od innych modeli, był używany pod koniec każdej epoki, w celu oceny stanu modelu. Jeśli aktualny stan parametrów okazywał się być lepszy, niż poprzedni najlepszy, plik z wagami był zapisywany, licznik epok resetowany do zera, a błąd na zbiorze walidacyjnym zapisywany. Jeśli natomiast błąd był wyższy, licznik epok szedł w górę,a trening trwał dalej. Trening zatrzymywał się w momencie osiągnięcia przez licznika wskazanej liczby epok. Finalny zapis wag był dokonywany zatem pięć epok przed końcem treningu.
+
+Zastosowanie tej techniki pozwoliło ograniczyć czas obliczeń, a jednocześnie ograniczał ryzyko nadmiernego dopasowania modelu do danych treningowych, które mogłyby wystąpić przy dłuższym treningu.
+
+\subsubsection{Precyzja mieszana}
+Precyzja mieszana(z ang. mixed precision) to użycie 16 bitowych oraz 32-bitowych typów zmiennoprzecinkowych w modelu podczas uczenia, w celu przyspieszenia jego działania oraz ograniczenia zużycia pamięci. Pozwala to na skrócenie czasu kroku, przy zachowaniu jakości treningu. Standardowo, większość modeli trenowanych jest przy użyciu 32-bitowych liczb zmiennoprzecinkowych, co pozwala na osiągnięcie wysokiej skuteczności, co idzie jednak z kosztem dużego użycia pamięci oraz długiego czasu treningu. Precyzja mieszana natomiast używa jednocześnie 16 bitowych oraz 32 bitowych liczb zmiennoprzecinkowych. 32 bitowe liczby są używane do krytycznych operacji, które wymagają dużej precyzji, a 16-bitowe do operacji, gdzie mniejsza precyzja jest akceptowalna. Zastosowanie tej techniki pozwala na skrócenie czasu trenowania oraz zmniejszenie zużycia pamięci, bez wpływu na jakość przeprowadzonego treningu.\cite{nvidia_mixed_precision}
+
+
+\subsection{Wykonane eksperymenty}
+W ramach przeprowadzonych badań wykonano dwa eksperymenty, których celem było określenie wpływu charakterystyki używanego zbioru treningowego na skuteczność analizowanych modeli. W pierwszym eksperymencie zbadano wpływ liczby danych treningowych, a w drugim eksperymencie wpływ jakości danych na otrzymane wyniki.
+
+Oba eksperymenty przeprowadzono z wykorzystaniem tej samej strategii treningowej oraz konfiguracji hiperparametrów, z wyjątkiem modelu EfficientNetB1, gdzie z powodu specyfiki tego modelu, należy zastosować inna rozdzielczość wejściową.
+
+\subsubsection{Trenowanie modeli na zbiorach z różną liczbą danych}
+Celem tego eksperymentu było zbadanie wpływu liczby danych w zbiorze treningowym na skuteczność klasyfikacji analizowanych architektur. Założeniem eksperymentu było sprawdzenie, czy coraz mniejsza liczba dostępnych danych w trakcie treningu jednakowo wpłynie na badane modele, czy też niektóre z nich wykazują lepszą odporność na to ograniczenie.
+
+W ramach eksperymentu każdy z 10 modeli został wytrenowany na trzech wariantach zbioru treningowego. Pierwszy wariant wykorzystywał pełen zbiór danych, drugi  tylko 50\% oryginalnego zbioru, a trzeci 25\%. Każdy trening został wykonany niezależnie, to znaczy, że poszczególne treningi nie wpływały na wyniki innych.  Łącznie zostało wykonanych 30 treningów.
+
+
+\subsubsection{Trenowanie modeli na zbiorach z różnym procentem uszkodzonych danych}
+Celem tego eksperymentu było zbadanie wpływu jakości danych w zbiorze treningowych na skuteczność klasyfikacji analizowanych architektur. Założeniem eksperymentu było sprawdzenie, czy coraz większy udział obrazów poddanych kontrolowanym zniekształceniem wpływa na jakość klasyfikacji i w jaki sposób wśród badanych modeli.
+
+Każdy z 10 modeli został wytrenowany na trzech zbiorach. Każdy ze zbiorów posiadał wszystkie dane z oryginalnego zbioru treningowego. Różnią się one natomiast liczbą zniekształconych danych. W pierwszym zbiorze udział obrazów poddanych zniekształceniom wynosi 75 \%, w drugim 50\%, w trzecim 25\%.  Każdy trening został wykonany niezależnie, to znaczy, że poszczególne treningi nie wpływały na wyniki innych.  Łącznie zostało wykonanych 30 treningów. 
+
+
+\subsection{Użyte miary}
+Pomimo przedstawienia w rozdziale wielu miar wykorzystywanych do oceny jakości modelów klasyfikacji, w ramach analizy wyników, wykorzystano jako główna metrykę oceny miarę Macro F1-Score. Wybór ten został podyktowany naturą badania. W ramach trenowania modeli został użyty zbiór wieloklasowy, który, jak wynika z analizy przedstawionej w rozdziale , nie ma równomiernego rozkładu zdjęć między klasami. W związku z tym, Macro F1 jest idealna miarą badawczą, która bierze pod uwagę fakt nierówności klas, a jednocześnie łączy w sobie miary Precision oraz Recall. 
+\clearpage

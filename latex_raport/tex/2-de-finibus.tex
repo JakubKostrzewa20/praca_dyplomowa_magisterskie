@@ -1,49 +1,74 @@
-\section{Przegląd literatury , rozwiązań oraz dostępnych baz danych}
-W poniższym rozdziale został przeprowadzony przegląd literatury w zakresie wykrywania chorób roślin przy użyciu klasyfikacji zdjęć. Przedstawione zostały tutaj inne badania, przeprowadzonych przy użyciu różnych algortymów głębokiego nauczania. Opisano również zbiory danych, które zostały wykorzystane w projekcie. Są to zdjęcia lisci roślin zdrowych, jak i z różnymi chorobami, głównie gatunki hodowane przez rolników, takie jak pomidory, czy ziemniak. Na koniec przedstawiono kilka przykładów praktycznego technologii w postaci ogólnodostępnych aplikacji na telefony osobiste z systemem Android.
-\subsection{Przegląd literatury}
-Dzięki rozwojowi technologii nauczania maszynowego, problem rozpoznawnia roślin, czy identyfikacji chorób ich trapiących z wykorzystaniem nauczania głębokiego wzrasta na popularności. Skutkiem tego jest szeroka gamma artykułów naukowych, prac i badań poruszających ten temat. Literatura naukowa w tematyce detekcji chorób roślin wykorzystuje głównie zbiór danych PlantVillage, który zawiera rośliny rolicznie  (roz.\ref{rodzial:plantvillage}). W badaniu autorstwa Sharada P.Mohanty, David P.Hughes oraz Marcel Salathé porównują oni dwa typy architektur nauczania głębokiwego, GoogLeNet i AlexNet, w różnych konfiguracjach zmiennych oraz danych. Skupili się oni głównie na różnych wersjach tych samych danych. Dostarczyli modelom trzy zestawy tych samych zdjęć - jeden zestaw zawierał kolorowe zdjęcia, drugi zdjęcia w odcieniach szarości, a w trzecim dokonano segmentacji obiektu liścia. Wyniki badania sugerują lepszą skuteczność modelu przy użyciu pełnego kolorowego obrazu, choć różnica między trzema zbiorami danych jest minimalna \cite{sharada}. W artykule opublikowanym w AgriEngineering autorzy wykorzystuja tylko zdjecia pomidora. Następnie, po przeprowadzonej segmentacji, dokonują oni badania skalowania modelu EfficientNet co do ilości klas, które ma rozpoznać - od prostego podziału binarnego na zdrowe, bądź chore, do rozpoznawnia konkretnych chorób \cite{tomato}.  Badania te sprawdzają skuteczność różnych architektur, jednak, na co warto zwrocic uwage, mimo używania tego samego zbioru danych, sposób ich użycia, jak i przygotowania do badania różni się między autorami, co nie pozwala na uzyskanie spójnych wniosków dotyczących wyboru najlepszego typu architektury co do rozwiązania tego problemu. Warto także zwrócić uwage na fakt, że liczba architektur wykorzystana w tych badaniach jest dosyć ograniczona.
-
-\subsection{Aplikacje}
-Poniżej przedstawione aplikacje to rozwiązania ogólno dostępne w sklepie Play, wykorzystujące klasyfikacje z pomocą sztucznej inteligencji w celu identyfikacji roślin, bądź także identyfikacji trapiących ich chorób. Są one przykładem praktycznego zastosowania technologii klasyfikacji w codziennym życiu.
-\subsubsection{Planta: Plant \& Garden Care}
-Aplikacja skierowana do osób zajmujących się hodowlą roślin. W aplikacji znajduje się atlas roślin, w którym znajdziemy informacje na temat trudności w hodowli, cech rośliny oraz szeroki zakres informacji na temat hodowli każdego gatunku z bazy.  W ramach zakupu subskrypcji aplikacja umożliwia także identyfikacje roślin oraz dręczących ich chorób ze zdjęcia oraz planowanie i przypominanie na temat różnych czynności dotyczacych opieki nad roślina np. podlewanie czy nawożenie\cite{Planta}.
+\section{Przegląd literatury}
+W niniejszym rozdziale przedstawiono przegląd literatury w zakresie wykrywania chorób roślin przy użyciu klasyfikacji obrazów. Przedstawiono  inne badania, przeprowadzonych z wykorzystaniem różnych algorytmów uczenia głębokiego. Opisano również dostępne publicznie zbiory danych wykorzystywanie w badaniach z użyciem uczenia maszynowego, spośród których wybrano zbiór wykorzystany w niniejszej pracy. Zbiory te zawierają  zdjęcia liści roślin zdrowych, jak liści dotkniętych różnymi chorobami, głównie gatunki hodowane przez rolników, takie jak pomidory, czy ziemniak. Przedstawiono także przegląd zastosowań metod sztucznej inteligencji  w rolnictwie oraz przykłady aplikacji.
+\subsection{Przegląd badań}
+Wraz z rozwojem technologii uczenia maszynowego, problem rozpoznania roślin, czy identyfikacji chorób ich trapiących z wykorzystaniem tych metod wzrasta na popularności. Skutkiem tego jest rosnąca liczba artykułów naukowych, prac i badań poruszających ten temat. Literatura naukowa w tematyce detekcji chorób roślin wykorzystuje głównie zbiór danych PlantVillage, który zawiera rośliny rolnicze. W badaniu autorstwa Sharada P.Mohanty, David P.Hughes oraz Marcel Salathé porównano dwa typy architektur uczenia głębokiego: GoogLeNet i AlexNet, w różnych konfiguracjach zmiennych oraz danych. Analiza opierała się głównie na różnych wariantach tego samego zbioru danych. Modele trenowane były z użyciem trzech zestawów tych samych zdjęć - jeden zestaw zawierał kolorowe zdjęcia, drugi zdjęcia w odcieniach szarości, a w trzecim dokonano segmentacji obiektu liścia. Wyniki badania sugerują lepszą skuteczność modelu przy użyciu pełnego kolorowego obrazu, choć różnica między trzema zbiorami danych jest minimalna \cite{sharada}. \newline W artykule opublikowanym w AgriEngineering autorzy wykorzystują tylko zdjęcia pomidora. Następnie, po przeprowadzonej segmentacji,autorzy zbadali skalowanie modelu EfficientNet w zależności od liczby klas, które ma rozpoznać - od prostego podziału binarnego na zdrowe, bądź chore, do rozpoznania konkretnych chorób \cite{tomato}. Przedstawione  badania pozwalają porównać skuteczność różnych architektur. Należy jednak zauważyć, że  używania tego samego zbioru danych, sposób ich użycia, jak i przygotowania do badania różni się między autorami, co nie pozwala na uzyskanie spójnych wniosków dotyczących wyboru najlepszego typu architektury co do rozwiązania tego problemu. Warto także zwrócić uwagę na fakt, że liczba architektur wykorzystana w tych badaniach jest dosyć ograniczona.
+\subsection{Sztuczna inteligencja w rolnictwie}
+Metody sztucznej inteligencji (ang. Artificial Inteligence - AI) znajdują szerokie zastosowanie w rolnictwie. Przemysł rolniczy, jako jedna z najważniejszych gałęzi światowej gospodarki, aktywnie rozwija się w celu optymalizacji produkcji żywności, wykorzystując w tym celu, między innymi sztuczną inteligencje. Sztuczna inteligencja znajduję zastosowanie w wielu obszarach działalności rolniczej. SI jest wykorzystywane do prognozowania i szacowania wielkości plonów. Na podstawie zdjęć modele są wstanie określić wielkość plonów zdatnych do zebrania. Niektóre takie rozwiązania są wstanie określić, czy owoce na danym krzaku są zdatne do spożycia i zainicjować proces zbierania. Niektóre rozwiązania zbierają dane z pól i tworzą raport dla rolnika na temat dojrzałości zbiorów, co pozwala mu na lepsze zaplanowanie sezonu. Inne rozwiązania wykorzystują dane pogodowe do oceny stopnia dojrzałości upraw. SI wykorzystywane jest także w ramach klasyfikacji obrazów. Istnieje wiele rozwiązań, które dokonują detekcji chorób roślin na podstawie zdjęć, miedzy innymi zdjęć liści. Klasyfikacja stosowana jest też w detekcji chwastów i szkodników. SI wykorzystywana jest także w ocenie jakości plonów. Znajduje także zastosowanie w zarządzaniu chowem, gdzie na podstawie np. zachowań krów dokonuje klasyfikacji ich zachowania. Istnieją także rozwiązania, które pozwalają zaoszczędzić wodę - modele na podstawie danych ze szklarni, np. wilgotność ziemi dokonuje decyzji, czy należy podlać rośliny. Sztuczna inteligencja więc nie tylko pozwala na zoptymalizowanie procesu produkcji żywności pochodzenia roślinnego i zwierzęcego, lecz pozwala także na oszczędzanie zasobów takich jak woda. Ma to szczególne znaczenie w czasach globalnego ocieplenia oraz susz, szczególnie w Polsce, gdzie woda staje się zasobem, który należy oszczędzać. \cite{liakos2018mlagriculture}
+\subsection{Bazy danych}
+Poniżej przedstawiono zbiory danych zawierające zdjęcia liści  zdrowych jak i chorych roślin. Zbiory danych przedstawiają głównie rośliny uprawne, hodowane na całym świecie takie jak pomidor, czy kukurydza.
+\subsubsection{PlantDoc: A Dataset for Visual Plant Disease Detection}
+ CroppedPlant-Doc to zbiór danych zawierający zdjęcia roślin zdrowych oraz chorych. Posiada ponad 2,500 zdjęć 13 gatunków roślin i 17 klas chorób. Wykorzystany został \newline w pracy przedstawionej na konferencji  ACM India Joint International Conference on Data Science and Management of Data. Zdjęcia zostały wykonane w naturalnym środowisku,\newline a na wielu z nich widoczny jest także fragment oryginalnej rośliny \cite{PlantDoc}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{img/planta.jpg}
+	\includegraphics[width=0.3\textwidth]{img/plantdoc-1.jpg}
+	\includegraphics[width=0.2\textwidth]{img/plantdoc-2.jpg}
+	\includegraphics[width=0.3\textwidth]{img/plantdoc-3.jpg}
+	\caption{Przykładowe zdjęcia ze zbioru danych PlantDoc. \cite{PlantDoc}}
+	\label{fig:zdjecia_lisci-plat_doc}
+\end{figure}
+\subsubsection{PlantVillage Dataset}
+\label{rodzial:plantvillage}
+Zbiór danych  zawierający 15 klas na temat 3 roślin: ziemniak, pomidor oraz papryka. Każda roślina ma klasę przedstawiającą jej liście w zdrowym stadium oraz kilka klas przedstawiających różne choroby oraz ich objawy na strukturze liści. Zbiór zawiera łącznie ponad 20 tysięcy zdjęć. Został stworzony do konkursu na stronie AICrowd\cite{PlantVillage}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{img/lisc-1.png}
+	\includegraphics[width=0.3\textwidth]{img/lisc-2.png}
+	\includegraphics[width=0.3\textwidth]{img/lisc-3.png}
+	\caption{Przykładowe zdjęcia ze zbioru danych PlantVillage.\cite{PlantVillage}}
+	\label{fig:zdjecia_lisci}
+\end{figure}
+\subsubsection{New Plant Diseases Dataset}
+Zbiór danych z serwisu Kaggle zawierający ponad 87 tysięcy zdjęć roślin podzielonych w 38 różnych klas określających gatunek oraz chorobę rośliny. Dane podzielone są na zestawy treningowe oraz walidacyjne, w stosunku 80/20. Jest to zaktualizowana wersja zbioru danych PlantVillage - prócz oryginalnych zdjęć zawiera dodatkowe gatunki oraz zdjęcia \cite{PlantNew}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{img/AppleScab2.jpg}
+	\includegraphics[width=0.3\textwidth]{img/PotatoHealthy2.jpg}
+	\includegraphics[width=0.3\textwidth]{img/TomatoEarlyBlight4.jpg}
+	\caption{Przykładowe zdjęcia ze zbioru danych New Plant Diseases.\cite{PlantNew}}
+	\label{fig:zdjecia_lisci-plat-new}
+\end{figure}
+\subsection{Przykłady aplikacji}
+Poniżej przedstawione aplikacje to rozwiązania ogólnodostępne w sklepie Play, wykorzystujące sztuczną inteligencje w celu identyfikacji roślin, a także identyfikacji trapiących ich chorób. Są one przykładem praktycznego zastosowania technologii klasyfikacji \newline w codziennym życiu.
+\subsubsection{Planta: Plant \& Garden Care}
+Aplikacja skierowana do osób zajmujących się hodowlą roślin. Aplikacji zawiera atlas roślin, w którym znajdują się informacje na temat trudności w hodowli, cech rośliny oraz szeroki zakres informacji na temat hodowli każdego gatunku z bazy.  W ramach zakupu subskrypcji aplikacja umożliwia także identyfikacje roślin oraz dręczących ich chorób ze zdjęcia oraz planowanie i przypominanie na temat różnych czynności dotyczących opieki nad roślina np. podlewanie czy nawożenie\cite{Planta}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{img/planta.jpg}
 	\hspace{0.05\textwidth} 
-	\includegraphics[width=0.3\textwidth]{img/planta2.jpg}
+	\includegraphics[width=0.4\textwidth]{img/planta2.jpg}
 	\caption{Przykładowe zrzuty ekranu z aplikacji Planta.}
 	\label{fig:plantazdjecia}
 \end{figure}
 \subsubsection{Agrio - Plant diagnosis app}
-Aplikacja skierowana do miłośników roślin. Pozwala na zrobienie serii zdjęć chorej rośliny, przekazanie jej aplikacji, któa następnie zadaje krótka serie pytań i na podstawie zdjeć oraz informacji z kwestionariusza, dokonuje diagnozy, jednak rozpoznaje tylko chorobę i rodzinę rośliny - nie poda informacji szczegółowych na temat gatunku ze zdjęcia. Aplikacja pozwala także, za dodatkową opłatą, na skonsultowanie się z ekspertem. Prócz funkcji diagnozy, posiada także system czat AI, gdzie użytkownik może zadawać różne pytania na temat flory. Aplikacja posiada także funkcje społecznościowe\cite{Agrio}.
+Aplikacja skierowana do miłośników roślin. Pozwala na wykonanie serii zdjęć chorej rośliny, przekazanie jej aplikacji, która następnie zadaje krótka serie pytań i na podstawie zdjęć oraz informacji z kwestionariusza, dokonuje diagnozy, jednak rozpoznaje tylko chorobę i rodzinę rośliny - nie poda informacji szczegółowych na temat gatunku ze zdjęcia. Aplikacja pozwala także, za dodatkową opłatą, na skonsultowanie się z ekspertem. Prócz funkcji diagnozy, posiada także system czat SI, gdzie użytkownik może zadawać różne pytania na temat flory. Aplikacja posiada także funkcje społecznościowe\cite{Agrio}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{img/agrio1.jpg}
+	\includegraphics[width=0.4\textwidth]{img/agrio1.jpg}
 	\hspace{0.05\textwidth} 
-	\includegraphics[width=0.3\textwidth]{img/agrio2.jpg}
+	\includegraphics[width=0.4\textwidth]{img/agrio2.jpg}
 	\caption{Przykładowe zrzuty ekranu z aplikacji Agrio.}
 	\label{fig:agriozdjecia}
 \end{figure}
 \subsubsection{PlantNet Plant Identification}
-Aplikacja pozwala na identyfikacje roślin na podstawie kilku metryk, np. na podstawie zdjęcia liści, kwiatu, czy ogólnego habitatu. Przedstawia także inne, prawdopdoobne gatunki pasujące do dostarczonych danych. Posiada także atas roślin, gdzie każdy gatunek z bazy ma przypisaną nazwę w wybranym z dostępnych języków, nazwę łacińską, zdjęcia, linki do źródeł informacji takich jak np. Wikipedia, oraz status gatunku w czerwonej księdze IUCN\cite{PlantNet}.
+Aplikacja pozwala na identyfikacje roślin na podstawie kilku metryk, np. na podstawie zdjęcia liści, kwiatu, czy ogólnego habitatu. Przedstawia także inne, prawdopodobne gatunki pasujące do dostarczonych danych. Posiada także atlas roślin, gdzie każdy gatunek z bazy ma przypisaną nazwę w wybranym z dostępnych języków, nazwę łacińską, zdjęcia, linki do źródeł informacji takich jak np. Wikipedia, oraz status gatunku w czerwonej księdze IUCN\cite{PlantNet}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{img/plantnet1.jpg}
+	\includegraphics[width=0.4\textwidth]{img/plantnet1.jpg}
 	\hspace{0.05\textwidth} 
-	\includegraphics[width=0.3\textwidth]{img/plantnet2.jpg}
+	\includegraphics[width=0.4\textwidth]{img/plantnet2.jpg}
 	\hspace{0.05\textwidth} 
-	\includegraphics[width=0.3\textwidth]{img/plantnet3.jpg}
+	\includegraphics[width=0.4\textwidth]{img/plantnet3.jpg}
 	\caption{Przykładowe zrzuty ekranu z aplikacji.}
 	\label{fig:agriozdjecia}
 \end{figure}
-\subsection{Bazy danych}
-Poniżej przedstawiono bazy danych zawierających zdjęcia liści roślin, zdrowych jak i chorych. Zbiory danych przedstawiają głównie rośliny uprawne, hodowane na całym świecie takie jak pomidor, czy kukurydza.
-\subsubsection{PlantDoc: A Dataset for Visual Plant Disease Detection}
-Zbiór danych CroppedPlant-Doc zawierający zdjęcia roślin zdrowych oraz chorych. Posiada ponad 2,500 zdjęć 13 gatunków roślin i 17 klas chorób. Wykorzystany został w pracy przedstawionej na konferencji  ACM India Joint International Conference on Data Science and Management of Data. Zdjęcia zostały wykonane w naturalnym środowisku, często zdjęcia prezentują także fragment oryginalnej rośliny\cite{PlantDoc}.
-\subsubsection{PlantVillage Dataset}
-\label{rodzial:plantvillage}
-Zbiór danych  zawierający 15 klas na temat 3 roślin: ziemniak, pomidor oraz papryka. Każda roślina ma klasę przedstawiającą jej liście w zdrowym stadium oraz kilka klas przedstawiających różne choroby oraz ich objawy na strukturze liści. Zbiór zawiera łącznie ponad 20 tysięcy zdjęć. Został stworzony do konkursu na stronie AICrowd\cite{PlantVillage}.
-\subsubsection{New Plant Diseases Dataset}
-Zbiór danych z serwisu Kaggle zawierający ponad 87 tysięcy zdjęć roślin podzielonych w 38 różnych klas określających gatunek oraz chorobę rośliny. Dane podzielone są na zestawy treningowe oraz walidacyjne, w stosunku 80/20. To zaktualizowana wersja dataseta PlantVillage - prócz oryginalnych zdjęć zawiera dodatkowe gatunki oraz zdjęcia \cite{PlantNew}.
 \clearpage

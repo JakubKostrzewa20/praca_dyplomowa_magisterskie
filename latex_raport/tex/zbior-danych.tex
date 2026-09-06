@@ -1,37 +1,36 @@
 \newpage % Rozdziały zaczynamy od nowej strony.
 \section{Zbiór danych}
+Do przeprowadzenia badania wybrano zbiór danych PlantVillage-Dataset. Wybór tego zbioru wynikał z kilku czynników istotnych z punktu widzenia planowanych badań. Zdjęcia zawarte w zbiorze nie zawierają dodatkowych przekształceń i cechują się dobrą jakością, dzięki czemu możliwe było przeprowadzenie procesu przygotowania i modyfikacji danych zgodnie z założeniami jednego z eksperymentów. Istotnym argumentem była też struktura zbioru. Dane zostały odpowiednio uporządkowane i opisane, co ograniczało konieczność wykonania dodatkowych prac związanych z ich uporządkowaniem. Dodatkowym czynnikiem przejawiającym za wyborem tego zbioru było jego wykorzystanie \newline w badaniach przedstawionych w przeglądzie literatury. 
 \subsection{Charakterystyka zbioru danych}
-Wybrany zbiór danych do wykorzystania w ramach badania to PlantVillage-Dataset. 
-Jest to zaktualizowana wersja datasetu PlantVillage Dataset, który używany jest w ramach przedstawionych wcześniej badań. 
-Zawiera on 54 305 zdjęć liści roślin uprawnych wykonanych w środowisku laboratoryjnym.Dataset ten posiada klasy, 
-które przedstawiają zdrowe okazy różnych gatunków roślin uprawnych, oraz klasy które przedstawiają choroby trawiące te rośliny, razem 38.
+Zbiór danych zawiera  54 305 zdjęć liści roślin uprawnych wykonanych w środowisku laboratoryjnym. Posiada on 38 klas, 
+które obejmują zdrowe okazy różnych gatunków roślin oraz chore okazy, wraz ze wskazaniem konkretnej choroby. Zdjęcia te zostały wykonane \newline w warunkach laboratoryjnych, co może nie w pełni odzwierciedlać rzeczywiste warunki takie jak światło czy tło jakie występują w środowisku naturalnym. Niemniej jednak, pozwala on na przeprowadzanie kontrolowanej analizy i zrozumienie badanych zależności oraz na porównanie wyników z badaniami przedstawionymi w ramach przeglądu literatury 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.2\textwidth]{img/lisc-1.png}
-	\includegraphics[width=0.2\textwidth]{img/lisc-2.png}
-	\includegraphics[width=0.2\textwidth]{img/lisc-3.png}
-	\caption{Przykładowe zdjęcia ze zbioru danych.}
+	\includegraphics[width=0.3\textwidth]{img/lisc-1.png}
+	\includegraphics[width=0.3\textwidth]{img/lisc-2.png}
+	\includegraphics[width=0.3\textwidth]{img/lisc-3.png}
+	\caption{Przykładowe zdjęcia ze zbioru danych. \cite{PlantVillage}}
 	\label{fig:zdjecia_lisci}
 \end{figure}
 \subsection{Analiza zestawu}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|}
 		\hline
-		Klasa o najmniejszej ilości zdjęć & Potato\_\_\_healthy                           \\ \hline
-		Klasa o największej ilości zdjęć  & Orange\_\_\_Haunglongbing\_(Citrus\_greening) \\ \hline
-		Największa ilość zdjęć dla klasy  & 5507                                          \\ \hline
-		Najmniejsza ilość zdjęć dla klasy & 152                                           \\ \hline
+		Klasa o najmniejszej liczba zdjęć & Potato\_\_\_healthy                           \\ \hline
+		Klasa o największej liczba zdjęć  & Orange\_\_\_Haunglongbing\_(Citrus\_greening) \\ \hline
+		Największa liczba zdjęć dla klasy  & 5507                                          \\ \hline
+		Najmniejsza liczba zdjęć dla klasy & 152                                           \\ \hline
 		Odchylenie standardowe            & 1254.8938177261505                            \\ \hline
-		Średnia zdjęć na klasę            & 1429.078947368421                             \\ \hline
+		Średnia liczba zdjęć na klasę            & 1429.078947368421                             \\ \hline
 	\end{tabular}
 \caption{Statystyki liczby zdjęć w zbiorze danych}
 \label{tab:dataset_stats}
 \end{table}
-Analiza statystyczna sugeruję niezrównoważony rozkłąd zdjęć w zbiorze danych. Jak widać z tabeli \ref{tab:dataset_stats}, istnieje duża różnica ilościowa między klasą o największej ilości zdjęć - Orange\_Haunglonbging\_(Citrus\_greening), a klasą i najmniejszej ilości zdjęć - Potato\_healthy. Dodatkowo występuje duże odchylenie standardowe, bardzo bliskie średniej ilości zdjęć na klasę. Wszystko to wskazuję na potrzebe zastosowania augmentacji danych, w celu zapobiegnięcia overfittingu.
+Analiza statystyczna sugeruję niezrównoważony rozkład zdjęć w zbiorze danych. Jak widać z tabeli \ref{tab:dataset_stats}, istnieje duża różnica  między klasą o największej liczbie zdjęć - Orange\_Haunglonbging\_(Citrus\_greening), a klasą i najmniejszej liczbie zdjęć - Potato\_healthy. Dodatkowo występuje duże odchylenie standardowe, bardzo bliskie średniej liczbie zdjęć na klasę. Wszystko to wskazuję na potrzebę zastosowania augmentacji danych, w celu zapobiegnięcia przeuczeniu.
 
  
 
 
-
+\clearpage

@@ -1,0 +1,20 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[2] Config.pm:311> INFO - Logfile is 'main.blg'
+[223] biber-MSWIN64:340> INFO - === 
+[374] Biber.pm:420> INFO - Reading 'main.bcf'
+[533] Biber.pm:994> INFO - Found 36 citekeys in bib section 0
+[558] Biber.pm:4463> INFO - Processing section 0
+[594] Biber.pm:4654> INFO - Looking for bibtex file 'bibliografia.bib' for section 0
+[689] bibtex.pm:1713> INFO - LaTeX decoding ...
+[778] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliografia.bib'
+[1086] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1086] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1087] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pl-PL'
+[1162] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1207] bbl.pm:779> INFO - Output to main.bbl
+[1329] Biber.pm:131> WARN - Duplicate entry key: 'Goodfellow-et-al-2016' in file 'bibliografia.bib', skipping ...
+[1329] Biber.pm:131> WARN - legacy month field 'August' in entry 'liakos2018mlagriculture' is not an integer - this will probably not sort properly.
+[1330] Biber.pm:131> WARN - legacy month field 'feb' in entry 'Ying_2019' is not an integer - this will probably not sort properly.
+[1330] Biber.pm:131> WARN - legacy month field 'September' in entry 'cortes1995svm' is not an integer - this will probably not sort properly.
+[1330] Biber.pm:131> WARN - online entry 'MINIwyklady' (bibliografia.bib): Invalid format 'Dostęp zdalny (2026-05-19)' of date field 'urldate' - ignoring
+[1330] Biber.pm:133> INFO - WARNINGS: 5

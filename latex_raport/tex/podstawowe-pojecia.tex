@@ -1,55 +1,223 @@
 \newpage % Rozdziały zaczynamy od nowej strony.
-\section{Podstawy teoretyczne}
-Poniżej przedstawione zostaną podsta
+\section{Wprowadzenie do nauczania maszynowego}
+W poniższym rozdziale przedstawiono podstawy teoretyczne niezbędne do analizy wpływu liczby danych oraz ich jakości na wyniki klasyfikacji otrzymywane przez model. Omówiono podstawowe pojęcia wykorzystywane w dalszej części pracy, a następnie przedstawiono klasyczne metody klasyfikacji danych oraz nowoczesne architektury głębokich sieci neuronowych stosowanych w zadaniach klasyfikacji.
 \subsection{Podstawowe pojęcia}
-Poniższy podrozdział zawiera wyjaśnienia wybranych pojęć, które są potem wykorzystywane w kolejnych rozdziałach pracy.  Ich zrozumienie jest potrzebne do poprawnej interpretacji opisanych w kolejnych rozdziałach metod, modeli oraz wyników przeprowadzonego badania.
-\subsubsection{Nauczanie maszynowe}
-Dziedzina sztucznej inteligencji, zajmująca się algorytmami, które pozwalają komputerom na automatyczne nauczanie poprzez ekspozycje na dane.\cite{Mitchell1997M}
-\subsubsection{Deep learning}
-Nauczanie głębokie to podzbiór uczenia maszynowego,
-oparty na sztucznych sieciach neuronowych,
-wykorzystujących wiele warstw, których konstrukcja
-inspirowa na jest budową ludzkiego mózgu.\cite{he2016deep}
-\subsubsection{Nauczanie nadzorowane}
-Najpowszechniejsza forma deep learningu nazywana
-szkoleniem nadzorowanym. Polega on na dostarczeniu
-modelowi zbioru danych z etykietami klas. Model tworzy
-funkcje celu, gdzie na wejściu otrzymuje dane, a na wyjściu  etykietę. Podczas szkolenia model modyfikuje swoje wewnętrzne parametry tak, aby funkcja mogła dostarczonej mu danie przypisać odpowiednią etykietę.\cite{lecun2015deep}
+W poniższym podrozdziale przedstawiono wyjaśnienia wybranych pojęć, które są potem wykorzystywane w kolejnych rozdziałach pracy.  Znajomość i zrozumienie tych pojęć jest niezbędna do poprawnej interpretacji opisanych w kolejnych rozdziałach metod, modeli oraz wyników przeprowadzonych badań.
+\subsubsection{Uczenie maszynowe}
+Dziedzina sztucznej inteligencji, zajmująca się algorytmami, które pozwalają komputerom na automatyczne uczenie się na podstawie danych.\cite{Mitchell1997M}
+\subsubsection{Rodzaje uczenia}
+\begin{itemize}
+	\item Uczenie nadzorowane -  polega ono na dostarczeniu
+	modelowi danych wejściowych z etykietami klas. Model tworzy
+	funkcje celu, gdzie na wejściu otrzymuje dane, a na wyjściu  etykietę. Podczas treningu model modyfikuje swoje wewnętrzne parametry tak, aby funkcja mogła dostarczonej mu danie przypisać odpowiednią etykietę.\cite{lecun2015deep}
+	\item Uczenie nienadzorowane - uczenie polegające na analizie zbioru danych zwierających wiele cech, a następnie nauki użytecznych właściwości struktury tego zbioru. Dane nie posiadają etykiet, w związku z tym model operuję jedynie na samej analizie cech. Algorytmy wykorzystujące tego typu uczenie polegają na podziale zbioru danych na klastry podobnych przykładów.
+	\item Uczenie ze wzmocnieniem - uczenie polegające na przygotowaniu modeli środowiska, w którym uczy się wykonywać odpowiednie działania, które maksymalizują nagrodę. W przeciwieństwie do innych typów szkolenia, nie przygotowuje się zbioru, tylko środowisko. Model wchodzi z nim w interakcje i na podstawie poprzednich informacji oraz swojej polityki dokonuje akcji. Jego zadaniem jest udoskonalenie polityki w celu maksymalizacji nagrody otrzymywanej w wyniku podejmowanych akcji. \cite{tf_agents_intro_rl}
+\end{itemize}
+
 \subsubsection{Klasyfikacja}
-Analiza obrazów na podstawie ich tresci w celu przyporządkowania ich do wcześniej zdefiniowanyuch klas.
+Analiza obrazów na podstawie ich treści w celu przyporządkowania ich do wcześniej zdefiniowanych klas.
 \subsubsection{Balans klas}
-Balans klas odnosi się do rozkładu danych w ramach zbioru danych używanego w szkoleniu. Jeśli istnieją spore różnice w ilościach danych, między klasami, zbiór jest określany wtedy jako niezbalansowany, analogicznie, jeśli dane są równomiernie rozłożone to zbiór można określić jako zbalansowany.
+Balans klas odnosi się do rozkładu liczby danych pomiędzy poszczególnymi klasami \newline w ramach zbioru danych. Jeśli istnieją spore różnice w liczbie danych, między klasami, zbiór jest określany jako niezbalansowany, analogicznie, jeśli dane są równomiernie rozłożone to zbiór można określić jako zbalansowany.
 \subsubsection{Rodzaje zbiorów}
-Dane używane do procesu szkolenia modelu oraz jego ewaluacji, dzielone są na trzy zbiory danych, każde posiadające unikalne zdjęcia oraz rolę w całym procesie:
+Dane używane w ramach procesu treningu modelu oraz jego ewaluacji, dzielone są na trzy zbiory danych, z których każdy posiada unikalne zdjęcia oraz rolę w całym procesie uczenia:
  \begin{itemize}
- 	\item Zbiór treningowy (training set) - zbiór danych wykorzystywany przez model do szkolenia;
- 	\item Zbiór walidacyjny (validation set) - zbiór używany do w wyznaczenia optymalnych hiperparametrów modelu;
- 	\item Zbiór testowy (test set) - zbiór danych wykorzystywanych do przetestowania wyszkolonego modelu;
+ 	\item Zbiór treningowy (z ang. training set) - zbiór danych wykorzystywany przez model do treningu;
+ 	\item Zbiór walidacyjny (z ang. validation set) - zbiór używany do w wyznaczenia optymalnych hiperparametrów modelu;
+ 	\item Zbiór testowy (z ang. test set) - zbiór danych wykorzystywanych do przetestowania wyszkolonego modelu;
  \end{itemize}
 \subsubsection{Generalizacja}
-Zdolność modelu do klasyfikacji nie widzianej wcześniej dany, na podstawie przeprowadzonego wcześniej treningu.
+Zdolność modelu do klasyfikacji nie widzianych wcześniej danych, na podstawie przeprowadzonego treningu.\cite{Goodfellow-et-al-2016}
+
 \subsubsection{Przeuczenie}
-Zjawisko występujące, kiedy model osiąga wysokie wyniki na zbiorze treningowym, jednak kiedy otrzymuje on wcześniej niewidziane dane, nie jest on wstanie poprawnie dokonać klasyfikacji.
-\subsubsection{Fine-Tunning}
-\subsection{Architektury modeli}
-Poniższej zaprezentowano podstawową budowe architektur Konwolucyjnych sieci neuronowych oraz Transformeru wizyjnego.
-\subsubsection{Transformer wizyjny - ViT}
-Transformer wizyjny to architektura działająca oddmienie od CNN. Obraz dostarczony do modelu jest dzielony na kawałki, tak zwane patche, o z góry narzuconym rozmiarze. Każdy z patchy jest płaszczony, a następnie mapowany do wektora. Dodawana do wektora jest pozycje patchy, a otrzymany wynik jest przepuszczany przez enkoder transformera. Przegląd modelu znajduję się na  . Transformer wizyjny, dzięki swojej unikalnej strukturze, lepiej tworzy powiązania globalne między różnymi elementami na obrazku niż klasyczne podejście CNN.\cite{dosovitskiy2020image}
-\begin{figure}[h]
+Zjawisko występujące, kiedy model osiąga wysokie wyniki na zbiorze treningowym, jednak po otrzymaniu wcześniej niewidzianych danych jego skuteczność klasyfikacji spada. \cite{Ying_2019}
+
+\subsubsection{Regularyzacja}
+Zbiór technik matematycznych, których celem jest zmniejszenie błędu generalizacji, ale nie błędu uczenia.
+\cite{Goodfellow-et-al-2016}
+
+\subsubsection{Uczenie transferowe}
+Uczenie transferowe (z ang. transfer learning) to technika uczenia sieci neuronowych, gdzie model trenowany na jednym zbiorze danych, wykorzystywany jest ponownie \newline w podobnym zadaniu, szczególnie kiedy opiera się ono o ograniczone dane. 
+\subsubsection{Dostrajanie modelu}
+Technika uczenia transferowego, polegająca na wykorzystaniu wstępnie wytrenowanego modelu, który jest dodatkowo trenowany na danych dotyczących konkretnego zadania, aby dostosować jego wagi do pożądanego zadania.
+\subsection{Klasyczne metody uczenia maszynowego}
+\subsubsection{Maszyna wektorów nośnych - SVM} 
+Maszyna wektorów nośnych (z ang.SVM - Support Vector Machine) to metoda uczenia nadzorowanego, najczęściej wykorzystywana w zadaniach klasyfikacji oraz regresji.  Algorytm wyznacza najlepszą granicę dyskryminacji, bądź hiperpowierzchni w przypadku danych wielowymiarowych, która pozwoli na odseparowanie różnych klas w zestawie danych.  Sieci te dedykowane są do zadań klasyfikacji, gdzie jedną klasę separujemy możliwie dużym marginesem od pozostałych klas.
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{img/vit.png}
-	\caption{Przedstawienie budowy oraz działania ViT.\cite{dosovitskiy2020image}}
-	\label{fig:vit_rys}
+	\includegraphics[width=0.8\textwidth]{img/svm-ilustacja.png}
+	\caption{Schemat ilustrujący działanie algorytmu SVM}
+	\label{fig:svm}
 \end{figure}
+Algorytm SVM jest szczególnie wrażliwy na występowanie wyjątków. W niektórych zadaniach poprawna klasyfikacja jest przez to niemożliwa. W związku z tym, zamiast twardego marginesu, czyli optymalnego marginesu niedopuszczającego żadnych błędów, należy zastosować miękki margines - pozwala on na pewne błędy klasyfikacji wynikające \newline z występowania wyjątków i umożliwia kompromis między szerokością marginesu, a liczbą błędów. W związku ze sposobem działania tego algorytmu nie nadaje się on do zadania klasyfikacji wieloklasowej, z małym wyjątkiem - separowanie jednej klasy od innych, jednak nie jest to przedmiot badania w tej pracy.\cite{cortes1995svm}\cite{horzyk_svm}
+\subsubsection{Regresja liniowa}
+Regresja liniowa (z ang. Linear Regression) to algorytm uczenia maszynowego nadzorowanego służący do przewidywania wartości liczbowych. Modeluje zależność między zmienną zależną a jedną lub wieloma niezależnymi zmiennymi, przy założeniu, że jest ona liniowa. Regresja liniowa znajduje najlepiej dopasowaną prostą, która  reprezentuje relację między wartościami rzeczywistymi, a przewidywanymi. Model działa dobrze, gdy występuje liniowa zależność. W momencie kiedy ta zależność jest nieliniowa, model może nie dział poprawnie. Dodatkowo, wartości odstające, czyli odbiegające od reszty zbioru, mogą znacząco wpłynąć na jakość predykcji. Jest to jednak prosty w zrozumieniu oraz implementacji algorytm nauczania maszynowego. Wykorzystywany jest on głównie w operacjach na danych liczbowych, np. prognozach finansowych, analizach danych czy marketingu. Niestety, ze względu na to, że operuje on na wartościach ciągłych,\newline a klasyfikacja wymaga konkretnych klas, nie nadaje się on do zadania klasyfikacji. \cite{geeksforgeeks_linear_regression}
+\subsubsection{Drzewa decyzyjne}
+Drzewa decyzyjne to jedna z podstawowych metod uczenia maszynowego, którego historia sięga XX wieku. Algorytmy oparte na drzewach decyzyjnych znajdują zastosowanie w różnych dziedzinach, na przykład w zadaniu klasyfikacji, regresji czy wyboru cech. Procedura uczenia drzew decyzyjnych polega na rekurencyjnym dzieleniu danych na podzbiory  co prowadzi do powstania struktury przypominającej drzewo, tak jak na rysunku \ref{fig:drzew-decyzyjne}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{img/drzewo-decyzyjne.jpg}
+	
+	\caption{Schemat budowy drzewa decyzyjnego \cite{decisiontree}}
+	\label{fig:drzew-decyzyjne}
+\end{figure}
+ Węzeł główny to początkowy punkt drzewa, reprezentuje on cały zbiór danych. Algorytm następnie identyfikuje cechę oraz progi, które prowadzą do najlepszego podziału na podstawie wybranego kryterium. Proces ten jest kontynuowany, aż zostanie osiągnięty warunek końcowy - może to być ustalona głębokość drzewa, bądź gdy wszystkie dane \newline w węźle należą do jednej klasy. Węzły końcowe, w których drzewo się kończy nazywane są liśćmi - reprezentują one wyniki bądź etykiety klas. Dzięki charakterystycznej budowie są one łatwe w zrozumieniu kolejności podejmowania decyzji. Efektywność drzew decyzyjnych jest jednak bardzo zależna od liczby oraz jakości danych, a przy dużej liczbie klas drzewo podatne jest na przeuczenie.\cite{decisiontree}
+\subsubsection{Algorytm najbliższych sąsiadów - k-NN}
+Algorytm najbliższych sąsiadów (k-NN) jest jednym z najprostszych algorytmów uczenia maszynowego bazującym na uczeniu nadzorowanym.\cite{suyal2022review} Znajduję zastosowanie głównie w zadaniu klasyfikacji. Jego działanie polega na wskazaniu do jakiej klasy należy nowy punkt w obszarze danych oznaczonych etykietami, np. klasa A i klasa B.
+Działanie algorytmu polega na konkretnych krokach: 
+\begin{enumerate}
+	\item Wybierz liczbę sąsiadów \textit{k}
+	\item Oblicz odległość do wszystkich sąsiadów
+	\item Spośród sąsiadów wybierz \textit{k} najbliższych  na podstawie wyliczonych odległości
+	\item Wśród wybranych sąsiadów \textit{k}, policz ilość punktów należących do każdej kategorii
+	\item Do badanego punktu zostanie przypisana ta kategoria, która ma najwięcej klas \newline w grupie najbliższych sąsiadów.
+\end{enumerate}
+Odległość możemy wyliczyć stosując wybrany wcześniej wzór, na przykład,  wzór na odległość euklidesową: 
+\[
+\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
+\]
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/k-nn1.png}
+	\caption{Dane przed wykorzystaniem algorytmu k-NN}
+	\label{fig:k-nn1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/k-nn2.png}
+	\caption{Dane po wykorzystaniu algorytmu k-NN}
+	\label{fig:k-nn2}
+\end{figure}
+
+\subsection{Sztuczne sieci neuronowe - ANN}
+Sieci neuronowe to techniki analityczne tworzone na wzór ludzkiego mózgu, posiadająca zdolność do przewidywania nowych obserwacji na podstawie wcześniejszych obserwacji, po przeprowadzeniu procesu uczenia opartego o istniejące dane. Pierwszym krokiem jest zaprojektowanie architektury sieci. Zawierać ona powinna określoną liczbę warstw, z których każda posiada określona liczbę neuronów. Neuron jest matematycznym modelem, którego zadaniem jest odbieranie sygnałów otrzymywanych od innych neuronów, przetwarzanie sumarycznego sygnału przy zastosowaniu funkcji aktywacji, \newline a następnie wysłanie przetworzonej próbki do innych neuronów znajdujących się w sieci. Wielkość oraz struktura sieci zależy od badanego zjawiska. \cite{horzyk_mlp}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/neuron.png}
+	\caption{Schemat budowy neuronu\cite{MINIwyklady}}
+	\label{fig:neuron_rys}
+\end{figure}
+W literaturze znajduje się wiele modeli neuronów, które różnią się między sobą sposobem sumowania otrzymanych danych oraz stosowaną funkcją aktywacji, która decyduje, w którym momencie wysyłany jest sygnał zwrotny i o jakiej mocy. Jednym z podstawowych modeli neuronu jest model McCullocha-Pittasa, który został zaproponowany w 1943 roku. Neurony w ramach sieci komunikują się ze sobą poprzez połączenia synaptyczne, których wielkość określa waga, oznaczoną na rysunku znakiem $ t_{ij}$, który symbolizuje wagę połączenia neuronu $j $z neuronem $i$. Suma przemnożonych przez wagi sygnałów nazywana jest potencjałem wejściowym i oznaczona jest$ u_{i}$. Potencjałem wyjściowym jest odpowiedź neuronu na zadany potencjał wejściowy, którego charakterystyka określana jest przez funkcje aktywacji. \cite{MINIwyklady} 
+\subsubsection{Perceptron}
+Jednym z podstawowych modeli sieci jednokierunkowych jest perceptron, którego schemat przedstawiony jest na rysunku \ref{fig:percepton_rys}. Jest on zbudowany z \textit{N} neuronów wejściowych oraz \textit{M} neuronów wyjściowych. Perceptron ma za zadanie odwzorowanie zadanego zbioru wektorów wejściowych na zadany zbiór wektorów wyjściowych. W związku z tym zbiór treningowy składa się z par wektorów. Nauka perceptronu polega na stopniowej modyfikacji wag łączących neurony wejściowe z wyjściowymi, tak żeby, po zakończeniu szkolenia, podanie wektora skutkowało wygenerowaniem odpowiadającego mu wektora wyjściowego.\cite{MINIwyklady} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{img/percepton.png}
+	\caption{Schemat budowy perceptronu \cite{MINIwyklady}}
+	\label{fig:percepton_rys}
+\end{figure}
+\subsubsection{Perceptron wielowarstwowy - MLP}
+Perceptron wielowarstwowy - MLP (z ang. Multilayer Perceptron) to jeden z podstawowych typów sieci neuronowych. Sieci te muszą posiadać warstwę wejściową, która otrzymuje dane oraz warstwę wyjściowa, która prezentuje wynik . Pomiędzy nimi, może znajdować się jedna, lub więcej warstw ukrytych.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/mlp.png}
+	\caption{Schemat ilustrujący budowę MLP.}
+	\label{fig:mlp}
+\end{figure}
+ W poszczególnych warstwach może występować różna liczba neuronów. W warstwie wejściowej odpowiada ona zwykle liczbie parametrów, które opisują dane wejściowe, \newline a w warstwie wyjściowej np. liczba klas. Sieci te posiadają małą liczbę warstw ukrytych  - duża liczba warstw ukrytych charakteryzuje sieci głębokie.   \cite{horzyk_mlp}\cite{gfg_mlp_tensorflow} \cite{MINIwyklady}
+\subsection{Uczenie głębokie - Deep learning}
+Uczenie głębokie to podzbiór uczenia maszynowego,
+oparty na sztucznych sieciach neuronowych,
+w których znajdziemy dużą liczbę warstw ukrytych.\cite{he2016deep} Sieci głębokie mogą rozwiązywać bardziej złożone problemy, przy większej liczbie danych, niż proste architektury sieci neuronowych. Dzięki ukrytym warstwom mają one dużą złożoność obliczeniową, co wiąże się też z większą liczbą zasobów oraz czasu potrzebnego do przeprowadzenia treningu.
+
 \subsubsection{Konwolucyjne sieci neuronowe - CNN}
-Konwolucyjne sieci neuronowe to architektura deep
-learning, opierająca się na czterech kluczowych konceptach: połączenia lokalne, współdzielone wagi, grupowanie i wykorzystywanie wielu warstw. Typowa architektura modelu CNN zawiera w sobie: warstwy konwolucyjne, które dokonują ekstrakcji cech; warstwy poolingowe, które dokonują zmniejszenia wymiarów inputu, scalając podobne cechy w jedną , ułatwiając obliczenia ; warstwy aktywacyjnej
-oraz warstw w pełni połączonych, gdzie na podstawie
-nauczonych parametrów z poprzednich warstw, dokonywana
-jest klasyfikacja danych. Na poniższym obrazku przedstawiona jest kontrukcja takiej sieci.\cite{lecun2015deep}
+Konwolucyjne sieci neuronowe to typ architektury uczenia głębokiego, opierającej się na czterech kluczowych konceptach: warstw konwolucyjnych, warstw łączących, funkcji aktywacji oraz w pełni połączonych warstw. Modele te znajdują zastosowanie w klasyfikacji obrazów, detekcji obiektów, rozpoznawaniu mowy, analizie danych oraz więcej.\newline W przypadku analizy obrazów model przyjmuje dane wejściowe w postaci macierzy, bądź tensora.\newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{img/CNN-Model-Architecture.png}
+	\caption{Schemat budowy CNN.\cite{ksolves_cnn_architecture}}
+	\label{fig:CNN_rys}
+\end{figure}
+ Warstwa konwolucyjna (z ang. convolutional layer) stanowi najważniejszy element architektury modelu. W warstwach model przetwarza otrzymane dane, aby wykryć lokalne cechy takie krawędzie czy tekstury. Warstwa posiada jądro (z ang. kernel), które przesuwa się po obrazie, mnoży skalarnie wartości filtru i pikseli tworząc mapę cech ( z ang. feature map), która jest nową reprezentacją obrazu. Zawiera ona informacje wydobyte przez jądro. Jądro, które nazywane też jest czasem filtrem, przesuwane jest o z góry narzucony krok. 
+ 
+	 Warstwa łącząca (z ang. pooling layer) to warstwa zmniejszająca rozdzielczość map cech, zachowując najważniejsze informacje. Pozwala to na zmniejszenie liczby obliczeń oraz zapobiegnięcie przeuczenia. Warstwa ta najpierw zmniejsza rozdzielczość mapy cech, wybierając z okna najważniejszą wartość i zapisuje ją w nowej mapie. Następnie przesuwa się o stały krok. Wartości są wybierane w różny sposób - dla np. warstwy Max Pooling, wybierana jest największa wartość w oknie, a dla warstwy Average  Polling wyliczana jest średnia wartości w oknie i to ona jest zapisywana w nowej mapie.
+	 
+ 	Funkcja aktywacyjna (z ang. activation function)  jest aplikowana do wyliczonej sumy danych wejściowych przez warstwę konwolucyjną. Wprowadza ona nieliniowość do modelu. Pozwala to modelowi na naukę skomplikowanych wzorców i zależności. Istnieje wiele funkcji aktywacji, każda z nich stosowana jest w innym celu. W przypadku klasyfikacji binarnej stosuje się funkcje sigmoidalną, a w przypadku klasyfikacji wieloklasowej zastosować można funkcje ReLu, bądź Softmax.\newline
+ 	Warstwa w pełni połączona warstwa to warstwa, w której wszystkie neurony są połączone ze wszystkimi neuronami z warstwy poprzedniej. W CNN są to warstwy odpowiadające za generowanie predykcji na podstawie cech wyuczonych przez poprzednie warstwy.\cite{DBLP:journals/corr/OSheaN15}
+\subsubsection{Transformer}
+Transformer to architektura uczenia głębokiego skupiająca się na modelowaniu relacji między danymi. W przeciwieństwie do CNN, przetwarza ona całe sekwencje danych jednocześnie, zamiast krok po kroku. Z tego powodu znajdują one zastosowanie w przetwarzaniu języka naturalnego czy analizie obrazów. Transformery opierają się na kilku kluczowych konceptach: mechanizm samo-uwagi, wielogłowej uwagi, kodowania pozycyjnego oraz wektorów reprezentacji.
+
+Mechanizm samo-uwagi(z ang. self-attention mechanism) przetwarza np. wszystkie słowa w zdaniu, czy cały obraz jednocześnie i identyfikuje, które fragmenty są ważne \newline i jakie są relacje między nimi, aby móc określić kontekst i znaczenie stojące za całością. Każdy fragment w sekwencji jest mapowany na trzy wektory: Query (Q), Key(K) i Value(V). Wyliczana jest następnie wartość uwagi według wzoru: $$Attention(Q,K,V) = softmax(\frac{QK^{T}}{\sqrt{d_{K}}})V $$.
+
+Wielogłowa uwaga(z ang. multi-head attention) to mechanizm pozwalający modelowi na jednoczesne analizowanie różnych zależności występujących w danych takich jak kolor, tekstura czy kształt.
+Zamiast pojedynczego mechanizmu uwagi stosuje się kilka niezależnych głów jednocześnie, z których każda koncentruję się na innych zależnościach miedzy elementami sekwencji. Wyniki ze wszystkich głów są następnie łączone i poddawane projekcji liniowej, aby stworzyć końcowe wyjście mechanizmu uwagi. Całość pozwala modelowi uchwycić więcej powiązań i wzorców, niż przy użyciu pojedynczej głowy. 
+
+Transformery nie mogą pracować bezpośrednio na surowych danych, ponieważ wymagają numerycznych reprezentacji. Z tego powodu, każdy token, który jest fragmentem danych, np. fragment słowa, bądź słowo, jest przekształcane w wektor, który nazywany jest wektorem reprezentacyjnym. Zawierają one informacje na temat znaczenia, bądź relacji między elementami danych, gdzie fragmenty podobne do siebie znajdują się blisko siebie, a te różniące dalej.
+
+Z powodu procesowania danych równolegle, transformery nie są w stanie określić kolejności danych. Aby rozwiązać ten problem, do wektorów reprezentacyjnych, dodawane są kodowania pozycyjne, które dostarczają modelowi informacje o pozycji każdego tokenu w zbiorze danych.\cite{DBLP:journals/corr/VaswaniSPUJGKP17}
+
+\subsubsection{Rekurencyjne sieci neuronowe - RNN}
+Rekurencyjne sieci neuronowe to typ architektury sieci neuronowych przeznaczonej do detekcji wzorców w sekwencji danych. Przykładami takich danych są tekst, pismo odręczne, genomy lub numeryczne szeregi czasowe. Sieci tego typu mogą zostać wykorzystane również do analizy obrazów, jeśli dane zostaną odpowiednio wcześniej podzielone na fragmenty i potraktowane jako dane sekwencyjne.  Podstawową jednostką przetwarzającą w RNN jest jednostka rekurencyjna, która przechowuje ukryty stan ( z ang. hidden state) - zawiera on informacje o poprzednich elementach sekwencji.
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/nfa-.jpg}
+	\caption{Przedstawienie jednostki rekurencyjnej.\cite{lecun2015deep}}
+	\label{fig:rnn_rys}
+\end{figure} 
+Poprzez przekazywanie stanu ukrytego pomiędzy kolejnymi krokami, jednostki rekurencyjne mogą zapamiętać informacje z wcześniejszych etapów, które mogą wpływać na wynik generowany przez sieć w kolejnym kroku. Aby umożliwić sieciom RNN uczenie się zależności występujących w danych sekwencyjnych, stosuje się koncept rozwijania sieci, polegający na przedstawieniu struktury rekurencyjnej jako szeregu kolejnych kroków czasowych.
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/nfa1.jpg}
+	\caption{Przedstawienie rozwijania RNN}
+	\label{fig:rnn_rys2}
+\end{figure} 
+Pozwala to na zastosowanie propagacji wstecznej przez czas - BPTT (z ang. Backpropagation Through Time). Jest to sposób propagacji błędu i obliczania gradientów w sieciach RNN. Ze względu na architekturę RNN, BPTT uwzględnia wszystkie stany przez kolejne kroki czasowe sekwencji. Umożliwia to aktualizacje wag z uwzględnieniem wszystkich zależności między elementami danych sekwencyjnych. Rekurencyjne sieci neuronowe znajdą zastosowanie w dziedzinach operujących na danych sekwencyjnych - takich jak np. prognoza pogody, czy generacja muzyki. Związku z tym, że modele RNN nie są powszechnie stosowane w zadaniach klasyfikacji obrazów, nie zostały one uwzględnione w ramach badania.\cite{robu_rnn_medium}
+\subsection{Metryki ewaluacji wyników}
+Ocena skuteczności modeli klasyfikacji obrazów wymaga zastosowania odpowiednio dobranych metryk ewaluacyjnych, umożliwiających obiektywną ocenę jakości uzyskiwanych predykcji. Odpowiedni dobór metryk
+pozwala na wieloaspektową interpretacje otrzymanych wyników,
+także przy obecności niezbalansowanych danych.
+Umożliwiają one ogólną ocenę modelu, jak i analizę rodzaju popełnianych przez niego błędów. Poniżej przedstawiono wybrane metryki
+ewaluacyjne wraz ze wzorami oraz krótkim opisem użycia . Metryki te są 
+powszechnie stosowane w badaniach dotyczących klasyfikacji obrazów.
+\subsubsection{Macierz pomyłek}
+Macierz pomyłek (z ang. confusion matrix) jest  podstawowym narzędziem służącym do analizy wyników klasyfikacji. Stanowi ona podstawę do wyznaczania  bardziej złożonych metryk, takich jak precyzja czy czułość. Jest to tabela krzyżowa pozwalająca na porównanie wyników predykcji do oryginalnego przypisania klas do danych. Dzieli ona wynik klasyfikacji na cztery kategorię: TP (true positive), TN (true negative), FP (false positive) i  FN (false negative) \cite{grandini2020metrics}. Dla klasyfikacji wieloklasowej, macierz pomyłek, jest macierzą o wymiarach n x n, gdzie n to liczba klas, co przedstawiono w przykładzie dla klasy ‘B’ poniżej.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{img/cnn.png}
-	\caption{Przedstawienie budowy CNN.\cite{lecun2015deep}}
-	\label{fig:cnn_rys}
+	\includegraphics[width=1\textwidth]{img/macierz_pomylek.png}
+	\caption{Przykładowa macierz pomyłek dla trzech klas, z wynikami otrzymywanymi dla klasy ‘B’.}
+	\label{fig:macierz_konfliktu}
 \end{figure}
+
+\subsubsection{Dokładność}
+Wzór na Dokładność (z ang. Accuracy) określa stosunek liczby poprawnie przypisanych przez model klas do liczby wszystkich dokonanych klasyfikacji .\cite{grandini2020metrics} 
+
+
+$$Accuracy = \frac{TP+TN}{TP+TN+FN+FP}$$
+
+
+Wartość tej metryki określa odsetek poprawnie dokonanych predykcji przez model. Jest to podstawowa metryka, pozwalająca na szybką ocenę skuteczności modeli, zwracająca skuteczność predykcji modelu na całym zbiorze danych, nie bierze jednak pod uwagę niezbalansowania zbioru danych. Ze względu na prostą interpretacje metryka ta jest użyteczna do szybkiej i wstępnej oceny modelu. 
+
+\subsubsection{Precyzja}
+Precyzja (z ang. Precision) to miara informująca nas, jaki odsetek przypisań danej klasy dokonanych przez model, zgadza się z oryginalnymi przypisaniami. Innymi słowy, z jak często model dokonuję poprawnej predykcji danej klasy. \cite{grandini2020metrics}
+
+
+$$Precision= \frac{TP}{TP+FP}$$
+
+
+Miara ta jest używana dla konkretnych klas, jednak jej średnia, może zostać użyta do oceny całego modelu. Obliczanie tej metryki osobno da każdej klasy pozwala na ocenę, czy model nie wykazuję tendencji do częstszego przypisywania określonych klas. 
+
+\subsubsection{Czułość}
+Czułość (z ang. recall) to miara informująca nas, jaki odsetek danych, które oryginalnie mają daną klasę, zostało poprawnie sklasyfikowanych przez model. Jest więc to liczba poprawnych przypisań danej klasy podzielona przez liczbę danych należących do tej klasy w zbiorze. \cite{grandini2020metrics}
+
+
+$$Recall  = \frac{TP}{TP+FN}$$
+
+
+Miara ta pozwala ocenić, w jakim stopniu model jest wstanie poprawnie przypisać klasę do danych. Możliwe jest też użycie średniej tej metryki, co pozwala na uzyskanie oceny całego modelu, jednak uniemożliwia to analizę wyników klasyfikacji poszczególnych klas.
+
+\subsubsection{Miara F1}
+Miara F1 (z ang. F1-Score) jest próbą znalezienia pojedynczej metryki, pozwalającej na jak bardziej obiektywną ocenę modelu. Metryka agreguje metryki Precyzji i Czułości \newline z wykorzystaniem średniej harmonicznej. \cite{grandini2020metrics}
+
+
+$$F1-Score= 2*(\frac{precision*recall}{precision+recall})$$
+
+
+Przedstawiony wyżej wzór jest używany tylko w ramach klasyfikacji binarnej. Aby użyć tej miary w ramach klasyfikacji wieloklasowej należy, obliczyć odpowiednie średnie wcześniej wykorzystanych miar. W ramach tego otrzymujemy dwie nowe, ogólne miary: Macro F1-Score, które wykorzystuje arytmetyczną średnią Precyzji i Czułości, oraz Micro F1-Score – wykorzystująca średnie harmoniczną.\cite{grandini2020metrics}
+
+
+$$Macro F1-Score= 2*(\frac{Arithmetic Precision* Arithmetic Recall}{Arithmetic Precision+Arithmetic Recall})$$
+
+
+$$ Micro F1-Score= 2*(\frac{Harmonic Precision* Harmonic Recall}{Harmonic Precision+Harmonic Recall})$$
+\clearpage

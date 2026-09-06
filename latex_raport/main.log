@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.17)  14 APR 2026 16:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.17)  6 SEP 2026 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,16 +1050,35 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
+(C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count461
+\csq@gtype=\count462
+\csq@glevel=\count463
+\csq@qlevel=\count464
+\csq@maxlvl=\count465
+\csq@tshold=\count466
+\csq@ltx@everypar=\toks43
+
+(C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+File: csquotes.cfg 
+))
 
 Package biblatex Warning: Load 'inputenc' before biblatex.
 
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count461
-\@quotereset=\count462
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'polish'.
 (main.aux
 
 LaTeX Warning: Label `fig:agriozdjecia' multiply defined.
@@ -1068,52 +1087,52 @@ LaTeX Warning: Label `fig:agriozdjecia' multiply defined.
 LaTeX Warning: Label `fig:zdjecia_lisci' multiply defined.
 
 
-LaTeX Warning: Label `fig:macierz_konfliktu' multiply defined.
+LaTeX Warning: Label `fig:zdjecia_lisci' multiply defined.
 
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 40.
 LaTeX Font Info:    Trying to load font information for FML+futm on input line 
-28.
+40.
  (C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 40.
 LaTeX Font Info:    Trying to load font information for FMS+futm on input line 
-28.
+40.
 
 (C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 40.
 LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
-28.
+40.
 
 (C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
 
@@ -1126,40 +1145,46 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl
 
-No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 28.
-Package biblatex Info: Reference segment=0 on input line 28.
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'MINIwyklady':
+(biblatex)                - online entry 'MINIwyklady' (bibliografia.bib): Inva
+lid format 'DostÄ™p zdalny (2026-05-19)' of date field 'urldate' - ignoring.
+
+)
+Package biblatex Info: Reference section=0 on input line 40.
+Package biblatex Info: Reference segment=0 on input line 40.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
-(C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+ (C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: scrextend package is loaded.
 \caption@addmargin@hsize=\dimen185
 \caption@addmargin@linewidth=\dimen186
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 28.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 28.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 40.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 40.
 
 (C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count463
+\scratchcounter=\count467
 \scratchdimen=\dimen187
 \scratchbox=\box68
-\nofMPsegments=\count464
-\nofMParguments=\count465
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count466
+\nofMPsegments=\count468
+\nofMParguments=\count469
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count470
 \MPscratchDim=\dimen188
-\MPnumerator=\count467
-\makeMPintoPDFobject=\count468
-\everyMPtoPDFconversion=\toks44
+\MPnumerator=\count471
+\makeMPintoPDFobject=\count472
+\everyMPtoPDFconversion=\toks45
 )
 (C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1171,21 +1196,21 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count469
-LaTeX Info: Redefining \microtypecontext on input line 28.
-Package microtype Info: Applying patch `item' on input line 28.
-Package microtype Info: Applying patch `toc' on input line 28.
-Package microtype Info: Applying patch `eqnum' on input line 28.
-Package microtype Info: Applying patch `footnote' on input line 28.
-Package microtype Info: Applying patch `verbatim' on input line 28.
-LaTeX Info: Redefining \microtypesetup on input line 28.
+\c@lstlisting=\count473
+LaTeX Info: Redefining \microtypecontext on input line 40.
+Package microtype Info: Applying patch `item' on input line 40.
+Package microtype Info: Applying patch `toc' on input line 40.
+Package microtype Info: Applying patch `eqnum' on input line 40.
+Package microtype Info: Applying patch `footnote' on input line 40.
+Package microtype Info: Applying patch `verbatim' on input line 40.
+LaTeX Info: Redefining \microtypesetup on input line 40.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 28.
+LaTeX Info: Redefining \showhyphens on input line 40.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1193,7 +1218,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `futs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Link coloring ON on input line 28.
+Package hyperref Info: Link coloring ON on input line 40.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -1234,15 +1259,15 @@ Package hyperref Info: Link coloring ON on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<eiti/header.png, id=269, 483.7272pt x 76.8471pt>
+<eiti/header.png, id=353, 483.7272pt x 76.8471pt>
 File: eiti/header.png Graphic file (type png)
 <use eiti/header.png>
-Package pdftex.def Info: eiti/header.png  used on input line 48.
+Package pdftex.def Info: eiti/header.png  used on input line 59.
 (pdftex.def)             Requested size: 438.17247pt x 69.61084pt.
-<eiti/title-mgr.png, id=270, 483.7272pt x 105.39375pt>
+<eiti/title-mgr.png, id=354, 483.7272pt x 105.39375pt>
 File: eiti/title-mgr.png Graphic file (type png)
 <use eiti/title-mgr.png>
-Package pdftex.def Info: eiti/title-mgr.png  used on input line 48.
+Package pdftex.def Info: eiti/title-mgr.png  used on input line 59.
 (pdftex.def)             Requested size: 438.17247pt x 95.4694pt.
 
 
@@ -1258,16 +1283,22 @@ c/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./eiti/header.png
 ]
 
 [3]
+Overfull \hbox (5.94426pt too wide) in paragraph at lines 81--82
+[]\T1/futs/m/n/12 (-20) The ob-ta-ined re-sults in-di-ca-ted that most of the a
+na-ly-zed mo-dels achie-ved high Macro-F1
+ []
+
+
 
 [4]
 
 pdfTeX warning: pdflatex.exe (file ./eiti/oswiadczenie_autora_pracy.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<eiti/oswiadczenie_autora_pracy.pdf, id=290, 597.55246pt x 845.07718pt>
+<eiti/oswiadczenie_autora_pracy.pdf, id=374, 597.55246pt x 845.07718pt>
 File: eiti/oswiadczenie_autora_pracy.pdf Graphic file (type pdf)
 <use eiti/oswiadczenie_autora_pracy.pdf>
 Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line
- 69.
+ 90.
 (pdftex.def)             Requested size: 521.4263pt x 737.46782pt.
 
 
@@ -1314,323 +1345,555 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 2.
 
+Overfull \hbox (3.69598pt too wide) detected at line 28
+\T1/futs/m/n/12 3.1.10. 
+ []
 
-[7])
+
+
+[7]
+
+[8]
+Overfull \hbox (4.89598pt too wide) detected at line 83
+\T1/futs/b/n/12 10. 
+ []
+
+
+Overfull \hbox (4.41592pt too wide) detected at line 84
+\T1/futs/m/n/12 10.1. 
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
 
 
-[8] (tex/1-wstep.tex
-
-[9
-
-
-]) (tex/2-de-finibus.tex
-
-LaTeX Warning: Citation 'sharada' on page 10 undefined on input line 4.
-
-
-LaTeX Warning: Citation 'tomato' on page 10 undefined on input line 4.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[9]
 
 [10
 
+
+] (tex/1-wstep.tex
+
+[11]
+
+[12]) (tex/2-de-finibus.tex
+
+[13
+
 ]
-
-LaTeX Warning: Citation 'Planta' on page 11 undefined on input line 9.
-
-<img/planta.jpg, id=429, 1084.05pt x 2409.0pt>
-File: img/planta.jpg Graphic file (type jpg)
-<use img/planta.jpg>
-Package pdftex.def Info: img/planta.jpg  used on input line 12.
-(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
-<img/planta2.jpg, id=430, 1084.05pt x 2409.0pt>
-File: img/planta2.jpg Graphic file (type jpg)
-<use img/planta2.jpg>
-Package pdftex.def Info: img/planta2.jpg  used on input line 14.
-(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
-
-LaTeX Warning: Citation 'Agrio' on page 11 undefined on input line 19.
-
-<img/agrio1.jpg, id=431, 1084.05pt x 2409.0pt>
-File: img/agrio1.jpg Graphic file (type jpg)
-<use img/agrio1.jpg>
-Package pdftex.def Info: img/agrio1.jpg  used on input line 22.
-(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
-<img/agrio2.jpg, id=432, 1084.05pt x 2409.0pt>
-File: img/agrio2.jpg Graphic file (type jpg)
-<use img/agrio2.jpg>
-Package pdftex.def Info: img/agrio2.jpg  used on input line 24.
-(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
-
-
-[11 <./img/planta.jpg> <./img/planta2.jpg>]
-
-LaTeX Warning: Citation 'PlantNet' on page 12 undefined on input line 29.
-
-<img/plantnet1.jpg, id=438, 1084.05pt x 2409.0pt>
-File: img/plantnet1.jpg Graphic file (type jpg)
-<use img/plantnet1.jpg>
-Package pdftex.def Info: img/plantnet1.jpg  used on input line 32.
-(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
-<img/plantnet2.jpg, id=439, 1084.05pt x 2409.0pt>
-File: img/plantnet2.jpg Graphic file (type jpg)
-<use img/plantnet2.jpg>
-Package pdftex.def Info: img/plantnet2.jpg  used on input line 34.
-(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
-<img/plantnet3.jpg, id=440, 1084.05pt x 2409.0pt>
-File: img/plantnet3.jpg Graphic file (type jpg)
-<use img/plantnet3.jpg>
-Package pdftex.def Info: img/plantnet3.jpg  used on input line 36.
-(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
+<img/plantdoc-1.jpg, id=559, 642.4pt x 481.8pt>
+File: img/plantdoc-1.jpg Graphic file (type jpg)
+<use img/plantdoc-1.jpg>
+Package pdftex.def Info: img/plantdoc-1.jpg  used on input line 13.
+(pdftex.def)             Requested size: 131.45306pt x 98.58585pt.
+<img/plantdoc-2.jpg, id=560, 2249.40375pt x 3998.94pt>
+File: img/plantdoc-2.jpg Graphic file (type jpg)
+<use img/plantdoc-2.jpg>
+Package pdftex.def Info: img/plantdoc-2.jpg  used on input line 14.
+(pdftex.def)             Requested size: 87.63315pt x 155.78108pt.
+<img/plantdoc-3.jpg, id=561, 154.176pt x 104.5506pt>
+File: img/plantdoc-3.jpg Graphic file (type jpg)
+<use img/plantdoc-3.jpg>
+Package pdftex.def Info: img/plantdoc-3.jpg  used on input line 15.
+(pdftex.def)             Requested size: 131.45306pt x 89.1428pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[12 <./img/agrio1.jpg> <./img/agrio2.jpg>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[13 <./img/plantnet1.jpg> <./img/plantnet2.jpg> <./img/plantnet3.jpg>]
-
-LaTeX Warning: Citation 'PlantDoc' on page 14 undefined on input line 43.
-
-
-LaTeX Warning: Citation 'PlantVillage' on page 14 undefined on input line 46.
-
-
-LaTeX Warning: Citation 'PlantNew' on page 14 undefined on input line 48.
-
-
-
-[14]) (tex/podstawowe-pojecia.tex
-
-LaTeX Warning: Citation 'Mitchell1997M' on page 15 undefined on input line 7.
-
-
-LaTeX Warning: Citation 'he2016deep' on page 15 undefined on input line 12.
-
-
-LaTeX Warning: Citation 'lecun2015deep' on page 15 undefined on input line 17.
-
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 25.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 25.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 25.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 25.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 25.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 25.
-
-
-[15
-
-]
-
-LaTeX Warning: Citation 'dosovitskiy2020image' on page 16 undefined on input li
-ne 37.
-
-<img/vit.png, id=461, 388.45125pt x 206.57175pt>
-File: img/vit.png Graphic file (type png)
-<use img/vit.png>
-Package pdftex.def Info: img/vit.png  used on input line 40.
-(pdftex.def)             Requested size: 262.90614pt x 139.8113pt.
-
-LaTeX Warning: Citation 'dosovitskiy2020image' on page 16 undefined on input li
-ne 41.
-
-
-LaTeX Warning: Citation 'dosovitskiy2020image' on page 16 undefined on input li
-ne 41.
-
-
-LaTeX Warning: Citation 'lecun2015deep' on page 16 undefined on input line 49.
-
-<img/cnn.png, id=463, 803.0pt x 401.5pt>
-File: img/cnn.png Graphic file (type png)
-<use img/cnn.png>
-Package pdftex.def Info: img/cnn.png  used on input line 52.
-(pdftex.def)             Requested size: 262.90614pt x 131.45392pt.
-
-LaTeX Warning: Citation 'lecun2015deep' on page 16 undefined on input line 53.
-
-
-LaTeX Warning: Citation 'lecun2015deep' on page 16 undefined on input line 53.
-
-) (tex/3-modele.tex
-
-[16 <./img/vit.png>]
-
-[17 <./img/cnn.png>]
-
-LaTeX Warning: Citation 'howard2017mobilenets' on page 18 undefined on input li
-ne 5.
-
-
-LaTeX Warning: Citation 'dosovitskiy2020image' on page 18 undefined on input li
-ne 7.
-
-
-LaTeX Warning: Citation 'he2016deep' on page 18 undefined on input line 9.
-
-<img/res_net.png, id=475, 275.22826pt x 142.73325pt>
-File: img/res_net.png Graphic file (type png)
-<use img/res_net.png>
-Package pdftex.def Info: img/res_net.png  used on input line 12.
-(pdftex.def)             Requested size: 262.90614pt x 136.34718pt.
-
-LaTeX Warning: Citation 'he2016deep' on page 18 undefined on input line 13.
-
-
-LaTeX Warning: Citation 'he2016deep' on page 18 undefined on input line 13.
-
-
-
-[18]
-
-LaTeX Warning: Citation 'tan2019efficientnet' on page 19 undefined on input lin
-e 18.
-
-<img/efficientnet.png, id=480, 1156.32pt x 578.16pt>
-File: img/efficientnet.png Graphic file (type png)
-<use img/efficientnet.png>
-Package pdftex.def Info: img/efficientnet.png  used on input line 21.
-(pdftex.def)             Requested size: 262.90614pt x 131.44778pt.
-
-Underfull \vbox (badness 1383) has occurred while \output is active []
-
-
-
-[19 <./img/res_net.png> <./img/efficientnet.png>]) (tex/zbior-danych.tex
-
-[20]
-<img/lisc-1.png, id=493, 136.8312pt x 136.3494pt>
+[14]
+<img/lisc-1.png, id=571, 136.8312pt x 136.3494pt>
 File: img/lisc-1.png Graphic file (type png)
 <use img/lisc-1.png>
-Package pdftex.def Info: img/lisc-1.png  used on input line 10.
-(pdftex.def)             Requested size: 87.63315pt x 87.32571pt.
-<img/lisc-2.png, id=494, 140.2038pt x 140.2038pt>
+Package pdftex.def Info: img/lisc-1.png  used on input line 24.
+(pdftex.def)             Requested size: 131.45306pt x 130.9917pt.
+<img/lisc-2.png, id=573, 140.2038pt x 140.2038pt>
 File: img/lisc-2.png Graphic file (type png)
 <use img/lisc-2.png>
-Package pdftex.def Info: img/lisc-2.png  used on input line 11.
-(pdftex.def)             Requested size: 87.63315pt x 87.63142pt.
-<img/lisc-3.png, id=495, 136.3494pt x 135.8676pt>
+Package pdftex.def Info: img/lisc-2.png  used on input line 25.
+(pdftex.def)             Requested size: 131.45306pt x 131.45142pt.
+<img/lisc-3.png, id=574, 136.3494pt x 135.8676pt>
 File: img/lisc-3.png Graphic file (type png)
 <use img/lisc-3.png>
-Package pdftex.def Info: img/lisc-3.png  used on input line 12.
-(pdftex.def)             Requested size: 87.63315pt x 87.32605pt.
-) (tex/miary.tex
-
-[21 <./img/lisc-1.png> <./img/lisc-2.png> <./img/lisc-3.png>]
-
-[22]
-
-[23]
-(C:\Users\kubac\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 88.
-<img/wykres-augmentacji.png, id=516, 722.7pt x 722.7pt>
-File: img/wykres-augmentacji.png Graphic file (type png)
-<use img/wykres-augmentacji.png>
-Package pdftex.def Info: img/wykres-augmentacji.png  used on input line 101.
-(pdftex.def)             Requested size: 438.17247pt x 438.1777pt.
+Package pdftex.def Info: img/lisc-3.png  used on input line 26.
+(pdftex.def)             Requested size: 131.45306pt x 130.99323pt.
+<img/AppleScab2.jpg, id=578, 256.96pt x 256.96pt>
+File: img/AppleScab2.jpg Graphic file (type jpg)
+<use img/AppleScab2.jpg>
+Package pdftex.def Info: img/AppleScab2.jpg  used on input line 34.
+(pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
+<img/PotatoHealthy2.jpg, id=579, 256.96pt x 256.96pt>
+File: img/PotatoHealthy2.jpg Graphic file (type jpg)
+<use img/PotatoHealthy2.jpg>
+Package pdftex.def Info: img/PotatoHealthy2.jpg  used on input line 35.
+(pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
+<img/TomatoEarlyBlight4.jpg, id=580, 256.96pt x 256.96pt>
+File: img/TomatoEarlyBlight4.jpg Graphic file (type jpg)
+<use img/TomatoEarlyBlight4.jpg>
+Package pdftex.def Info: img/TomatoEarlyBlight4.jpg  used on input line 36.
+(pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[24]
+[15 <./img/plantdoc-1.jpg> <./img/plantdoc-2.jpg> <./img/plantdoc-3.jpg> <./img
+/lisc-1.png> <./img/lisc-2.png> <./img/lisc-3.png>]
+<img/planta.jpg, id=595, 1084.05pt x 2409.0pt>
+File: img/planta.jpg Graphic file (type jpg)
+<use img/planta.jpg>
+Package pdftex.def Info: img/planta.jpg  used on input line 46.
+(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+<img/planta2.jpg, id=596, 1084.05pt x 2409.0pt>
+File: img/planta2.jpg Graphic file (type jpg)
+<use img/planta2.jpg>
+Package pdftex.def Info: img/planta2.jpg  used on input line 48.
+(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[25 <./img/wykres-augmentacji.png>]
-Overfull \hbox (11.68776pt too wide) in paragraph at lines 118--119
-[][][][][][][][][][][][][][][][][][][][][][][][] 
+[16 <./img/AppleScab2.jpg> <./img/PotatoHealthy2.jpg> <./img/TomatoEarlyBlight4
+.jpg>]
+<img/agrio1.jpg, id=604, 1084.05pt x 2409.0pt>
+File: img/agrio1.jpg Graphic file (type jpg)
+<use img/agrio1.jpg>
+Package pdftex.def Info: img/agrio1.jpg  used on input line 56.
+(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+<img/agrio2.jpg, id=605, 1084.05pt x 2409.0pt>
+File: img/agrio2.jpg Graphic file (type jpg)
+<use img/agrio2.jpg>
+Package pdftex.def Info: img/agrio2.jpg  used on input line 58.
+(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[17 <./img/planta.jpg> <./img/planta2.jpg>]
+<img/plantnet1.jpg, id=613, 1084.05pt x 2409.0pt>
+File: img/plantnet1.jpg Graphic file (type jpg)
+<use img/plantnet1.jpg>
+Package pdftex.def Info: img/plantnet1.jpg  used on input line 66.
+(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+<img/plantnet2.jpg, id=614, 1084.05pt x 2409.0pt>
+File: img/plantnet2.jpg Graphic file (type jpg)
+<use img/plantnet2.jpg>
+Package pdftex.def Info: img/plantnet2.jpg  used on input line 68.
+(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+<img/plantnet3.jpg, id=615, 1084.05pt x 2409.0pt>
+File: img/plantnet3.jpg Graphic file (type jpg)
+<use img/plantnet3.jpg>
+Package pdftex.def Info: img/plantnet3.jpg  used on input line 70.
+(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[18 <./img/agrio1.jpg> <./img/agrio2.jpg>]
+Overfull \vbox (119.45238pt too high) has occurred while \output is active []
+
+
+
+[19 <./img/plantnet1.jpg> <./img/plantnet2.jpg> <./img/plantnet3.jpg>])
+(tex/podstawowe-pojecia.tex
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 10.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 10.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 10.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 10.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 10.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 10.
+
+
+[20
+
+]
+<img/svm-ilustacja.png, id=642, 347.2975pt x 287.0725pt>
+File: img/svm-ilustacja.png Graphic file (type png)
+<use img/svm-ilustacja.png>
+Package pdftex.def Info: img/svm-ilustacja.png  used on input line 47.
+(pdftex.def)             Requested size: 350.5393pt x 289.76134pt.
+
+
+[21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[22 <./img/svm-ilustacja.png>]
+<img/drzewo-decyzyjne.jpg, id=661, 158.994pt x 71.0655pt>
+File: img/drzewo-decyzyjne.jpg Graphic file (type jpg)
+<use img/drzewo-decyzyjne.jpg>
+Package pdftex.def Info: img/drzewo-decyzyjne.jpg  used on input line 58.
+(pdftex.def)             Requested size: 438.17247pt x 195.87961pt.
+
+
+[23 <./img/drzewo-decyzyjne.jpg>]
+<img/k-nn1.png, id=673, 371.3875pt x 301.125pt>
+File: img/k-nn1.png Graphic file (type png)
+<use img/k-nn1.png>
+Package pdftex.def Info: img/k-nn1.png  used on input line 81.
+(pdftex.def)             Requested size: 306.71939pt x 248.69768pt.
+<img/k-nn2.png, id=674, 371.3875pt x 301.125pt>
+File: img/k-nn2.png Graphic file (type png)
+<use img/k-nn2.png>
+Package pdftex.def Info: img/k-nn2.png  used on input line 88.
+(pdftex.def)             Requested size: 306.71939pt x 248.69768pt.
+
+Underfull \vbox (badness 3260) has occurred while \output is active []
+
+
+
+[24 <./img/k-nn1.png>]
+<img/neuron.png, id=690, 285.31593pt x 161.85469pt>
+File: img/neuron.png Graphic file (type png)
+<use img/neuron.png>
+Package pdftex.def Info: img/neuron.png  used on input line 97.
+(pdftex.def)             Requested size: 394.35254pt x 223.71039pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[25 <./img/k-nn2.png>]
+<img/percepton.png, id=704, 405.01312pt x 201.00093pt>
+File: img/percepton.png Graphic file (type png)
+<use img/percepton.png>
+Package pdftex.def Info: img/percepton.png  used on input line 106.
+(pdftex.def)             Requested size: 438.17247pt x 217.46114pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[26 <./img/neuron.png>]
+<img/mlp.png, id=715, 288.07625pt x 291.0875pt>
+File: img/mlp.png Graphic file (type png)
+<use img/mlp.png>
+Package pdftex.def Info: img/mlp.png  used on input line 114.
+(pdftex.def)             Requested size: 262.90614pt x 265.66287pt.
+
+Underfull \vbox (badness 2762) has occurred while \output is active []
+
+
+
+[27 <./img/percepton.png> <./img/mlp.png>]
+<img/CNN-Model-Architecture.png, id=727, 1296.845pt x 325.215pt>
+File: img/CNN-Model-Architecture.png Graphic file (type png)
+<use img/CNN-Model-Architecture.png>
+Package pdftex.def Info: img/CNN-Model-Architecture.png  used on input line 128
+.
+(pdftex.def)             Requested size: 438.17247pt x 109.88187pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--131
+
  []
 
 
 
-[26]
+[28 <./img/CNN-Model-Architecture.png>]
 
-LaTeX Warning: Citation 'grandini2020metrics' on page 27 undefined on input lin
-e 149.
+[29]
+<img/nfa-.jpg, id=746, 239.89626pt x 280.04625pt>
+File: img/nfa-.jpg Graphic file (type jpg)
+<use img/nfa-.jpg>
+Package pdftex.def Info: img/nfa-.jpg  used on input line 154.
+(pdftex.def)             Requested size: 219.08623pt x 255.75693pt.
+<img/nfa1.jpg, id=749, 630.355pt x 280.04625pt>
+File: img/nfa1.jpg Graphic file (type jpg)
+<use img/nfa1.jpg>
+Package pdftex.def Info: img/nfa1.jpg  used on input line 161.
+(pdftex.def)             Requested size: 394.35254pt x 175.19939pt.
 
-<img/macierz_pomylek.png, id=546, 319.1925pt x 158.39175pt>
+
+[30 <./img/nfa-.jpg (PNG copy)>]
+<img/macierz_pomylek.png, id=758, 319.1925pt x 158.39175pt>
 File: img/macierz_pomylek.png Graphic file (type png)
 <use img/macierz_pomylek.png>
-Package pdftex.def Info: img/macierz_pomylek.png  used on input line 152.
-(pdftex.def)             Requested size: 262.90614pt x 130.46211pt.
-
-LaTeX Warning: Citation 'grandini2020metrics' on page 27 undefined on input lin
-e 158.
+Package pdftex.def Info: img/macierz_pomylek.png  used on input line 177.
+(pdftex.def)             Requested size: 438.17247pt x 217.43524pt.
 
 
-Overfull \hbox (56.64691pt too wide) in paragraph at lines 158--159
-\T1/futs/m/n/12 (-20) klas(TP i TN) przez sum¦ wszyst-kich do-ko-na-nych kla-sy
--fi-ka-cji (TP +TN+ FN+ FP).[] 
+[31 <./img/nfa1.jpg (PNG copy)>]
+
+[32 <./img/macierz_pomylek.png>]
+
+[33]) (tex/3-modele.tex
+<img/depthcon.png, id=782, 354.57469pt x 210.7875pt>
+File: img/depthcon.png Graphic file (type png)
+<use img/depthcon.png>
+Package pdftex.def Info: img/depthcon.png  used on input line 14.
+(pdftex.def)             Requested size: 394.35254pt x 234.44005pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[34
+
+]
+<img/vit.png, id=790, 388.45125pt x 206.57175pt>
+File: img/vit.png Graphic file (type png)
+<use img/vit.png>
+Package pdftex.def Info: img/vit.png  used on input line 28.
+(pdftex.def)             Requested size: 438.17247pt x 233.01988pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[35 <./img/depthcon.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[36 <./img/vit.png>]
+<img/res_net.png, id=810, 275.22826pt x 142.73325pt>
+File: img/res_net.png Graphic file (type png)
+<use img/res_net.png>
+Package pdftex.def Info: img/res_net.png  used on input line 61.
+(pdftex.def)             Requested size: 350.5393pt x 181.79407pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[37]
+<img/efficientnet.png, id=818, 1156.32pt x 578.16pt>
+File: img/efficientnet.png Graphic file (type png)
+<use img/efficientnet.png>
+Package pdftex.def Info: img/efficientnet.png  used on input line 70.
+(pdftex.def)             Requested size: 438.17247pt x 219.08554pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[38 <./img/res_net.png>]
+
+LaTeX Warning: Command \l invalid in math mode on input line 75.
+
+
+LaTeX Warning: Command \k invalid in math mode on input line 75.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 75.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 75.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 76.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 76.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 77.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 77.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[39 <./img/efficientnet.png>]
+<img/densenet.png, id=835, 555.57562pt x 79.79813pt>
+File: img/densenet.png Graphic file (type png)
+<use img/densenet.png>
+Package pdftex.def Info: img/densenet.png  used on input line 96.
+(pdftex.def)             Requested size: 438.17247pt x 62.93631pt.
+
+
+[40 <./img/densenet.png>]) (tex/zbior-danych.tex
+File: img/lisc-1.png Graphic file (type png)
+<use img/lisc-1.png>
+Package pdftex.def Info: img/lisc-1.png  used on input line 9.
+(pdftex.def)             Requested size: 131.45306pt x 130.9917pt.
+File: img/lisc-2.png Graphic file (type png)
+<use img/lisc-2.png>
+Package pdftex.def Info: img/lisc-2.png  used on input line 10.
+(pdftex.def)             Requested size: 131.45306pt x 131.45142pt.
+File: img/lisc-3.png Graphic file (type png)
+<use img/lisc-3.png>
+Package pdftex.def Info: img/lisc-3.png  used on input line 11.
+(pdftex.def)             Requested size: 131.45306pt x 130.99323pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[41
+
+]
+
+[42]) (tex/miary.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[43
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[44]
+<img/lisc-1-prz.JPG, id=869, 256.96pt x 256.96pt>
+File: img/lisc-1-prz.JPG Graphic file (type jpg)
+<use img/lisc-1-prz.JPG>
+Package pdftex.def Info: img/lisc-1-prz.JPG  used on input line 97.
+(pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
+<img/lisc-2-prz.JPG, id=870, 256.96pt x 256.96pt>
+File: img/lisc-2-prz.JPG Graphic file (type jpg)
+<use img/lisc-2-prz.JPG>
+Package pdftex.def Info: img/lisc-2-prz.JPG  used on input line 98.
+(pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
+<img/lisc-3-prz.JPG, id=871, 256.96pt x 256.96pt>
+File: img/lisc-3-prz.JPG Graphic file (type jpg)
+<use img/lisc-3-prz.JPG>
+Package pdftex.def Info: img/lisc-3-prz.JPG  used on input line 99.
+(pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
+
+Underfull \vbox (badness 1609) has occurred while \output is active []
+
+
+
+[45 <./img/lisc-1-prz.JPG> <./img/lisc-2-prz.JPG> <./img/lisc-3-prz.JPG>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[46]
+<img/wykres-augmentacji.png, id=884, 722.7pt x 722.7pt>
+File: img/wykres-augmentacji.png Graphic file (type png)
+<use img/wykres-augmentacji.png>
+Package pdftex.def Info: img/wykres-augmentacji.png  used on input line 136.
+(pdftex.def)             Requested size: 438.17247pt x 438.1777pt.
+
+
+[47 <./img/wykres-augmentacji.png>]
+
+[48]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[49]
+
+[50]
+
+[51]) (tex/wyniki.tex
+Overfull \hbox (29.99104pt too wide) in paragraph at lines 8--22
+ [][] 
  []
 
 
-LaTeX Warning: Citation 'grandini2020metrics' on page 27 undefined on input lin
-e 165.
+
+[52
+
+]
+
+[53]
+
+[54
+
+]
+
+[55]
+
+[56]
+
+[57]) (tex/aplikacja.tex
+<img/aplikacja-1.png, id=942, 1084.05pt x 2409.0pt>
+File: img/aplikacja-1.png Graphic file (type png)
+<use img/aplikacja-1.png>
+Package pdftex.def Info: img/aplikacja-1.png  used on input line 17.
+(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
+<img/aplikacja-2.png, id=943, 1084.05pt x 2409.0pt>
+File: img/aplikacja-2.png Graphic file (type png)
+<use img/aplikacja-2.png>
+Package pdftex.def Info: img/aplikacja-2.png  used on input line 19.
+(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[27 <./img/macierz_pomylek.png>]
+[58
 
-LaTeX Warning: Citation 'grandini2020metrics' on page 28 undefined on input lin
-e 172.
+]) (tex/podsumowanie.tex
 
-
-LaTeX Warning: Citation 'grandini2020metrics' on page 28 undefined on input lin
-e 179.
+[59 <./img/aplikacja-1.png> <./img/aplikacja-2.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-LaTeX Warning: Citation 'grandini2020metrics' on page 28 undefined on input lin
-e 183.
 
-) (tex/wyniki.tex
+[60])
 
-[28]
-Overfull \hbox (6.8272pt too wide) in paragraph at lines 6--20
-[][] 
+[61]
+
+[62
+
+
+]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+[63]
+Overfull \hbox (16.65492pt too wide) in paragraph at lines 120--120
+\T1/cmtt/m/n/12 lectures / miw / MIW -[] SztuczneSieciNeuronoweMLP . pdf$[][]\T
+1/futs/m/n/12 (-20) , Do-st¦p zdalny (2026-05-19),
  []
 
 
-Overfull \hbox (53.56306pt too wide) in paragraph at lines 24--36
-[][] 
+Overfull \hbox (30.68358pt too wide) in paragraph at lines 120--120
+[]\T1/futs/m/n/12 (-20) K. Kacz-mar-ski. ^^R  MiNI Wy-kªady^^Q. adr.: [][]$\T1/
+cmtt/m/n/12 https : / / pages . mini . pw . edu . pl / ~kaczmarskik /
  []
 
 
-Underfull \vbox (badness 1337) has occurred while \output is active []
+Overfull \hbox (8.68517pt too wide) in paragraph at lines 120--120
+\T1/futs/m/n/12 (-20) (2026-05-19). adr.: [][]$\T1/cmtt/m/n/12 https : / / www 
+. ksolves . com / blog / artificial -[] intelligence /
+ []
 
 
 
-[29])
+[64]
+Overfull \hbox (11.5308pt too wide) in paragraph at lines 120--120
+\T1/cmtt/m/n/12 / / docs . nvidia . com / deeplearning / performance / mixed -[
+] precision -[] training /
+ []
 
-[30]
 
-LaTeX Warning: Empty bibliography on input line 95.
 
-(main.lof)
+[65] (main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- (main.lot)
+ (main.lot
+Underfull \vbox (badness 1189) has occurred while \output is active []
+
+
+
+[66])
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
@@ -1640,48 +1903,40 @@ LaTeX Warning: Empty bibliography on input line 95.
 
 
 
-[31
-
-
-] (main.aux)
+[67] (main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D92A135A19144D559FA2E472A60C0595;11361.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 9FA2C9589DF74C2CDFC818E254766874;15320.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28692 strings out of 473682
- 498692 string characters out of 5719215
- 1733801 words of memory out of 5000000
- 50915 multiletter control sequences out of 15000+600000
- 661787 words of font info for 318 fonts, out of 8000000 for 9000
+ 29394 strings out of 473682
+ 518932 string characters out of 5719215
+ 1667428 words of memory out of 5000000
+ 51391 multiletter control sequences out of 15000+600000
+ 678764 words of font info for 402 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,15n,121p,1993b,2601s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/kubac/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/four
-ier-ms.pfb><C:/Users/kubac/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utop
-ia/putb8a.pfb><C:/Users/kubac/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/u
-topia/putr8a.pfb><C:/Users/kubac/AppData/Local/Programs/MiKTeX/fonts/type1/adob
-e/utopia/putri8a.pfb>
-Output written on main.pdf (31 pages, 7986459 bytes).
+ 123i,15n,121p,2061b,2692s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kubac\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
+1200.pk><C:/Users/kubac/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourie
+r/fourier-mex.pfb><C:/Users/kubac/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/fourier/fourier-mlit.pfb><C:/Users/kubac/AppData/Local/Programs/MiKTeX/font
+s/type1/public/fourier/fourier-ms.pfb><C:/Users/kubac/AppData/Local/Programs/Mi
+KTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/kubac/AppData/Local/Programs
+/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/kubac/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (67 pages, 11291683 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 128 named destinations out of 1000 (max. 500000)
- 66168 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1245 PDF objects out of 1440 (max. 8388607)
+ 230 named destinations out of 1000 (max. 500000)
+ 77198 words of extra memory for PDF output out of 89155 (max. 10000000)
 

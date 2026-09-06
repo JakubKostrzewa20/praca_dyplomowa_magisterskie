@@ -1,27 +1,105 @@
 \newpage % Rozdziały zaczynamy od nowej strony.
 \section{Modele}
-W poniższym rozdziale przedstawiono rodziny modeli głębokiego uczenia, które zostały wykorzystane w pracy dyplomowej w ramach badania ich możliwości na wybranym wcześniej zbiorze danych zawierającym rośliny uprawe i choroby. Trzy z tych rodzin modeli reprezentują klasyczne podejście w postaci architektury CNN – ResNet, MobileNet oraz EfficientNet oraz jedena rodzina modeli bedący podstawową implementacją transformera wizyjnego – ViT. Wybór został podyktowany próbą rozwinięcia wcześniej dokonanych badań przedstawionych w przeglądzie literatury. Wybór szeroko używanych modeli CNN oraz nowego, mniej popularnego modelu architektury ViT pozwoli na porównanie nie tylko wydajności samych modeli, ale może dostarczyć ciekawych wniosków dotyczących typów architektur oraz ich skuteczności. Każdy z poniższych podrozdziałów przedstawia jedną z rodzin oraz krótko opisuję zasadę ich działania, która odróżnia go od innych.   
+\label{roz:modele}
+W poniższym rozdziale przedstawiono rodziny modeli głębokiego uczenia wykorzystane w pracy w ramach badania ich możliwości na wybranym wcześniej zbiorze danych zawierającym rośliny uprawne i choroby. Cztery z tych rodzin modeli reprezentują klasyczne podejście w postaci architektury CNN – ResNet, MobileNet, EfficientNet i DenseNet oraz jedna rodzina modeli będący implementacją transformera wizyjnego – ViT.  Wybór modeli podyktowany był próbą rozszerzenia badań wcześniej przedstawionych w przeglądzie literatury poprzez uwzględnienie modeli, które nie były analizowane, bądź bezpośrednio ze sobą porównywane. Uwzględnienie zarówno szeroko stosowanych modeli CNN, jak i nowszej architektury ViT pozwala na porównanie podejść rozwijanych w różnych okresach rozwoju głębokiego uczenia. Każdy z poniższych podrozdziałów przedstawia jedną z rodzin oraz przedstawia zasadę działania danej rodziny modeli oraz jej charakterystyczne cechy.   
 \subsection{MobileNet}
-MobileNet to rodzina modeli konwolucyjnych sieci neuronowych(CNN). Stworzona przez firmę Google,  zaprojektowana została z myślą o wykonywaniu zadań z dziedziny wizji komputerowej - klasyfikacja obrazów, detekcja obiektów itp. Są to małe modele o niskiej liczbie parametrów i małych opóźnieniach, zaprojektowane z myślą o ograniczeniach zasobów obliczeniowych, spotykanych w wielu sprzętach elektronicznych, głównie telefonach mobilnych. Charakterystyczną cechą tego modelu jest zastosowanie splotów separowanych głębinowo. Jest to połączenie splotu głębinowego, który polega na wykonywaniu splotu niezależnie dla każdego kanału mapy cech, co oznacza, że każdy kanał posiada swoje własne jądro, oraz splotu punktowego, który służy do łączenia cech i zmiany wymiaru.\cite{howard2017mobilenets}
-\subsection{ViT}
-ViT to rodzina modeli stworzonych przez Google, ale też architektura sieci neuronowej, inna od CNN, nazywana transformerem wizyjnym. Modele stworzone od Google, są podstawową implementacją tej architektury, gdzie każdy  model z rodziny ma z góry narzucone inne parametry.\cite{dosovitskiy2020image}
+MobileNet to rodzina lekkich modeli konwolucyjnych sieci neuronowych (CNN). Została ona opracowana przez firmę Google, zaprojektowana z myślą  o wykonywaniu zadań z dziedziny wizji komputerowej - klasyfikacja obrazów, czy detekcja obiektów. Są to małe modele o niskiej liczbie parametrów i małych opóźnieniach, zaprojektowane z myślą \newline o ograniczeniach zasobów obliczeniowych, występujących w wielu urządzeniach elektronicznych, głównie telefonach mobilnych.
+
+Charakterystyczną cechą tej rodziny modeli jest zastosowanie splotów separowanych głębinowo ( z ang. depthwise separable convolutions), które znacząco zmniejszają koszt obliczeniowy w porównaniu ze standardowymi warstwami konwolucyjnymi. Technika ta polega  na rozdzieleniu standardowej konwolucji na konwolucję głębokościową (z ang. depthwise convolution) oraz konwolucję 1 x 1, nazywaną konwolucją punktową (z ang. pointwise convolution). 
+ 
+ Konwolucja głębokościowa wykorzystuje pojedynczy filtr dla każdego kanału wejściowego. Następnie konwolucja punktowa stosuje konwolucję 1 x 1, aby połączyć wyniki uzyskane w ramach  konwolucji głębokościowej. 
+ 
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.9\textwidth]{img/depthcon.png}
+ 	\caption{Przedstawienie działania konwolucji głębokościowej.\cite{depthwise}}
+ 	\label{fig:gleb_rys}
+ \end{figure}
+ 
+ 
+ Różnica między standardowa konwolucją a techniką zastosowaną w tej rodzinie modeli jest znacząca. 
+ Standardowa konwolucja jednocześnie wykonuje filtrowanie oraz łączenie informacji w nowe dane wyjściowe w ramach jednego kroku, natomiast zastosowanie splotów separowanych głębinowo rozdziela to na dwie warstwy, jedna odpowiadająca za filtrowanie oraz drugą, oddzielną, odpowiadającą za łączenie. Pozwala to na znaczne zmniejszenie liczby obliczeń oraz wielkości modelu, przy jednoczesnym zachowaniu zdolności sieci do ekstrakcji istotnych cech obrazu. \cite{howard2017mobilenets}
+\subsection{Vision transformer - ViT}
+Vision Transformer (ViT, z ang. transformer wizyjny) to architektura sieci neuronowej przeznaczona do analizy obrazów. Działa ona odmienienie od modeli konwolucyjnych sieci neuronowych. Architektura ta opiera się na transformerze oraz mechanizmie samo-uwagi ( z ang. self-attention), pozwalający modelowi analizować zależności między różnymi fragmentami obrazu. Umożliwia to modelowanie zarówno lokalnych, jak \newline i globalnych zależności między elementami obrazu.
+
+ViT traktuje obraz jako sekwencję fragmentów (z ang. patch). Dzięki temu możliwe jest wykorzystanie mechanizmu samo-uwagi do modelowania zależności między różnymi fragmentami znajdującymi się w dużej i małej odległości od siebie. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{img/vit.png}
+\caption{Przedstawienie budowy oraz działania ViT.\cite{dosovitskiy2020image}}
+\label{fig:vit_rys}
+\end{figure}
+	
+Standardowy transformer otrzymuje dane wejściowe w postaci jednowymiarowej sekwencji tokenów. Aby model mógł korzystać z obrazów dwumiarowych jako danych wejściowych, obraz
+ jest przekształcany w sekwencje spłaszczonych, dwuwymiarowych fragmentów obrazu $ $, gdzie $(H, W)$ oznacza rozdzielczość obrazu wejściowego, $C$ liczbę jego kanałów, a $(P ,P)$ określa rozmiar pojedyńczego fragmentu. Zmienna $P$ jest narzucona z góry, określona w nazwie modelu. Zatem liczba uzyskanych fragmentów,a jednocześnie długość sekwencji wejściowej dla transformera, wynosi: 
+
+$$ N= \frac{HW}{P^2}$$ 
+
+Transformer wykorzystuje stały wymiar wektorów reprezentacji w swoich warstwach, zatem poszczególne fragmenty obrazu są spłaszczane, a następnie przekształcane do jednowymiarowej przestrzeni. Wynik tej projekcji stanowi reprezentację fragmentu obrazu(z ang. patch embedding)
+
+Na początku sekwencji reprezentacji fragmentów obrazu umieszczany jest nauczalny wektor reprezentacji(z ang. learnable embedding). Wektor ten służy do reprezentowania informacji zawartych w całej sekwencji.
+
+Do reprezentacji fragmentów obrazu, dodawane są kodowania pozycyjne(z ang. position embeddings). Przechowują one informacje o położeniu konkretnych fragmentów.
+
+Tak stworzony wektor jest używany jako dana wejściowa do enkodera. Dzięki takiej konstrukcji, model ten jest wstanie tworzyć globalne powiązania między fragmentami obrazu.\cite{dosovitskiy2020image}
+
 \subsection{ResNet}
-ResNet to rodzina modeli konwolucyjnych sieci neuronowych (CNN), stworzona przez firmę Microsoft,  implementujących koncept nauczania rezydualnego. Rozwiązuje to problem zanikającego/eksplodującego gradientu i umożliwia trenowanie bardzo głębokich sieci neuronowych. W sieci tej użyta jest technika zwana połączeniem skrótowym. Połączenie to łączy aktywacje warstwy do kolejnych warstw, pomijając część warstw. Tworzy to strukturę nazwaną blokiem rezydualnym. Pozwala to sieci na naukę różnicy między wyjściem a wejściem bloku, zamiast dokonywać aproksymacji docelowej funkcji. \cite{he2016deep}
-\begin{figure}[h]
+ResNet to rodzina modeli konwolucyjnych sieci neuronowych (CNN), stworzona przez firmę Microsoft w 2015 roku. Głównym celem opracowania tej architektury było rozwiązanie problemów pojawiających się podczas trenowania bardzo głębokich sieci neuronowych. Wraz ze zwiększaniem liczby warstw sieci, model powinien w teorii być zdalny do uczenia się coraz bardziej złożonych reprezentacji danych. W praktyce jednak dalsze zwiększanie głębokości modelu prowadzić może do pogorszenia jego wyników. ResNet rozwiązuje ten problem poprzez implementację połączeń rezydualnych(z ang. residual connection).
+
+W klasycznej sieci konwolucyjnej każda warstwa otrzymuje dane wyjściowe z warstwy poprzedzającej i przekształca je w kolejna reprezentacje cech. W przypadku bardzo głębokich sieci neuronowych może to utrudniać proces treningu.  Podczas propagacji wstecznej wartości gradientu przekazywane do wcześniejszych warstw sieci stają się coraz  mniejsze, co w konsekwencji powoduje, że parametry tych warstw są aktualizowane w niewielkim stopniu. Nazywane jest to problemem zanikającego gradientu( z ang. vanishing gradient). 
+
+Architektura ResNet rozwiązuje ten problem poprzez wprowadzenie bezpośrednich połączeń, nazywanych połączeniami skrótowymi( z ang. shortcut connections, lub skip connections). Zamiast wymagać od kolejnych warstw nauczenia się bezpośrednio funkcji odwzorowania, warstwy uczą się funkcji rezydualnej, tak aby:
+$$ F(x) = H(x) - x $$
+gdzie $x$ oznacza dane wejściowe, $F(x) $transformację dokonywaną przez warstwy konwolucyjne, a $H(x)$ oczekiwana funkcją odwzorowania. Całość jest wykonywana w ramach jednego bloku rezydualnego. W związku z tym funkcje odwzorowania można zapisać jako:
+$$ H(x) = F(x) + x $$
+ Ostatecznie zatem wyjście z takiego bloku powstaje poprzez dodanie danych wejściowych do transformacji dokonywanej w ramach bloku rezydualnego. 
+
+ 
+ Rozwiązanie to pozwala sieci na naukę różnicy między oczekiwanym wyjściem \newline a wejściem bloku, zamiast dokonywać aproksymacji docelowej. \cite{he2016deep}
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{img/res_net.png}
+	\includegraphics[width=0.8\textwidth]{img/res_net.png}
 	\caption{	Przedstawienie budowy oraz działania bloku rezydualnego.\cite{he2016deep}}
 	\label{fig:res_net_rys}
 \end{figure}
 
-\subsection{EfficentNet}
-EfficientNet to rodzina modeli konwolucyjnych sieci neuronowych(CNN) stworzonych przez Google. Naukowcy stojący za stworzeniem tego modelu, zauważyli, że różne wymiary skalowania nie są od siebie niezależne. Dla przykładu, dla obrazów o wyższej rozdzielczości, zwiększenie głębokości sieci pomaga polom recepcyjnym w uchwyceniu podobnych cech. Analogicznie, powinno się również zwiększyć szerokość sieci, aby umożliwić znajdywanie bardziej złożonych wzorców w obrazach o większej rozdzielczości. Doprowadziło to autorów do opracowania skalowania złożonego, czyli jednorodnego skalowania szerokości, głębokości oraz rozdzielczości sieci. Pozwoliło to na uzyskanie modelu, który osiąga wyniki lepsze niż inne modele dostępne na rynku w trakcie pierwotnego badania.\cite{tan2019efficientnet} 
-\begin{figure}[h]
+\subsection{EfficientNet}
+EfficientNet to rodzina modeli konwolucyjnych sieci neuronowych(CNN) stworzonych przez Google. Architektura została opracowana z myślą o uzyskaniu kompromisu między dokładnością modelu a jego kosztem obliczeniowym. W innych sieciach głębokich głębokość, szerokość oraz rozdzielczość były skalowane niezależnie od siebie. Naukowcy stojący za tą architekturą zauważyli, że zwiększenie rozmiaru sieci może mieć pozytywny efekt na dokładność uzyskiwanej klasyfikacji, jednak sposób skalowania modelu ma istotny wpływ na uzyskiwane rezultaty. Dla przykładu, dla obrazów o wyższej rozdzielczości, zwiększenie głębokości sieci pomaga polom recepcyjnym w uchwyceniu podobnych cech. Analogicznie, = zwiększenie szerokość sieci może umożliwić znajdywanie bardziej złożonych wzorców w obrazach o większej rozdzielczości. W ramach architektury EfficientNet zaproponowano metodę skalowania złożonego (z ang. compound scaling).
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{img/efficientnet.png}
-	\caption{Przykładowa macierz pomyłek dla trzech klas, z wynikami otzymywanymi dla klasy ‘B’.}
-	\label{fig:macierz_konfliktu}
+	\includegraphics[width=1\textwidth]{img/efficientnet.png}
+	\caption{Skalowanie modelu (a) to bazowy przykład modeli; (b)-(d) są modelami,w których zwiększono tylko jeden wymiar; (e) to model w ramach, którego zastosowano skalowanie złożone.\cite{tan2019efficientnet} }
+	\label{fig:efficient_net_scaling}
 \end{figure}
-\subsection{DenseNet}
-DenseNet to rodzina modeli konwolucyjnych sieci neuronowych (CNN), stworzona przez naukowców z Uniwersytetu Kaliforniejskiego w Merced. Podobnie jak w modelach ResNet, zaimplementowano tutaj formę połączeń skórtowych między warstwami, jednak w różnej formię. Celem twórcóW było zaprojektowanie architektury, któa sprosta występującemu problemówi w czasach tworzenia - zanikającego gradientu. Twórcy tym samym dążyli do redukcji czasu klasyfikacji, aby model mógł być wprowadzony do użytku w ramach analizy wideo w czasie rzeczywistym. W DenseNet, każda warstwa otrzymuję wszystkie wyniki z poprzedzających ją warstw w postaci tensora. Dzięki temu model na każdej warstwie ma dostęp do całości danych, od surowych wejściowych, po te przetworzone przez kolejmne warstwy, a nie jak w normalnej sieci konwolucyjnej, czyli tylko wynik z poprzedzającej warstwy. Pozwala to na dodawanie nowych cech, bez tracenia wcześniej wyuczonych informacji.
+Skalowanie złożone wykorzystuje współczynnik złożony -- do jednolitego i systematycznego skalowania szerokości, głębokości oraz rozdzielczości sieci:
+$$ głębokość:  d = \alpha^{\phi}  $$
+ $$ szerokość: w = \beta^{\phi} $$
+ $$ rozdzielczość: r = \gamma^{\phi} $$
+ przy warunkach:
+ $$ \alpha \cdot \beta^2 \cdot \gamma^2 \approx 2 $$
+ $$\alpha \geq 1 $$
+ $$\beta \geq 1 $$
+ $$\gamma \geq 1 $$
+ gdzie, $\alpha $, $\beta $, i $\gamma $ są stałymi wyznaczonymi przez autorów eksperymentalnie w ramach przeszukiwania siatki. $\phi $ jest określoną przez użytkownika współczynnikiem, który kontroluje ile zasobów obliczeniowych jest przeznaczonych na skalowanie modelu, a  $\alpha $, $\beta $, i $\gamma $ określają jak te dodatkowe zasoby są rozdzielane między głębokość, szerokość i rozdzielczość. 
 
+ Zastosowanie tej techniki pozwoliło na uzyskanie modelu, który osiąga wyniki lepsze niż inne modele dostępne na rynku w trakcie pierwotnego badania, przy mniejszej ilości parametrów oraz wymagań dotyczących zasobów obliczeniowych.\cite{tan2019efficientnet} 
+
+\subsection{DenseNet}
+DenseNet to rodzina modeli konwolucyjnych sieci neuronowych (CNN), opracowana przez naukowców z Uniwersytetu Kaliforniejskiego w Merced. Podobnie jak w modelach ResNet, zaimplementowano w niej formę połączeń skrótowych między warstwami, jednak w innej formie. Celem twórców było zaprojektowanie architektury, która sprosta występującemu problemowi zanikającego gradientu, który stanowił istotne wyzwanie w podczas trenowania głębokich sieci neuronowych. Twórcy tym samym dążyli do redukcji czasu klasyfikacji, aby umożliwić zastosowanie modelu do analizy wideo w czasie rzeczywistym. 
+
+W klasycznej sieci konwolucyjnej każda warstwa otrzymuje dane wyjściowe z poprzedzającej ją warstwy i przekształca ją we własną reprezentacje cech. W przypadku bardzo głębokich sieci neuronowych, pojawia się problem zanikającego gradientu. Przez to, klasyczne sieci konwolucyjne nie mogą być zbyt głębokie, co może prowadzić do problemów z efektywnym uczeniem parametrów modelu. 
+
+Architektura DenseNet rozwiązuje ten problem w podobny sposób jak model ResNet. Wprowadza ona ideę gęstych połączeń. W DenseNet, każda warstwa znajdująca się \newline w ramach jednego bloku nazwanego blokiem złożonym,  otrzymuję wszystkie wyniki \newline z poprzedzających ją warstw w postaci tensora. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{img/densenet.png}
+	\caption{Struktura modelu DenseNet. \cite{huang2018denselyconnectedconvolutionalnetworks}}
+	\label{fig:densenet}
+\end{figure}
+
+Załóżmy, że $x_{0}$ to dana wejściowa do bloku złożonego, $x_{1},x_{2}...x_{l-1}$ to dane wyjściowe \newline z kolejnych warstw bloku, a $H_{l}$ to oczekiwana funkcją odwzorowania. 
+
+$$x_l=H_l([x_0,x_1,\ldots,x_{l-1}])$$
+gdzie, $[x_0,x_1,\ldots,x_{l-1}]$ oznacza powiązanie (z ang. concatenation) wyników poprzedzających warstw. Dzięki temu model na każdej warstwie ma dostęp do całości danych, od danych wejściowych, po reprezentacje przetworzone przez kolejne warstwy. Pozwala to na dodawanie nowych cech, bez tracenia wcześniej wyuczonych informacji.\cite{huang2018denselyconnectedconvolutionalnetworks}
+\clearpage

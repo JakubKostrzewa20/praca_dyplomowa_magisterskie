@@ -1,2 +1,8 @@
 \babel@toc {polish}{}\relax 
-\contentsline {table}{\numberline {5.1}{\ignorespaces Statystyki liczby zdjęć w zbiorze danych}}{21}{table.caption.10}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Statystyki liczby zdjęć w zbiorze danych}}{42}{table.caption.25}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Lista modeli wykorzystanych w badaniu}}{44}{table.caption.26}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Lista zbiorów oraz liczba zdjęć }}{45}{table.caption.27}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Operacje i parametry stosowane podczas przygotowania danych treningowych}}{48}{table.caption.30}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Statystyki modeli dla tego samego zbioru danych}}{52}{table.caption.31}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Wyniki klasyfikacji dla zbiorów treningowych o różnej wielkości}}{52}{table.caption.32}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces Wyniki klasyfikacji dla różnego procenta zaszumienia zbioru treningowego}}{53}{table.caption.33}%
