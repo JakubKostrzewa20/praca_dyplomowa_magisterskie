@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.17)  6 SEP 2026 01:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.17)  6 SEP 2026 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1386,17 +1386,17 @@ Overfull \hbox (4.41592pt too wide) detected at line 84
 <img/plantdoc-1.jpg, id=559, 642.4pt x 481.8pt>
 File: img/plantdoc-1.jpg Graphic file (type jpg)
 <use img/plantdoc-1.jpg>
-Package pdftex.def Info: img/plantdoc-1.jpg  used on input line 13.
+Package pdftex.def Info: img/plantdoc-1.jpg  used on input line 14.
 (pdftex.def)             Requested size: 131.45306pt x 98.58585pt.
 <img/plantdoc-2.jpg, id=560, 2249.40375pt x 3998.94pt>
 File: img/plantdoc-2.jpg Graphic file (type jpg)
 <use img/plantdoc-2.jpg>
-Package pdftex.def Info: img/plantdoc-2.jpg  used on input line 14.
+Package pdftex.def Info: img/plantdoc-2.jpg  used on input line 15.
 (pdftex.def)             Requested size: 87.63315pt x 155.78108pt.
 <img/plantdoc-3.jpg, id=561, 154.176pt x 104.5506pt>
 File: img/plantdoc-3.jpg Graphic file (type jpg)
 <use img/plantdoc-3.jpg>
-Package pdftex.def Info: img/plantdoc-3.jpg  used on input line 15.
+Package pdftex.def Info: img/plantdoc-3.jpg  used on input line 16.
 (pdftex.def)             Requested size: 131.45306pt x 89.1428pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1407,32 +1407,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <img/lisc-1.png, id=571, 136.8312pt x 136.3494pt>
 File: img/lisc-1.png Graphic file (type png)
 <use img/lisc-1.png>
-Package pdftex.def Info: img/lisc-1.png  used on input line 24.
+Package pdftex.def Info: img/lisc-1.png  used on input line 25.
 (pdftex.def)             Requested size: 131.45306pt x 130.9917pt.
 <img/lisc-2.png, id=573, 140.2038pt x 140.2038pt>
 File: img/lisc-2.png Graphic file (type png)
 <use img/lisc-2.png>
-Package pdftex.def Info: img/lisc-2.png  used on input line 25.
+Package pdftex.def Info: img/lisc-2.png  used on input line 26.
 (pdftex.def)             Requested size: 131.45306pt x 131.45142pt.
 <img/lisc-3.png, id=574, 136.3494pt x 135.8676pt>
 File: img/lisc-3.png Graphic file (type png)
 <use img/lisc-3.png>
-Package pdftex.def Info: img/lisc-3.png  used on input line 26.
+Package pdftex.def Info: img/lisc-3.png  used on input line 27.
 (pdftex.def)             Requested size: 131.45306pt x 130.99323pt.
 <img/AppleScab2.jpg, id=578, 256.96pt x 256.96pt>
 File: img/AppleScab2.jpg Graphic file (type jpg)
 <use img/AppleScab2.jpg>
-Package pdftex.def Info: img/AppleScab2.jpg  used on input line 34.
+Package pdftex.def Info: img/AppleScab2.jpg  used on input line 35.
 (pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
 <img/PotatoHealthy2.jpg, id=579, 256.96pt x 256.96pt>
 File: img/PotatoHealthy2.jpg Graphic file (type jpg)
 <use img/PotatoHealthy2.jpg>
-Package pdftex.def Info: img/PotatoHealthy2.jpg  used on input line 35.
+Package pdftex.def Info: img/PotatoHealthy2.jpg  used on input line 36.
 (pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
 <img/TomatoEarlyBlight4.jpg, id=580, 256.96pt x 256.96pt>
 File: img/TomatoEarlyBlight4.jpg Graphic file (type jpg)
 <use img/TomatoEarlyBlight4.jpg>
-Package pdftex.def Info: img/TomatoEarlyBlight4.jpg  used on input line 36.
+Package pdftex.def Info: img/TomatoEarlyBlight4.jpg  used on input line 37.
 (pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1444,12 +1444,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <img/planta.jpg, id=595, 1084.05pt x 2409.0pt>
 File: img/planta.jpg Graphic file (type jpg)
 <use img/planta.jpg>
-Package pdftex.def Info: img/planta.jpg  used on input line 46.
+Package pdftex.def Info: img/planta.jpg  used on input line 47.
 (pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
 <img/planta2.jpg, id=596, 1084.05pt x 2409.0pt>
 File: img/planta2.jpg Graphic file (type jpg)
 <use img/planta2.jpg>
-Package pdftex.def Info: img/planta2.jpg  used on input line 48.
+Package pdftex.def Info: img/planta2.jpg  used on input line 49.
 (pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1458,15 +1458,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [16 <./img/AppleScab2.jpg> <./img/PotatoHealthy2.jpg> <./img/TomatoEarlyBlight4
 .jpg>]
-<img/agrio1.jpg, id=604, 1084.05pt x 2409.0pt>
+<img/agrio1.jpg, id=606, 1084.05pt x 2409.0pt>
 File: img/agrio1.jpg Graphic file (type jpg)
 <use img/agrio1.jpg>
-Package pdftex.def Info: img/agrio1.jpg  used on input line 56.
+Package pdftex.def Info: img/agrio1.jpg  used on input line 57.
 (pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
-<img/agrio2.jpg, id=605, 1084.05pt x 2409.0pt>
+<img/agrio2.jpg, id=607, 1084.05pt x 2409.0pt>
 File: img/agrio2.jpg Graphic file (type jpg)
 <use img/agrio2.jpg>
-Package pdftex.def Info: img/agrio2.jpg  used on input line 58.
+Package pdftex.def Info: img/agrio2.jpg  used on input line 59.
 (pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1474,54 +1474,51 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [17 <./img/planta.jpg> <./img/planta2.jpg>]
-<img/plantnet1.jpg, id=613, 1084.05pt x 2409.0pt>
+<img/plantnet1.jpg, id=617, 1084.05pt x 2409.0pt>
 File: img/plantnet1.jpg Graphic file (type jpg)
 <use img/plantnet1.jpg>
-Package pdftex.def Info: img/plantnet1.jpg  used on input line 66.
-(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
-<img/plantnet2.jpg, id=614, 1084.05pt x 2409.0pt>
+Package pdftex.def Info: img/plantnet1.jpg  used on input line 67.
+(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
+<img/plantnet2.jpg, id=618, 1084.05pt x 2409.0pt>
 File: img/plantnet2.jpg Graphic file (type jpg)
 <use img/plantnet2.jpg>
-Package pdftex.def Info: img/plantnet2.jpg  used on input line 68.
-(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
-<img/plantnet3.jpg, id=615, 1084.05pt x 2409.0pt>
+Package pdftex.def Info: img/plantnet2.jpg  used on input line 69.
+(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
+<img/plantnet3.jpg, id=619, 1084.05pt x 2409.0pt>
 File: img/plantnet3.jpg Graphic file (type jpg)
 <use img/plantnet3.jpg>
-Package pdftex.def Info: img/plantnet3.jpg  used on input line 70.
-(pdftex.def)             Requested size: 175.26631pt x 389.45454pt.
+Package pdftex.def Info: img/plantnet3.jpg  used on input line 71.
+(pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [18 <./img/agrio1.jpg> <./img/agrio2.jpg>]
-Overfull \vbox (119.45238pt too high) has occurred while \output is active []
-
-
 
 [19 <./img/plantnet1.jpg> <./img/plantnet2.jpg> <./img/plantnet3.jpg>])
 (tex/podstawowe-pojecia.tex
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 10.
+(Font)              scaled to size 13.24796pt on input line 11.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 10.
+(Font)              scaled to size 9.19998pt on input line 11.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 10.
+(Font)              scaled to size 7.35999pt on input line 11.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 10.
+(Font)              scaled to size 13.24796pt on input line 11.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 10.
+(Font)              scaled to size 9.19998pt on input line 11.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 10.
+(Font)              scaled to size 7.35999pt on input line 11.
 
 
 [20
 
 ]
-<img/svm-ilustacja.png, id=642, 347.2975pt x 287.0725pt>
+<img/svm-ilustacja.png, id=648, 347.2975pt x 287.0725pt>
 File: img/svm-ilustacja.png Graphic file (type png)
 <use img/svm-ilustacja.png>
-Package pdftex.def Info: img/svm-ilustacja.png  used on input line 47.
+Package pdftex.def Info: img/svm-ilustacja.png  used on input line 48.
 (pdftex.def)             Requested size: 350.5393pt x 289.76134pt.
 
 
@@ -1531,23 +1528,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [22 <./img/svm-ilustacja.png>]
-<img/drzewo-decyzyjne.jpg, id=661, 158.994pt x 71.0655pt>
+<img/drzewo-decyzyjne.jpg, id=667, 158.994pt x 71.0655pt>
 File: img/drzewo-decyzyjne.jpg Graphic file (type jpg)
 <use img/drzewo-decyzyjne.jpg>
-Package pdftex.def Info: img/drzewo-decyzyjne.jpg  used on input line 58.
+Package pdftex.def Info: img/drzewo-decyzyjne.jpg  used on input line 59.
 (pdftex.def)             Requested size: 438.17247pt x 195.87961pt.
 
 
 [23 <./img/drzewo-decyzyjne.jpg>]
-<img/k-nn1.png, id=673, 371.3875pt x 301.125pt>
+<img/k-nn1.png, id=679, 371.3875pt x 301.125pt>
 File: img/k-nn1.png Graphic file (type png)
 <use img/k-nn1.png>
-Package pdftex.def Info: img/k-nn1.png  used on input line 81.
+Package pdftex.def Info: img/k-nn1.png  used on input line 82.
 (pdftex.def)             Requested size: 306.71939pt x 248.69768pt.
-<img/k-nn2.png, id=674, 371.3875pt x 301.125pt>
+<img/k-nn2.png, id=680, 371.3875pt x 301.125pt>
 File: img/k-nn2.png Graphic file (type png)
 <use img/k-nn2.png>
-Package pdftex.def Info: img/k-nn2.png  used on input line 88.
+Package pdftex.def Info: img/k-nn2.png  used on input line 89.
 (pdftex.def)             Requested size: 306.71939pt x 248.69768pt.
 
 Underfull \vbox (badness 3260) has occurred while \output is active []
@@ -1555,10 +1552,10 @@ Underfull \vbox (badness 3260) has occurred while \output is active []
 
 
 [24 <./img/k-nn1.png>]
-<img/neuron.png, id=690, 285.31593pt x 161.85469pt>
+<img/neuron.png, id=696, 285.31593pt x 161.85469pt>
 File: img/neuron.png Graphic file (type png)
 <use img/neuron.png>
-Package pdftex.def Info: img/neuron.png  used on input line 97.
+Package pdftex.def Info: img/neuron.png  used on input line 98.
 (pdftex.def)             Requested size: 394.35254pt x 223.71039pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1566,10 +1563,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [25 <./img/k-nn2.png>]
-<img/percepton.png, id=704, 405.01312pt x 201.00093pt>
+<img/percepton.png, id=710, 405.01312pt x 201.00093pt>
 File: img/percepton.png Graphic file (type png)
 <use img/percepton.png>
-Package pdftex.def Info: img/percepton.png  used on input line 106.
+Package pdftex.def Info: img/percepton.png  used on input line 107.
 (pdftex.def)             Requested size: 438.17247pt x 217.46114pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1577,10 +1574,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [26 <./img/neuron.png>]
-<img/mlp.png, id=715, 288.07625pt x 291.0875pt>
+<img/mlp.png, id=721, 288.07625pt x 291.0875pt>
 File: img/mlp.png Graphic file (type png)
 <use img/mlp.png>
-Package pdftex.def Info: img/mlp.png  used on input line 114.
+Package pdftex.def Info: img/mlp.png  used on input line 115.
 (pdftex.def)             Requested size: 262.90614pt x 265.66287pt.
 
 Underfull \vbox (badness 2762) has occurred while \output is active []
@@ -1588,14 +1585,14 @@ Underfull \vbox (badness 2762) has occurred while \output is active []
 
 
 [27 <./img/percepton.png> <./img/mlp.png>]
-<img/CNN-Model-Architecture.png, id=727, 1296.845pt x 325.215pt>
+<img/CNN-Model-Architecture.png, id=733, 1296.845pt x 325.215pt>
 File: img/CNN-Model-Architecture.png Graphic file (type png)
 <use img/CNN-Model-Architecture.png>
-Package pdftex.def Info: img/CNN-Model-Architecture.png  used on input line 128
+Package pdftex.def Info: img/CNN-Model-Architecture.png  used on input line 129
 .
 (pdftex.def)             Requested size: 438.17247pt x 109.88187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--131
+Underfull \hbox (badness 10000) in paragraph at lines 126--132
 
  []
 
@@ -1604,23 +1601,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--131
 [28 <./img/CNN-Model-Architecture.png>]
 
 [29]
-<img/nfa-.jpg, id=746, 239.89626pt x 280.04625pt>
+<img/nfa-.jpg, id=752, 239.89626pt x 280.04625pt>
 File: img/nfa-.jpg Graphic file (type jpg)
 <use img/nfa-.jpg>
-Package pdftex.def Info: img/nfa-.jpg  used on input line 154.
+Package pdftex.def Info: img/nfa-.jpg  used on input line 155.
 (pdftex.def)             Requested size: 219.08623pt x 255.75693pt.
-<img/nfa1.jpg, id=749, 630.355pt x 280.04625pt>
+<img/nfa1.jpg, id=755, 630.355pt x 280.04625pt>
 File: img/nfa1.jpg Graphic file (type jpg)
 <use img/nfa1.jpg>
-Package pdftex.def Info: img/nfa1.jpg  used on input line 161.
+Package pdftex.def Info: img/nfa1.jpg  used on input line 162.
 (pdftex.def)             Requested size: 394.35254pt x 175.19939pt.
 
 
 [30 <./img/nfa-.jpg (PNG copy)>]
-<img/macierz_pomylek.png, id=758, 319.1925pt x 158.39175pt>
+<img/macierz_pomylek.png, id=764, 319.1925pt x 158.39175pt>
 File: img/macierz_pomylek.png Graphic file (type png)
 <use img/macierz_pomylek.png>
-Package pdftex.def Info: img/macierz_pomylek.png  used on input line 177.
+Package pdftex.def Info: img/macierz_pomylek.png  used on input line 178.
 (pdftex.def)             Requested size: 438.17247pt x 217.43524pt.
 
 
@@ -1629,7 +1626,7 @@ Package pdftex.def Info: img/macierz_pomylek.png  used on input line 177.
 [32 <./img/macierz_pomylek.png>]
 
 [33]) (tex/3-modele.tex
-<img/depthcon.png, id=782, 354.57469pt x 210.7875pt>
+<img/depthcon.png, id=788, 354.57469pt x 210.7875pt>
 File: img/depthcon.png Graphic file (type png)
 <use img/depthcon.png>
 Package pdftex.def Info: img/depthcon.png  used on input line 14.
@@ -1642,7 +1639,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [34
 
 ]
-<img/vit.png, id=790, 388.45125pt x 206.57175pt>
+<img/vit.png, id=796, 388.45125pt x 206.57175pt>
 File: img/vit.png Graphic file (type png)
 <use img/vit.png>
 Package pdftex.def Info: img/vit.png  used on input line 28.
@@ -1658,7 +1655,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [36 <./img/vit.png>]
-<img/res_net.png, id=810, 275.22826pt x 142.73325pt>
+<img/res_net.png, id=816, 275.22826pt x 142.73325pt>
 File: img/res_net.png Graphic file (type png)
 <use img/res_net.png>
 Package pdftex.def Info: img/res_net.png  used on input line 61.
@@ -1669,7 +1666,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [37]
-<img/efficientnet.png, id=818, 1156.32pt x 578.16pt>
+<img/efficientnet.png, id=824, 1156.32pt x 578.16pt>
 File: img/efficientnet.png Graphic file (type png)
 <use img/efficientnet.png>
 Package pdftex.def Info: img/efficientnet.png  used on input line 70.
@@ -1710,7 +1707,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [39 <./img/efficientnet.png>]
-<img/densenet.png, id=835, 555.57562pt x 79.79813pt>
+<img/densenet.png, id=841, 555.57562pt x 79.79813pt>
 File: img/densenet.png Graphic file (type png)
 <use img/densenet.png>
 Package pdftex.def Info: img/densenet.png  used on input line 96.
@@ -1720,15 +1717,15 @@ Package pdftex.def Info: img/densenet.png  used on input line 96.
 [40 <./img/densenet.png>]) (tex/zbior-danych.tex
 File: img/lisc-1.png Graphic file (type png)
 <use img/lisc-1.png>
-Package pdftex.def Info: img/lisc-1.png  used on input line 9.
+Package pdftex.def Info: img/lisc-1.png  used on input line 10.
 (pdftex.def)             Requested size: 131.45306pt x 130.9917pt.
 File: img/lisc-2.png Graphic file (type png)
 <use img/lisc-2.png>
-Package pdftex.def Info: img/lisc-2.png  used on input line 10.
+Package pdftex.def Info: img/lisc-2.png  used on input line 11.
 (pdftex.def)             Requested size: 131.45306pt x 131.45142pt.
 File: img/lisc-3.png Graphic file (type png)
 <use img/lisc-3.png>
-Package pdftex.def Info: img/lisc-3.png  used on input line 11.
+Package pdftex.def Info: img/lisc-3.png  used on input line 12.
 (pdftex.def)             Requested size: 131.45306pt x 130.99323pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1752,20 +1749,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [44]
-<img/lisc-1-prz.JPG, id=869, 256.96pt x 256.96pt>
+<img/lisc-1-prz.JPG, id=875, 256.96pt x 256.96pt>
 File: img/lisc-1-prz.JPG Graphic file (type jpg)
 <use img/lisc-1-prz.JPG>
-Package pdftex.def Info: img/lisc-1-prz.JPG  used on input line 97.
+Package pdftex.def Info: img/lisc-1-prz.JPG  used on input line 98.
 (pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
-<img/lisc-2-prz.JPG, id=870, 256.96pt x 256.96pt>
+<img/lisc-2-prz.JPG, id=876, 256.96pt x 256.96pt>
 File: img/lisc-2-prz.JPG Graphic file (type jpg)
 <use img/lisc-2-prz.JPG>
-Package pdftex.def Info: img/lisc-2-prz.JPG  used on input line 98.
+Package pdftex.def Info: img/lisc-2-prz.JPG  used on input line 99.
 (pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
-<img/lisc-3-prz.JPG, id=871, 256.96pt x 256.96pt>
+<img/lisc-3-prz.JPG, id=877, 256.96pt x 256.96pt>
 File: img/lisc-3-prz.JPG Graphic file (type jpg)
 <use img/lisc-3-prz.JPG>
-Package pdftex.def Info: img/lisc-3-prz.JPG  used on input line 99.
+Package pdftex.def Info: img/lisc-3-prz.JPG  used on input line 100.
 (pdftex.def)             Requested size: 131.45306pt x 131.45563pt.
 
 Underfull \vbox (badness 1609) has occurred while \output is active []
@@ -1778,10 +1775,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [46]
-<img/wykres-augmentacji.png, id=884, 722.7pt x 722.7pt>
+<img/wykres-augmentacji.png, id=890, 722.7pt x 722.7pt>
 File: img/wykres-augmentacji.png Graphic file (type png)
 <use img/wykres-augmentacji.png>
-Package pdftex.def Info: img/wykres-augmentacji.png  used on input line 136.
+Package pdftex.def Info: img/wykres-augmentacji.png  used on input line 137.
 (pdftex.def)             Requested size: 438.17247pt x 438.1777pt.
 
 
@@ -1808,6 +1805,9 @@ Overfull \hbox (29.99104pt too wide) in paragraph at lines 8--22
 ]
 
 [53]
+Underfull \vbox (badness 1454) has occurred while \output is active []
+
+
 
 [54
 
@@ -1818,15 +1818,15 @@ Overfull \hbox (29.99104pt too wide) in paragraph at lines 8--22
 [56]
 
 [57]) (tex/aplikacja.tex
-<img/aplikacja-1.png, id=942, 1084.05pt x 2409.0pt>
+<img/aplikacja-1.png, id=948, 1084.05pt x 2409.0pt>
 File: img/aplikacja-1.png Graphic file (type png)
 <use img/aplikacja-1.png>
-Package pdftex.def Info: img/aplikacja-1.png  used on input line 17.
+Package pdftex.def Info: img/aplikacja-1.png  used on input line 18.
 (pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
-<img/aplikacja-2.png, id=943, 1084.05pt x 2409.0pt>
+<img/aplikacja-2.png, id=949, 1084.05pt x 2409.0pt>
 File: img/aplikacja-2.png Graphic file (type png)
 <use img/aplikacja-2.png>
-Package pdftex.def Info: img/aplikacja-2.png  used on input line 19.
+Package pdftex.def Info: img/aplikacja-2.png  used on input line 20.
 (pdftex.def)             Requested size: 131.45306pt x 292.08171pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1919,10 +1919,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29394 strings out of 473682
- 518932 string characters out of 5719215
- 1667428 words of memory out of 5000000
- 51391 multiletter control sequences out of 15000+600000
+ 29400 strings out of 473682
+ 519004 string characters out of 5719215
+ 1667592 words of memory out of 5000000
+ 51397 multiletter control sequences out of 15000+600000
  678764 words of font info for 402 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,15n,121p,2061b,2692s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1934,9 +1934,9 @@ s/type1/public/fourier/fourier-ms.pfb><C:/Users/kubac/AppData/Local/Programs/Mi
 KTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/kubac/AppData/Local/Programs
 /MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/kubac/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (67 pages, 11291683 bytes).
+Output written on main.pdf (67 pages, 11293844 bytes).
 PDF statistics:
- 1245 PDF objects out of 1440 (max. 8388607)
+ 1257 PDF objects out of 1440 (max. 8388607)
  230 named destinations out of 1000 (max. 500000)
  77198 words of extra memory for PDF output out of 89155 (max. 10000000)
 

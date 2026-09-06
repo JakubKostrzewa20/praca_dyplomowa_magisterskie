@@ -1,6 +1,6 @@
 \newpage % Rozdziały zaczynamy od nowej strony.
 \section{Modele}
-\label{roz:modele}
+\label{sec:modele}
 W poniższym rozdziale przedstawiono rodziny modeli głębokiego uczenia wykorzystane w pracy w ramach badania ich możliwości na wybranym wcześniej zbiorze danych zawierającym rośliny uprawne i choroby. Cztery z tych rodzin modeli reprezentują klasyczne podejście w postaci architektury CNN – ResNet, MobileNet, EfficientNet i DenseNet oraz jedna rodzina modeli będący implementacją transformera wizyjnego – ViT.  Wybór modeli podyktowany był próbą rozszerzenia badań wcześniej przedstawionych w przeglądzie literatury poprzez uwzględnienie modeli, które nie były analizowane, bądź bezpośrednio ze sobą porównywane. Uwzględnienie zarówno szeroko stosowanych modeli CNN, jak i nowszej architektury ViT pozwala na porównanie podejść rozwijanych w różnych okresach rozwoju głębokiego uczenia. Każdy z poniższych podrozdziałów przedstawia jedną z rodzin oraz przedstawia zasadę działania danej rodziny modeli oraz jej charakterystyczne cechy.   
 \subsection{MobileNet}
 MobileNet to rodzina lekkich modeli konwolucyjnych sieci neuronowych (CNN). Została ona opracowana przez firmę Google, zaprojektowana z myślą  o wykonywaniu zadań z dziedziny wizji komputerowej - klasyfikacja obrazów, czy detekcja obiektów. Są to małe modele o niskiej liczbie parametrów i małych opóźnieniach, zaprojektowane z myślą \newline o ograniczeniach zasobów obliczeniowych, występujących w wielu urządzeniach elektronicznych, głównie telefonach mobilnych.

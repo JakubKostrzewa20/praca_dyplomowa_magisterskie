@@ -1,5 +1,6 @@
 \newpage
 \section{Metodyka badań}
+\label{sec:metodyka}
 Celem poniższego rozdziału jest przedstawienie specyfikacji sprzętowej, metod, narzędzi oraz przeprowadzonych badań porównawczych modeli głębokiego nauczania.
 
 \subsection{Środowisko badawcze}
@@ -180,7 +181,7 @@ Współczynnik uczenia ustalono na poziomie 1-4e. Wartość tę przyjęto jako s
 
 Rozmiar partii( z ang. batchy) został ustalony na 128 próbek, uwzględniając możliwości sprzętowe wykorzystywanego środowiska obliczeniowego. Wartość ta pozwalała na efektywne wykorzystanie dostępnych zasobów pamięci GPU i skrócenie czasu realizacji eksperymentów, co miało znaczenie ze względu na liczbę przeprowadzonych treningów. 
 
-W celu zachowania jednolitych warunków eksperymentalnych dla większości analizowanych modeli zastosowano rozdzielczość wejściową 224x224 piksele. Wyjątek stanowił model EfficientNetB1, dla którego zastosowano rozdzielczość 240x240 pikseli, zgodnie z konfiguracją tego wariantu architektury. Zróżnicowanie rozdzielczości wynikało z charakterystyki analizowanych modeli i nie było elementem badanego czynnika eksperymentalnego.
+W celu zachowania jednolitych warunków eksperymentalnych dla większości analizowanych modeli zastosowano rozdzielczość wejściową 224x224 piksele. Wyjątek stanowił model EfficientNetB1, dla którego zastosowano rozdzielczość 240x240 pikseli, zgodnie \newline z konfiguracją tego wariantu architektury. Zróżnicowanie rozdzielczości wynikało z charakterystyki analizowanych modeli i nie było elementem badanego czynnika eksperymentalnego.
 
 Wszystkie analizowane modele zostały zainicjalizowane wagami wstępnie wytrenowanymi na zbiorze ImageNet. Wybór wag ImageNet wynikał z dostępności jednolitego wariantu wag dla wszystkich analizowanych architektur. 
 
@@ -215,5 +216,5 @@ Każdy z 10 modeli został wytrenowany na trzech zbiorach. Każdy ze zbiorów po
 
 
 \subsection{Użyte miary}
-Pomimo przedstawienia w rozdziale wielu miar wykorzystywanych do oceny jakości modelów klasyfikacji, w ramach analizy wyników, wykorzystano jako główna metrykę oceny miarę Macro F1-Score. Wybór ten został podyktowany naturą badania. W ramach trenowania modeli został użyty zbiór wieloklasowy, który, jak wynika z analizy przedstawionej w rozdziale , nie ma równomiernego rozkładu zdjęć między klasami. W związku z tym, Macro F1 jest idealna miarą badawczą, która bierze pod uwagę fakt nierówności klas, a jednocześnie łączy w sobie miary Precision oraz Recall. 
+Pomimo przedstawienia w rozdziale wielu miar wykorzystywanych do oceny jakości modelów klasyfikacji, w ramach analizy wyników, wykorzystano jako główna metrykę oceny miarę Macro F1-Score. Wybór ten został podyktowany naturą badania. W ramach trenowania modeli został użyty zbiór wieloklasowy, który, jak wynika z analizy przedstawionej w rozdziale , nie ma równomiernego rozkładu zdjęć między klasami. W związku \newline z tym, Macro F1 jest idealna miarą badawczą, która bierze pod uwagę fakt nierówności klas, a jednocześnie łączy w sobie miary Precision oraz Recall. 
 \clearpage

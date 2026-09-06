@@ -2,9 +2,9 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Przykładowe zdjęcia ze zbioru danych PlantDoc. \blx@tocontentsinit {0}\cite {PlantDoc}}}{15}{figure.caption.2}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Przykładowe zdjęcia ze zbioru danych PlantVillage.\blx@tocontentsinit {0}\cite {PlantVillage}}}{15}{figure.caption.3}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Przykładowe zdjęcia ze zbioru danych New Plant Diseases.\blx@tocontentsinit {0}\cite {PlantNew}}}{16}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Planta.}}{17}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Agrio.}}{18}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji.}}{19}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Planta\blx@tocontentsinit {0}\cite {Planta}.}}{17}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji Agrio\blx@tocontentsinit {0}\cite {Agrio}.}}{18}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Przykładowe zrzuty ekranu z aplikacji\blx@tocontentsinit {0}\cite {PlantNet}.}}{19}{figure.caption.7}%
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat ilustrujący działanie algorytmu SVM}}{22}{figure.caption.8}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Schemat budowy drzewa decyzyjnego \blx@tocontentsinit {0}\cite {decisiontree}}}{23}{figure.caption.9}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Dane przed wykorzystaniem algorytmu k-NN}}{24}{figure.caption.10}%

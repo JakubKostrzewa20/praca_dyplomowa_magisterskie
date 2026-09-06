@@ -1,4 +1,5 @@
 \section{Przegląd literatury}
+\label{sec:przeglad}
 W niniejszym rozdziale przedstawiono przegląd literatury w zakresie wykrywania chorób roślin przy użyciu klasyfikacji obrazów. Przedstawiono  inne badania, przeprowadzonych z wykorzystaniem różnych algorytmów uczenia głębokiego. Opisano również dostępne publicznie zbiory danych wykorzystywanie w badaniach z użyciem uczenia maszynowego, spośród których wybrano zbiór wykorzystany w niniejszej pracy. Zbiory te zawierają  zdjęcia liści roślin zdrowych, jak liści dotkniętych różnymi chorobami, głównie gatunki hodowane przez rolników, takie jak pomidory, czy ziemniak. Przedstawiono także przegląd zastosowań metod sztucznej inteligencji  w rolnictwie oraz przykłady aplikacji.
 \subsection{Przegląd badań}
 Wraz z rozwojem technologii uczenia maszynowego, problem rozpoznania roślin, czy identyfikacji chorób ich trapiących z wykorzystaniem tych metod wzrasta na popularności. Skutkiem tego jest rosnąca liczba artykułów naukowych, prac i badań poruszających ten temat. Literatura naukowa w tematyce detekcji chorób roślin wykorzystuje głównie zbiór danych PlantVillage, który zawiera rośliny rolnicze. W badaniu autorstwa Sharada P.Mohanty, David P.Hughes oraz Marcel Salathé porównano dwa typy architektur uczenia głębokiego: GoogLeNet i AlexNet, w różnych konfiguracjach zmiennych oraz danych. Analiza opierała się głównie na różnych wariantach tego samego zbioru danych. Modele trenowane były z użyciem trzech zestawów tych samych zdjęć - jeden zestaw zawierał kolorowe zdjęcia, drugi zdjęcia w odcieniach szarości, a w trzecim dokonano segmentacji obiektu liścia. Wyniki badania sugerują lepszą skuteczność modelu przy użyciu pełnego kolorowego obrazu, choć różnica między trzema zbiorami danych jest minimalna \cite{sharada}. \newline W artykule opublikowanym w AgriEngineering autorzy wykorzystują tylko zdjęcia pomidora. Następnie, po przeprowadzonej segmentacji,autorzy zbadali skalowanie modelu EfficientNet w zależności od liczby klas, które ma rozpoznać - od prostego podziału binarnego na zdrowe, bądź chore, do rozpoznania konkretnych chorób \cite{tomato}. Przedstawione  badania pozwalają porównać skuteczność różnych architektur. Należy jednak zauważyć, że  używania tego samego zbioru danych, sposób ich użycia, jak i przygotowania do badania różni się między autorami, co nie pozwala na uzyskanie spójnych wniosków dotyczących wyboru najlepszego typu architektury co do rozwiązania tego problemu. Warto także zwrócić uwagę na fakt, że liczba architektur wykorzystana w tych badaniach jest dosyć ograniczona.
@@ -46,7 +47,7 @@ Aplikacja skierowana do osób zajmujących się hodowlą roślin. Aplikacji zawi
 	\includegraphics[width=0.4\textwidth]{img/planta.jpg}
 	\hspace{0.05\textwidth} 
 	\includegraphics[width=0.4\textwidth]{img/planta2.jpg}
-	\caption{Przykładowe zrzuty ekranu z aplikacji Planta.}
+	\caption{Przykładowe zrzuty ekranu z aplikacji Planta\cite{Planta}.}
 	\label{fig:plantazdjecia}
 \end{figure}
 \subsubsection{Agrio - Plant diagnosis app}
@@ -56,19 +57,19 @@ Aplikacja skierowana do miłośników roślin. Pozwala na wykonanie serii zdję�
 	\includegraphics[width=0.4\textwidth]{img/agrio1.jpg}
 	\hspace{0.05\textwidth} 
 	\includegraphics[width=0.4\textwidth]{img/agrio2.jpg}
-	\caption{Przykładowe zrzuty ekranu z aplikacji Agrio.}
+	\caption{Przykładowe zrzuty ekranu z aplikacji Agrio\cite{Agrio}.}
 	\label{fig:agriozdjecia}
 \end{figure}
 \subsubsection{PlantNet Plant Identification}
 Aplikacja pozwala na identyfikacje roślin na podstawie kilku metryk, np. na podstawie zdjęcia liści, kwiatu, czy ogólnego habitatu. Przedstawia także inne, prawdopodobne gatunki pasujące do dostarczonych danych. Posiada także atlas roślin, gdzie każdy gatunek z bazy ma przypisaną nazwę w wybranym z dostępnych języków, nazwę łacińską, zdjęcia, linki do źródeł informacji takich jak np. Wikipedia, oraz status gatunku w czerwonej księdze IUCN\cite{PlantNet}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{img/plantnet1.jpg}
+	\includegraphics[width=0.3\textwidth]{img/plantnet1.jpg}
 	\hspace{0.05\textwidth} 
-	\includegraphics[width=0.4\textwidth]{img/plantnet2.jpg}
+	\includegraphics[width=0.3\textwidth]{img/plantnet2.jpg}
 	\hspace{0.05\textwidth} 
-	\includegraphics[width=0.4\textwidth]{img/plantnet3.jpg}
-	\caption{Przykładowe zrzuty ekranu z aplikacji.}
+	\includegraphics[width=0.3\textwidth]{img/plantnet3.jpg}
+	\caption{Przykładowe zrzuty ekranu z aplikacji\cite{PlantNet}.}
 	\label{fig:agriozdjecia}
 \end{figure}
 \clearpage

@@ -7,3 +7,4 @@ input_data/
 output/
 *.keras
 old/
+latex_report/
