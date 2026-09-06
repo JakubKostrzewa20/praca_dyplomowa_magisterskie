@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.17)  6 SEP 2026 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.17)  6 SEP 2026 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1934,9 +1934,9 @@ s/type1/public/fourier/fourier-ms.pfb><C:/Users/kubac/AppData/Local/Programs/Mi
 KTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/kubac/AppData/Local/Programs
 /MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/kubac/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (67 pages, 11293844 bytes).
+Output written on main.pdf (67 pages, 11293518 bytes).
 PDF statistics:
- 1257 PDF objects out of 1440 (max. 8388607)
+ 1255 PDF objects out of 1440 (max. 8388607)
  230 named destinations out of 1000 (max. 500000)
  77198 words of extra memory for PDF output out of 89155 (max. 10000000)
 
