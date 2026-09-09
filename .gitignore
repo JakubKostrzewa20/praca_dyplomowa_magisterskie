@@ -2,9 +2,8 @@
 .vscode/
 __pycache__/
 *.zip
-*.JPG
 input_data/
-output/
 *.keras
+*.pth
 old/
 latex_report/
